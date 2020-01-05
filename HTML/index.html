@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link rel="icon" type="image/png" href="../img/compact-disc.png">
+      <meta charset="UTF-8">
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../CSS/main.css">
+      <link rel="stylesheet" href="../CSS/fonts.css">
+      <link rel="stylesheet" href="../CSS/header.css">
+      <link rel="stylesheet" href="/mymusic/CSS/form.css">
+      <link rel="stylesheet" href="../CSS/footer.css">
+      <link rel="stylesheet" href="../CSS/animations.css">
+      <script src="https://kit.fontawesome.com/75ad4010ea.js" crossorigin="anonymous"></script>
+      <script src="../JS/jquery-3.4.1.min.js" charset="utf-8"></script>
+      <script src="../JS/main.js" charset="utf-8"></script>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, content="width=1000" maximum-scale=1, user-scalable=no"/>
+      <!--320-->
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>MyMusic</title>
+   </head>
+   <body>
+      <header class="nav-dark" id="header">
+         <nav class="fill">
+            <ul>
+               <img style="width:50px;height:50px;" src="../IMG/myMusicLogoBlack.png" alt="">
+               <li><a href="#">Főoldal</a></li>
+               <li><a href="../PHP/guest.php">Böngészés</a></li>
+               <li><a href="#gallery">Média</a></li>
+               <div id="button"><a href="loginlayout.html"><i style="padding: 0" class="fas fa-sign-in-alt fa-1x"></i></a></div>
+               <li><a href="#contact">Sugó</a></li>
+             </ul>
+         </nav>
+      </header>
+
+      <div class="wrapper-all">
+<div class="form-center">
+  <div class="formholder">
+     <div class="form root">
+        <form method="post" action="../PHP/CONFIG/connect.php">
+           <h2>Regrisztálj!</h2>
+           <div class="input">
+             <input class="inputFields" data-aos="fade-in" type="text" onkeydown="checkUsername()" required placeholder="Felhasználónév" id="username" name="username">
+             <div class="bar"></div>
+           </div>
+           <h2 id="userErrorMessage">  * felhasználónév legalább 10 karakter.</h2>
+           <h2 id="userErrorMessage2">  * felhasználónév maximum 20 karakter.</h2>
+           <div class="input">
+             <input class="inputFields" data-aos="fade-in" type="email" required placeholder="Email" id="email" name="email">
+             <div class="bar"></div>
+             <h2><i>Email-címed teljesen anoním marad.</i></p>
+           </div>
+           <div class="input">
+             <input class="inputFields" data-aos="fade-in" type="password" required placeholder="Jelszó" id="password" name="password">
+             <div class="bar"></div>
+           </div>
+           <br>
+           <br>
+           <input class="material-button" type="submit" value="Ingyenes regrisztáció!">
+           <p style="text-align:start"><small>Van már fiókod? <a href="../HTML/loginlayout.html">Bejelentkezés</a></small></p>
+        </form>
+     </div>
+     <div id="mail-holder" class="form">
+       <img class="animated jackInTheBox delay-0s" style="width:100px;height:100px;" src="../IMG/myMusicLogo.png" alt="">
+        <h1 style="color:#fff">Szereted a zenét?</h1>
+        <div class="popup-inside">
+           <form method="POST" action="../PHP/COMPONENTS/sendmail.php">
+              <h2>Iratkozz fel hírlevelünkre!</h2>
+                 <div class="input">
+                   <input class="inputFields" type="email" name="email" id="email" placeholder="Email címed" required>
+                   <div class="bar"></div>
+                 </div>
+              <h2 style="text-align: left">Heti hírlevelünkre feliratkozva, információkat küldünk neked!</h2>
+              <br>
+              <input id="send-mail" class="material-button" type="submit" value="Feliratkozom a hírlevélre">
+           </form>
+        </div>
+     </div>
+  </div>
+  <a id="github" href="github.com/wotlery99">
+      <i class="fab fa-github-alt fa-2x"></i>
+  </a>
+</div>
+         <div class="footer">
+            <ul>
+               <li>
+                  <h2>Rólunk</h2>
+               </li>
+               <li>Rólunk</li>
+               <li>Állások</li>
+               <li>For The Record</li>
+            </ul>
+            <ul>
+               <li>
+                  <h2>Közösségek</h2>
+               </li>
+               <li>Előadóknak</li>
+               <li>Fejlesztők</li>
+               <li>Szállítók</li>
+            </ul>
+            <ul>
+               <li>
+                  <h2>Hivatkozások</h2>
+               </li>
+               <li>Sugó</li>
+               <li>Webes lejátszó</li>
+               <li>Történetünk</li>
+            </ul>
+            <ul class="socials">
+               <li><i class="fab fa-github-square fa-3x"></i> </li>
+               <li><i class="fab fa-linkedin fa-3x"></i> </li>
+               <li><i class="fab fa-facebook-square fa-3x"></i> </li>
+            </ul>
+         </div>
+      </div>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+         AOS.init();
+         function checkUsername(){
+             let inputForUsername = document.getElementById("username").value;
+             for(i=0; i>inputForUsername.length; i++){
+             if(isNaN(inputForUsername.length[i])){
+                 }
+                }
+             if(inputForUsername.length == null){
+                 var errormsg = document.getElementById("userErrorMessage2").style.display = "none";
+                 var errormsg = document.getElementById("userErrorMessage").style.display = "none";
+             }
+             if(inputForUsername.length < 10 ){
+                 console.log("i should be none.");
+                 var errormsg = document.getElementById("userErrorMessage").style.display = "block";
+             }
+             else{
+                 var errormsg = document.getElementById("userErrorMessage").style.display = "none";
+             }
+             if(inputForUsername.length > 20){
+                 var errormsg = document.getElementById("userErrorMessage2").style.display = "block";
+             }
+             else{
+                 var errormsg = document.getElementById("userErrorMessage2").style.display = "none";
+             }
+         }
+      </script>
+   </body>
+</html>
