@@ -10,9 +10,7 @@
    //A lekérdezésnek megfelelően egy row változóba teszem a resultot
         ?>
           <div class="row-inner">
-            <div class="tile">
-              <span class="ribbon3">🤟🏼</span>
-
+            <div class="tile">  
               <h2 class="nameButton"><?php echo $row['artist'];?></h2>
               <h4 class="music-name"><?php echo $row['name']; ?></h4>
               <h2 class="userButton">Feltöltötte: <?php echo $row['uploadedby']; ?></h4>

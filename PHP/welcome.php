@@ -65,5 +65,7 @@ $id = $_SESSION['id'];
 <script type="text/javascript" src="../JS/main.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/music-related.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/likes.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/ribbons.js" charset="utf-8"></script>
+
 </body>
 </html>
