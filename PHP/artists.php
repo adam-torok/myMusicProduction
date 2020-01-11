@@ -24,7 +24,7 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
   <div class="track-container">
   <div class="searched-header">
   <h2>Az összes jelenlegi</h2>
-  <h1>ZENÉSZEK</h1>
+  <h1 style="color:white">ZENÉSZEK</h1>
   </div>
           <?php $sql = "SELECT DISTINCT artist, genre FROM songs";
           $result = mysqli_query($dbc,$sql);
@@ -53,5 +53,7 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 <script type="text/javascript" src="../JS/music-related.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/lightmode.js" charset="utf-8"></script>
+
   </body>
 </html>

@@ -1,10 +1,23 @@
-  function loadSpinner() {
-  var loadPage = setTimeout(showPage, 700);
+function loadSpinner() {
+var loadPage = setTimeout(showPage, 700);
 }
 function showPage() {
 document.getElementById("loader").style.display = "none";
 }
 $(document).ready(function(){
+
+if ((window.location.href.indexOf("welcome") != -1) ||
+    (window.location.href.indexOf("artists") != -1) ||
+    (window.location.href.indexOf("activity") != -1) ||
+    (window.location.href.indexOf("displayPlayList") != -1)) {
+    return false;
+    }
+    else{
+      console.log("😄Buttonok deaktiválása");
+      $("#grid a i").addClass("disable");
+      $("#change a i").addClass("disable");
+    }
+
 $(".material-button").hover(function(){
   $(this).toggleClass("animated pulse delay-0s");
 })
@@ -32,12 +45,6 @@ $("#pauseButton").click(function(){
   // Zene lejátszása gombbal
 $("#playButton").click(function(){
   $("#myaudio").trigger('play');
-});
-  // Sötét témára állítás
-  //--->ToggleClass nem működött...<---
-
-$("#grid").click(function(){
-  $(".row").toggleClass("grid");
 });
 
 $(".userPlayList").click(function () {

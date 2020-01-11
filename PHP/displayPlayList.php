@@ -76,5 +76,6 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 <script type="text/javascript" src="../JS/script.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/main.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/music-related.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/lightmode.js" charset="utf-8"></script>
 </body>
 </html>

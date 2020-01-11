@@ -103,5 +103,7 @@ h1{
     <script type="text/javascript" src="../JS/music-related.js" charset="utf-8"></script>
     <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../JS/lightmode.js" charset="utf-8"></script>
+
     </body>
     </html>

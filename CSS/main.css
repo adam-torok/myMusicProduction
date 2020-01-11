@@ -75,7 +75,7 @@ html{
 
 body{
     margin: 0;
-    background-color:#e2e1e0;
+    background-color: var(--bg-color);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

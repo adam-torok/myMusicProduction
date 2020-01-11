@@ -19,15 +19,6 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
     </head>
     <body class="bodyblack">
         <style>
-            body {
-                background-color:#F2F2F2;
-            }
-            h2 {
-                color: grey;
-            }
-            h4{
-                color: black;
-            }
             .tile{
               width: 100%;
             }
@@ -42,7 +33,7 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 <div class="divider">
 <?php include_once("COMPONENTS/sidebar.php");?>
 <div class="track-container">
-  <div class="searched-header" style="background-color:#303030">
+  <div class="searched-header">
       <div class="tile">
         <h2>  <?php echo "HITS OF "?></h2>
         <h1>  <?php echo $artistName;?></h1>
@@ -96,5 +87,7 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
      <script type="text/javascript" src="../JS/music-related.js" charset="utf-8"></script>
      <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
      <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
+     <script type="text/javascript" src="../JS/lightmode.js" charset="utf-8"></script>
+
     </body>
     </html>

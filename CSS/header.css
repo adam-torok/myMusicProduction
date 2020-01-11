@@ -75,3 +75,6 @@ li a:active{
   justify-content: center;
   align-items: center;
 }
+.disable{
+  color:grey!important;   
+}

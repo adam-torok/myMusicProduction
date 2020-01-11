@@ -59,7 +59,7 @@ p{
 }
 .container{
   display: grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr;
   background:var(--bg-color);
 }
 .form-center{
@@ -140,37 +140,42 @@ p{
 <div class="container">
 <div class="form-center">
   <div class="form-holder">
-  <form class="form" method="post" action="#" enctype="multipart/form-data">
-    <img style="width:100px;height:100px;" src="../IMG/myMusicLogo.png" alt="">
     <h1 style="color:#fff">FELTÖLTÉS</h1>
-      <div class="input">
-        <h2 id="nameErrorMessage">  * Maximum 20 karakter.</h2>
-          <input class="inputFields"  onkeydown="checkMusicName()" id="musicName" type="text" placeholder="Zene neve"  name="nameofmusic" required>
-          <div class="bar"></div>
-      </div>
-      <div class="input">
-        <h2 id="artistErrorMessage">  * Maximum 20 karakter.</h2>
-          <input  class="inputFields" onkeydown="checkArtistName()" id="artistName" type="text" placeholder="Előadója"  name="artistofmusic" required>
-          <div class="bar"></div>
-      </div>
+  <form class="form" method="post" action="#" enctype="multipart/form-data">
+    <div>
+        <div class="input">
+          <h2 id="nameErrorMessage">  * Maximum 20 karakter.</h2>
+            <input class="inputFields"  onkeydown="checkMusicName()" id="musicName" type="text" placeholder="Zene neve"  name="nameofmusic" required>
+            <div class="bar"></div>
+        </div>
+        <div class="input">
+          <h2 id="artistErrorMessage">  * Maximum 20 karakter.</h2>
+            <input  class="inputFields" onkeydown="checkArtistName()" id="artistName" type="text" placeholder="Előadója"  name="artistofmusic" required>
+            <div class="bar"></div>
+        </div>
+        <br>
+      <p style="text-align:center">Műfaj</p>
+      <select name="genreofmusic">
+      <option value="Rap">Rap</option>
+      <option value="Classical">Classical</option>
+      <option value="Future">Future House</option>
+      <option value="Tropical">Tropical</option>
+      <option value="Pop">Pop</option>
+      <option value="Alternatív">Alternatív</option>
+      </select>
+    </div>
+    <div>
+      <p style="text-align:center">Album fotó</p>
+      <input class="material-button" accept="image/*" class="" type="file" name="albumUpload"  id="albumUpload" required>
+      <input type="text" id="fileuploadurl" readonly="" placeholder="Csak képfálj a megengedett!">
+      <p style="text-align:center">Zene file</p>
+      <input class="material-button hidden-button" accept="audio/*" class="" type="file" name="musicUpLoad" id="musicUpLoad" required>
+      <input type="text" id="fileuploadurl" readonly="" placeholder="Csak zenefálj a megengedett!">
       <br>
-  <p style="text-align:center">Műfaj</p>
-  <select name="genreofmusic">
-    <option value="Rap">Rap</option>
-    <option value="Classical">Classical</option>
-    <option value="Future">Future House</option>
-    <option value="Tropical">Tropical</option>
-    <option value="Pop">Pop</option>
-    <option value="Alternatív">Alternatív</option>
-  </select>
-  <p style="text-align:center">Album fotó</p>
-  <input class="material-button" accept="image/*" class="" type="file" name="albumUpload"  id="albumUpload" required>
-  <input type="text" id="fileuploadurl" readonly="" placeholder="Csak képfálj a megengedett!">
-  <p style="text-align:center">Zene file</p>
-  <input class="material-button hidden-button" accept="audio/*" class="" type="file" name="musicUpLoad" id="musicUpLoad" required>
-  <input type="text" id="fileuploadurl" readonly="" placeholder="Csak zenefálj a megengedett!">
-  <br>
-  <button class="material-button" type="submit" class="btn" id="save_music" name="save_music">Feltöltés!</button>
+      <button class="material-button" type="submit" class="btn" id="save_music" name="save_music">Feltöltés!</button>
+    </div>
+
+
   </form>
   <?php
   if(isset($_POST['save_music'])){
