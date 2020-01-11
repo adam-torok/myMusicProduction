@@ -391,12 +391,10 @@ p {
   display: grid;
   flex-flow: column wrap;
   flex-direction: row;
-  padding: 1rem;
   margin-bottom: 15px;
   border-radius: 3px;
-  height: 80vh;
+  height: 50vh;
   overflow: scroll;
-  background-color: #424242;
   overflow-x: hidden;
 }
 .profile-track-container:hover{
@@ -405,11 +403,11 @@ p {
 
 .profile-track-container-featured{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
-  height: 50vh;
-  background-color: var(--bg-color);
+  grid-gap: 2rem;
+  padding: 0rem 2rem 0rem 2rem;
   justify-items:center;
 }
 .track-container-picture{
@@ -473,7 +471,6 @@ p {
     overflow: hidden;
     z-index: 1;
     display: flex;
-    flex-flow: row wrap;
     justify-content: space-between;
     background: linear-gradient( rgb(19, 13, 10), rgba(0, 0, 0, 0.7), rgba(18, 18, 18,1)), url(/img/bluebg.jpg);
     align-items: flex-end;

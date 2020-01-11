@@ -45,13 +45,9 @@ body{
   background:var(--bg-color);
 }
 p{
-   text-align:left;
-}
-.form{
- background-color:#424242;
+  text-align: left;
 }
 .form input{
- background-color:#424242;
  color:white;
 }
 .form input::placeholder{
@@ -59,7 +55,7 @@ p{
 }
 .container{
   display: grid;
-  grid-template-columns:1fr;
+  grid-template-columns:1fr 1fr;
   background:var(--bg-color);
 }
 .form-center{
@@ -122,21 +118,20 @@ p{
      </div>
 </div>
 </div>
-</div>
-<h1 style="color:white">Nemrég feltöltött zenék</h1>
+<h2>Előző feltöltéseid</h2>
 <div class="profile-track-container-featured">
-        <?php $sql = "SELECT * FROM songs WHERE `uploadedby` = '$uname' AND approved = 1 ORDER BY id DESC LIMIT 4 ";
+        <?php $sql = "SELECT * FROM songs WHERE `uploadedby` = '$uname' AND approved = 1 ORDER BY id DESC LIMIT 3 ";
         $result = mysqli_query($dbc,$sql);
  while($row = mysqli_fetch_assoc($result)) {?>
    <div>
-     <img id="albumcover" class="track-container-picture" src="../PROFILEIMAGES/<?php echo $row['covername'];?>"></a>
+     <img id="albumcover" class="track-container-picture" src="../img/albumcover/<?php echo $row['covername'];?>"></a>
      <h2 style="text-align:center"><?php echo $row['artist'];?></h2>
      <h2 style="text-align:center"><?php echo $row['time'];?></h2>
    </div>
         <?php
       }//while end ?>
 </div>
-
+</div>
 <div class="container">
 <div class="form-center">
   <div class="form-holder">
@@ -154,8 +149,8 @@ p{
             <div class="bar"></div>
         </div>
         <br>
-      <p style="text-align:center">Műfaj</p>
-      <select name="genreofmusic">
+      <p>Műfaj</p>
+      <select class="select-tex" name="genreofmusic" required>
       <option value="Rap">Rap</option>
       <option value="Classical">Classical</option>
       <option value="Future">Future House</option>
@@ -165,17 +160,13 @@ p{
       </select>
     </div>
     <div>
-      <p style="text-align:center">Album fotó</p>
-      <input class="material-button" accept="image/*" class="" type="file" name="albumUpload"  id="albumUpload" required>
-      <input type="text" id="fileuploadurl" readonly="" placeholder="Csak képfálj a megengedett!">
-      <p style="text-align:center">Zene file</p>
-      <input class="material-button hidden-button" accept="audio/*" class="" type="file" name="musicUpLoad" id="musicUpLoad" required>
-      <input type="text" id="fileuploadurl" readonly="" placeholder="Csak zenefálj a megengedett!">
+      <p>Album fotó</p>
+      <input accept="image/*" class="" type="file" name="albumUpload"  id="albumUpload" required>
+      <p>Zene file</p>
+      <input accept="audio/*" class="" type="file" name="musicUpLoad" id="musicUpLoad" required>
       <br>
       <button class="material-button" type="submit" class="btn" id="save_music" name="save_music">Feltöltés!</button>
     </div>
-
-
   </form>
   <?php
   if(isset($_POST['save_music'])){
@@ -247,7 +238,7 @@ p{
 
 <div class="profile-track-container">
     <h1 style="color:white;">Feltöltött számok</h1>
-        <?php $sql = "SELECT DISTINCT * FROM songs WHERE `uploadedby` = '$uname' AND approved = 1";
+        <?php $sql = "SELECT DISTINCT * FROM songs WHERE `uploadedby` = '$uname' AND approved = 1 ORDER BY id DESC";
         $result = mysqli_query($dbc,$sql);
  while($row = mysqli_fetch_assoc($result)) {?>
         <div class="track">
