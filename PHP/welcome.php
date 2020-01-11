@@ -14,10 +14,10 @@ $bio = $_SESSION['bio'];
 $profpic = $_SESSION['profpic'];
 $id = $_SESSION['id'];
 ?>
-  <html lang="hu">
-    <head>
-    <?php include_once("COMPONENTS/headerMeta.php"); ?>
-    <title>Üdvözlünk <?php echo $_SESSION['username'];?></title>
+<html lang="hu">
+<head>
+  <?php include_once("COMPONENTS/headerMeta.php"); ?>
+  <title>Üdvözlünk <?php echo $_SESSION['username'];?></title>
 </head>
 <body onload="loadSpinner()" class="bodyblack">
   <div id="loader" class="spinner">
@@ -65,6 +65,7 @@ $id = $_SESSION['id'];
 <script type="text/javascript" src="../JS/main.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/music-related.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/likes.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/lightmode.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/ribbons.js" charset="utf-8"></script>
 
 </body>

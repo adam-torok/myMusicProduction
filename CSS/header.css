@@ -14,22 +14,7 @@ transition: top 0.5s ease-in-out;
   width: 100%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.24), 0 3px 2px rgba(0,0,0,0.24);
 }
-.nav-light{
-  z-index: 999999999;
-  position: fixed;
-  font-family: 'Roboto', sans-serif;
-  height: 46px;
-top: 0;
-background-color:#fff;
-  display: flex;
-  font: 100 14px/1.5 'Roboto', sans-serif;;
-  -webkit-font-smoothing: subpixel-antialiased;
-align-items: center;
-justify-content: center;
-transition: top 0.5s ease-in-out;
-  width: 100%;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.24), 0 3px 2px rgba(0,0,0,0.24);
-}
+
 header a {
 	text-decoration: none;
     color: rgb(131, 131, 131);

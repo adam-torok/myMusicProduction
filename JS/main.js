@@ -35,15 +35,6 @@ $("#playButton").click(function(){
 });
   // Sötét témára állítás
   //--->ToggleClass nem működött...<---
-$("#change").click(function(){
-  $(".row-inner").toggleClass("row-inner-white");
-  $("body").toggleClass("bodyblack");
-  $(".nav-dark").toggleClass("nav-light");
-  $(".sidebar").toggleClass("sidebar-light")
-  $(".player").toggleClass("player-light");
-  $(".container").toggleClass("container-light");
-  $(".music-name").toggleClass("music-name-light");
-});
 
 $("#grid").click(function(){
   $(".row").toggleClass("grid");
