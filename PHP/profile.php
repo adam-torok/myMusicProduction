@@ -11,13 +11,13 @@ $id = $_SESSION['id'];
 $uname = $_SESSION['username'];
 $password = $_POST['password'];
 $sql = "SELECT bio FROM felhasznalo WHERE id = '$id'";
-$result = mysqli_query($dbc,$sql);
+$result = $dbc -> query($sql);
 while($row = $result->fetch_assoc()) {
        $_SESSION['bio'] = $row["bio"];
     }
 $bio = $_SESSION['bio'];
 $sql = "SELECT profile_image FROM felhasznalo WHERE id = '$id'";
-$result = mysqli_query($dbc,$sql);
+$result = $dbc -> query($sql);
 while($row = $result->fetch_assoc()) {
        $_SESSION['profpic'] = $row["profile_image"];
     }
@@ -25,7 +25,7 @@ $bio = $_SESSION['bio'];
 $profpic = $_SESSION['profpic'];
 $uname = $_SESSION['username'];
 $sql = "SELECT COUNT(*) FROM songs where uploadedby like '$uname'";
-$res = mysqli_query($dbc,$sql);
+$res = $dbc -> query($sql);
 while($row = $res->fetch_assoc()) {
       $_SESSION['$numOfUploads'] = $row['COUNT(*)'];
 };
@@ -121,8 +121,8 @@ p{
 <h2>Előző feltöltéseid</h2>
 <div class="profile-track-container-featured">
         <?php $sql = "SELECT * FROM songs WHERE `uploadedby` = '$uname' AND approved = 1 ORDER BY id DESC LIMIT 3 ";
-        $result = mysqli_query($dbc,$sql);
- while($row = mysqli_fetch_assoc($result)) {?>
+        $result = $dbc -> query($sql);
+ while($row = $result -> fetch_assoc()) {?>
    <div>
      <img id="albumcover" class="track-container-picture" src="../img/albumcover/<?php echo $row['covername'];?>"></a>
      <h2 style="text-align:center"><?php echo $row['artist'];?></h2>
@@ -239,8 +239,8 @@ p{
 <div class="profile-track-container">
     <h1 style="color:white;">Feltöltött számok</h1>
         <?php $sql = "SELECT DISTINCT * FROM songs WHERE `uploadedby` = '$uname' AND approved = 1 ORDER BY id DESC";
-        $result = mysqli_query($dbc,$sql);
- while($row = mysqli_fetch_assoc($result)) {?>
+        $result = $dbc -> query($sql);
+ while($row = $result -> fetch_assoc()) {?>
         <div class="track">
         <div class="thing">
         <i id="addPlayListButton" class="fas fa-check  fa-1x"></i>

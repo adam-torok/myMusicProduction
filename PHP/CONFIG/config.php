@@ -7,6 +7,7 @@ $dbname = "felhasznalo";
 
 //csatlakozás felépítése
 $dbc = new mysqli($host, $dbusername, $dbpassword, $dbname);
+
 if($dbc){
   $dbc -> set_charset("utf8");
 }

@@ -31,8 +31,8 @@ if(!empty($real_songs_array)){
 <div class="searched-container">
   <?php
   if($dbc = mysqli_connect('localhost', $dbusername, $dbpassword, $dbname)){
-      $res = mysqli_query($dbc, $sql);
-      while($row = mysqli_fetch_assoc($res)){
+      $res = $dbc -> query($sql);
+      while($row = $res -> fetch_assoc()){
           ?>
           <div class="row-inner">
           <div class="tile">

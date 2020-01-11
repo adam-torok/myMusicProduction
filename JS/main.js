@@ -18,6 +18,7 @@ if ((window.location.href.indexOf("welcome") != -1) ||
       $("#change a i").addClass("disable");
     }
 
+
 $(".material-button").hover(function(){
   $(this).toggleClass("animated pulse delay-0s");
 })
@@ -61,12 +62,6 @@ $(".nameButton").click(function(){
   var artistName = $(this).text();
   window.location.replace('searched.php?artistname=' + artistName);
   console.log(artistName);
-});
-
-$(".userButton").click(function(){
-  var userName = $(this).text().slice(13);
-  window.location.replace('userprofile.php?profilename=' + userName);
-  console.log(userName);
 });
 
 //add to playlist?,

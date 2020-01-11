@@ -59,12 +59,21 @@ $id = $_SESSION['id'];
 </div>
 <a id="github" href="http://www.github.com/woltery99"><i class="github fab fa-github-alt fa-2x"></i></a>
 <?php include_once("COMPONENTS/footer.php");?>
+<script type="text/javascript">
+$(".userButton").click(function(){
+  console.log("URL SÁV?😏.");
+  var userName = $(this).text().slice(13);
+  window.location.replace('userprofile.php?profilename=' + userName);
+  console.log(userName);
+});
+
+</script>
 <script type="text/javascript" src="../JS/jquery-3.4.1.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/main.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/music-player.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/script.js" charset="utf-8"></script>
-<script type="text/javascript" src="../JS/main.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/music-related.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/likes.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/lightmode.js" charset="utf-8"></script>

@@ -8,7 +8,7 @@ include_once("CONFIG/config.php");
 $username = mysqli_real_escape_string($dbc,$_POST['username']); //A form-ba beírt felhasználónév
 $password = mysqli_real_escape_string($dbc,$_POST['password']); //A form-ba beírt jelszó
 $sql = "SELECT * FROM felhasznalo WHERE felhnev = '$username' AND jelszo = SHA('$password')";
-$result = mysqli_query($dbc,$sql);
+$result = $dbc -> query($sql);
 //A result változóba tárolom el a lekérdezést
 if(mysqli_num_rows($result) == 1){
 // Itt megnézem, hogy csakis ha egy ilyen párosítás van, akkor engedjen be, és lekérem a többi adatot.

@@ -40,8 +40,8 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
       </div>
   </div>
         <?php $sql = "SELECT * FROM songs WHERE artist = '$artistName'";
-        $result = mysqli_query($dbc,$sql);
-        while($row = mysqli_fetch_assoc($result)) {?>
+        $result = $dbc -> query($sql);
+        while($row = $result -> fetch_assoc()) {?>
         <div class="track">
         <div class="thing">
         <i id="addPlayListButton" class="fas fa-plus-circle  fa-1x"></i>
@@ -88,6 +88,5 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
      <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
      <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
      <script type="text/javascript" src="../JS/lightmode.js" charset="utf-8"></script>
-
     </body>
-    </html>
+  </html>
