@@ -5,12 +5,11 @@
   </div>
       <div class="row">
         <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Alternatív'  AND  approved = 1";
-        $result = mysqli_query($dbc,$sql);
-        while($row = mysqli_fetch_assoc($result)){
-   //A lekérdezésnek megfelelően egy row változóba teszem a resultot
+        $result = $dbc -> query($sql);
+        while($row = $result -> fetch_assoc()){
         ?>
           <div class="row-inner">
-            <div class="tile">  
+            <div class="tile">
               <h2 class="nameButton"><?php echo $row['artist'];?></h2>
               <h4 class="music-name"><?php echo $row['name']; ?></h4>
               <h2 class="userButton">Feltöltötte: <?php echo $row['uploadedby']; ?></h4>
@@ -39,9 +38,8 @@
 </div>
         <div  class="row">
         <?php $sql = "SELECT * FROM songs  WHERE `genre` = 'Tropical' AND  approved = 1";
-        $result = mysqli_query($dbc,$sql);
-
- while($row = mysqli_fetch_assoc($result)) {
+        $result = $dbc -> query($sql);
+        while($row = $result -> fetch_assoc()) {
       //A lekérdezésnek megfelelően egy row változóba teszem a resultot
     ?>
         <div  class="row-inner">
@@ -74,9 +72,8 @@
     </div>
         <div class="row">
         <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Rap' AND  approved = 1";
-        $result = mysqli_query($dbc,$sql);
-        while($row = mysqli_fetch_assoc($result)) {
-      //A lekérdezésnek megfelelően egy row változóba teszem a resultot
+        $result = $dbc -> query($sql);
+        while($row = $result -> fetch_assoc()) {
     ?>
         <div class="row-inner">
         <div class="tile">
@@ -108,10 +105,8 @@
 </div>
         <div class="row">
         <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Classical' AND  approved = 1";
-        $result = mysqli_query($dbc,$sql);
-
- while($row = mysqli_fetch_assoc($result)) {
-      //A lekérdezésnek megfelelően egy row változóba teszem a resultot
+        $result = $dbc -> query($sql);
+        while($row = $result -> fetch_assoc()) {
     ?>
         <div class="row-inner">
         <div class="tile">
@@ -143,9 +138,8 @@
       </div>
         <div class="row">
         <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Pop' AND  approved = 1";
-        $result = mysqli_query($dbc,$sql);
-        while($row = mysqli_fetch_assoc($result)) {
-      //A lekérdezésnek megfelelően egy row változóba teszem a resultot
+        $result = $dbc -> query($sql);
+        while($row = $result -> fetch_assoc()) {
         ?>
         <div class="row-inner">
         <div class="tile">
@@ -177,9 +171,8 @@
     </div>
         <div class="row">
         <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Future' AND  approved = 1";
-        $result = mysqli_query($dbc,$sql);
-
- while($row = mysqli_fetch_assoc($result)) {
+        $result = $dbc -> query($sql);
+        while($row = $result -> fetch_assoc()) {
       //A lekérdezésnek megfelelően egy row változóba teszem a resultot
     ?>
         <div class="row-inner">

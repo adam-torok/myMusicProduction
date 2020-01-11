@@ -45,8 +45,8 @@ h1{
   </div>
   <div class="row">
     <?php $sql = "SELECT * FROM songs WHERE approved = 1 ORDER BY id DESC";
-    $result = mysqli_query($dbc,$sql);
-    while($row = mysqli_fetch_assoc($result)){
+    $result = $dbc -> query($sql);
+    while($row = $result -> fetch_assoc()){
 //A lekérdezésnek megfelelően egy row változóba teszem a resultot
     ?>
       <div class="row-inner">

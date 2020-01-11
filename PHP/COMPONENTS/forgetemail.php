@@ -9,15 +9,15 @@ require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
 if(isset($_POST['email']) AND isset($_POST['username'])){
-    $conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
-    $email = mysqli_real_escape_string($conn,$_POST['email']);
-    $uname = mysqli_real_escape_string($conn,$_POST['username']);
-    // Create connection
+    $dbc = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+    $email = mysqli_real_escape_string($dbc,$_POST['email']);
+    $uname = mysqli_real_escape_string($dbc,$_POST['username']);
+    // Create dbcection
 
     $sql = "SELECT jelszo FROM felhasznalo WHERE email = '$email' AND felhnev = '$uname'";
-    $result = mysqli_query($conn,$sql);
+    $result = mysqli_query($dbc,$sql);
     $pass = mysqli_fetch_assoc($result);
-    if ($conn->query($sql)){
+    if ($dbc->query($sql)){
         $mail = new PHPMailer(true);
         //Server settings
         $credens = parse_ini_file('credentials.ini');                  // Az ini filet webrooton kívülre kell helyezni
@@ -48,9 +48,9 @@ if(isset($_POST['email']) AND isset($_POST['username'])){
     }
 else{
     echo "Error: ". $sql ."
-    ". $conn->error;
+    ". $dbc->error;
     }
-    $conn->close();
+    $dbc->close();
 }
 else{
     echo "Need username / email";

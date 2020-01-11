@@ -3,7 +3,7 @@
 require_once('CONFIG/config.php');
 $username = $_POST['username'];
 $password = $_POST['password'];
-$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+$dbc = new mysqli ($host, $dbusername, $dbpassword, $dbname);
 $sql="SELECT * FROM felhasznalo WHERE username='$username'";
 $result=mysql_query($sql);
 

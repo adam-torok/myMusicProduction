@@ -10,14 +10,14 @@ $song_ID = "";
 $playlistID ="";
 
 $query = "SELECT * FROM songs WHERE name = '$songName'";
-$result = mysqli_query($dbc,$query);
-while($row = mysqli_fetch_assoc($result)) {
+$result = $dbc -> query($query);
+while($row = $result -> fetch_assoc()) {
     $song_ID = $row['id'];
 }
     echo "<br>";
 $query = "SELECT * FROM playlists WHERE user_id = '$id'";
-$result = mysqli_query($dbc,$query);
-while($row = mysqli_fetch_assoc($result)) {
+$result = $dbc -> query($query);
+while($row = $result -> fetch_assoc()) {
     $playlistID = $row['id'];
     }
     echo $song_ID . "user-id" .$id. "playlist-id" .$playlistID;

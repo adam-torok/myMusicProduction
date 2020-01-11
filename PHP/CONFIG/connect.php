@@ -14,10 +14,9 @@ $email = filter_input(INPUT_POST, 'email');
 if (!empty($username)){
 if (!empty($password)){
 if (!empty($email)){
-// Create connection
-$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+// Create dbcection
 $sql = "INSERT INTO $dbname (felhnev, jelszo, email) values ('$username', SHA('$password'), '$email')";
-if ($conn->query($sql)){
+if ($dbc->query($sql)){
   $mail = new PHPMailer(true);
     //Server settings
     $mail->Username   = 'woltery99@gmail.com';              // SMTP felhnev
@@ -47,9 +46,9 @@ if ($conn->query($sql)){
 }
 else{
 echo "Error: ". $sql ."
-". $conn->error;
+". $dbc->error;
 }
-$conn->close();
+$dbc->close();
 }
 }
 }

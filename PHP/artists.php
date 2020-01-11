@@ -27,8 +27,8 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
   <h1 style="color:white">ZENÉSZEK</h1>
   </div>
           <?php $sql = "SELECT DISTINCT artist, genre FROM songs";
-          $result = mysqli_query($dbc,$sql);
-   while($row = mysqli_fetch_assoc($result)) {?>
+          $result = $dbc -> query($sql);
+   while($row = $result -> fetch_assoc()) {?>
           <div class="track">
           <div class="thing">
           <i id="addPlayListButton" class="fas fa-plus-circle  fa-1x"></i>

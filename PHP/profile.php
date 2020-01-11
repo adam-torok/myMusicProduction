@@ -97,7 +97,7 @@ p{
         $profileImageName = $_FILES['profile_image']['name'];
         $profileImageName = strtolower($profileImageName);
         $profileImageName = trim($profileImageName);
-        $target = 'C:\wamp64\www\mymusic\PROFILEIMAGES/' . $profileImageName;
+        $target = "/myMusicProduction/PROFILEIMAGES/" . $profileImageName;
         if(move_uploaded_file($_FILES['profile_image']['tmp_name'],$target)){
             $sql = "UPDATE felhasznalo SET profile_image = '$profileImageName' WHERE id='$id'";
             if(mysqli_query($dbc,$sql)){

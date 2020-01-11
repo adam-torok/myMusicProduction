@@ -6,8 +6,11 @@ $dbpassword = "";
 $dbname = "felhasznalo";
 
 //csatlakozás felépítése
-$dbc = @mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname);
+$dbc = new mysqli($host, $dbusername, $dbpassword, $dbname);
 if($dbc){
-  mysqli_set_charset($dbc,"utf8");
+  $dbc -> set_charset("utf8");
+}
+else{
+  echo "Nem sikerült beállítani a karakter kódolást.";
 }
 ?>

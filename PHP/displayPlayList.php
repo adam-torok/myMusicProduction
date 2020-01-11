@@ -34,18 +34,18 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 <div class="row">
         <?php $sql = "SELECT id FROM playlists WHERE user_id = '$id'";
         $query1 = "";
-        $res = mysqli_query($dbc,$sql);
-        while($row = mysqli_fetch_assoc($res)){
+        $res = $dbc -> query($sql);
+        while($row = $res -> fetch_assoc()){
         $query1 = $row['id'];
         $sql2 = "SELECT DISTINCT song_id FROM playlist_songs WHERE playlist_id = '$query1'";
-        $res2 = mysqli_query($dbc,$sql2);
-        while ($row2 = mysqli_fetch_assoc($res2)){
+        $res2 = $dbc -> query($sql2);
+        while ($row2 = $res2 -> fetch_assoc()){
             $query2 = $row2['song_id'];
             $sql3 = "SELECT DISTINCT * FROM songs WHERE id = '$query2' ORDER BY artist ASC";
-            $res3 = mysqli_query($dbc,$sql3);
+            $res3 = $dbc -> query($sql3);
             ?>
         <div class="row-inner"><?php
-            while($row3 = mysqli_fetch_assoc($res3)){
+            while($row3 = $res3 -> fetch_assoc()){
             ?>
         <div class="tile">
         <h2 class="nameButton"><?php echo $row3['artist'];?></h2>

@@ -39,16 +39,6 @@ function getLikes($id)
   return $result[0];
 }
 
-// Get total number of dislikes for a particular post
-function getDislikes($id)
-{
-  global $dbc;
-  $sql = "SELECT COUNT(*) FROM likes
-  		  WHERE songId = $id AND action='dislike'";
-  $rs = mysqli_query($dbc, $sql);
-  $result = mysqli_fetch_array($rs);
-  return $result[0];
-}
 
 // Get total number of likes and dislikes for a particular post
 function getRating($id)
