@@ -1,7 +1,7 @@
 <div class="container">
   <div  id="Alternativ" class="banner">
     <h3>Alternatív</h2>
-      <h2>Popular playlists from the myMusic community</h2>
+      <h2>Felkapott zenék a myMusic közzöségben</h2>
   </div>
       <div class="row">
         <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Alternatív'  AND  approved = 1 LIMIT 10";
@@ -34,7 +34,7 @@
 </div>
      <div id="Tropical" class="banner">
         <h3>Tropical</h3>
-        <h2>Popular playlists from the myMusic community</h2>
+        <h2>Felkapott zenék a myMusic közzöségben</h2>
 </div>
         <div  class="row">
         <?php $sql = "SELECT * FROM songs  WHERE `genre` = 'Tropical' AND  approved = 1 LIMIT 10";
@@ -68,7 +68,7 @@
      </div>
      <div id="Rap" class="banner">
         <h3>Rap</h3>
-        <h2>Popular playlists from the myMusic community</h2>
+        <h2>Felkapott zenék a myMusic közzöségben</h2>
     </div>
         <div class="row">
         <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Rap' AND  approved = 1 LIMIT 10";
@@ -101,7 +101,7 @@
      </div>
      <div id="Classical" class="banner">
         <h3>Classical</h2>
-        <h2>Popular playlists from the myMusic community</h2>
+        <h2>Felkapott zenék a myMusic közzöségben</h2>
 </div>
         <div class="row">
         <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Classical' AND  approved = 1 LIMIT 10";
@@ -134,7 +134,7 @@
      </div>
      <div id="Pop" class="banner">
         <h3>Pop</h2>
-        <h2>Popular playlists from the myMusic community</h2>
+        <h2>Felkapott zenék a myMusic közzöségben</h2>
       </div>
         <div class="row">
         <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Pop' AND  approved = 1 LIMIT 10";
@@ -167,7 +167,7 @@
      </div>
      <div id="Future" class="banner">
     <h3>Future House</h2>
-    <h2>Popular playlists from the myMusic community</h2>
+    <h2>Felkapott zenék a myMusic közzöségben</h2>
     </div>
         <div class="row">
         <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Future' AND  approved = 1 LIMIT 10";
