@@ -4,7 +4,7 @@
       <h2>Popular playlists from the myMusic community</h2>
   </div>
       <div class="row">
-        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Alternatív'  AND  approved = 1";
+        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Alternatív'  AND  approved = 1 LIMIT 10";
         $result = $dbc -> query($sql);
         while($row = $result -> fetch_assoc()){
         ?>
@@ -37,7 +37,7 @@
         <h2>Popular playlists from the myMusic community</h2>
 </div>
         <div  class="row">
-        <?php $sql = "SELECT * FROM songs  WHERE `genre` = 'Tropical' AND  approved = 1";
+        <?php $sql = "SELECT * FROM songs  WHERE `genre` = 'Tropical' AND  approved = 1 LIMIT 10";
         $result = $dbc -> query($sql);
         while($row = $result -> fetch_assoc()) {
       //A lekérdezésnek megfelelően egy row változóba teszem a resultot
@@ -71,7 +71,7 @@
         <h2>Popular playlists from the myMusic community</h2>
     </div>
         <div class="row">
-        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Rap' AND  approved = 1";
+        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Rap' AND  approved = 1 LIMIT 10";
         $result = $dbc -> query($sql);
         while($row = $result -> fetch_assoc()) {
     ?>
@@ -104,7 +104,7 @@
         <h2>Popular playlists from the myMusic community</h2>
 </div>
         <div class="row">
-        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Classical' AND  approved = 1";
+        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Classical' AND  approved = 1 LIMIT 10";
         $result = $dbc -> query($sql);
         while($row = $result -> fetch_assoc()) {
     ?>
@@ -137,7 +137,7 @@
         <h2>Popular playlists from the myMusic community</h2>
       </div>
         <div class="row">
-        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Pop' AND  approved = 1";
+        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Pop' AND  approved = 1 LIMIT 10";
         $result = $dbc -> query($sql);
         while($row = $result -> fetch_assoc()) {
         ?>
@@ -170,7 +170,7 @@
     <h2>Popular playlists from the myMusic community</h2>
     </div>
         <div class="row">
-        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Future' AND  approved = 1";
+        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Future' AND  approved = 1 LIMIT 10";
         $result = $dbc -> query($sql);
         while($row = $result -> fetch_assoc()) {
       //A lekérdezésnek megfelelően egy row változóba teszem a resultot

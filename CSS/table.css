@@ -1,0 +1,26 @@
+table{
+  border-collapse: collapse;
+  width: 95vw;
+}
+tr{
+  text-align: left;
+}
+td{
+  padding: 0rem 1rem 0rem 1rem;
+}
+tr:hover{
+  background-color: var(--secondary-color);
+}
+th{
+  padding: 1rem;
+}
+th, td{
+  text-align: left!important;
+  border-bottom: 1px solid var(--secondary-color);
+}
+td:first-child {
+ width: 8em;
+ min-width: 8em;
+ max-width: 8em;
+ word-break: break-all;
+}

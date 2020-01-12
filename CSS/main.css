@@ -286,6 +286,15 @@ button:active{
     padding:3rem;
 }
 
+.filtering-container{
+  background-color: var(--accent-color);
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
 .divider{
     display: grid;
     grid-template-columns: 15% 85%;
@@ -400,7 +409,21 @@ p {
 .profile-track-container:hover{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-
+.filtered-image-container{
+width: 10vw;
+}
+.filtered-image-container:hover{
+  transform: scale(1.05);
+}
+.filtered-track-container-featured{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 2rem;
+  padding: 0rem 2rem 0rem 2rem;
+  justify-items:center;
+}
 .profile-track-container-featured{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

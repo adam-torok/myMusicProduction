@@ -26,7 +26,7 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
   <h2>Az összes jelenlegi</h2>
   <h1 style="color:white">ZENÉSZEK</h1>
   </div>
-          <?php $sql = "SELECT DISTINCT artist, genre FROM songs";
+          <?php $sql = "SELECT DISTINCT artist, genre FROM songs ORDER BY genre";
           $result = $dbc -> query($sql);
    while($row = $result -> fetch_assoc()) {?>
           <div class="track">
