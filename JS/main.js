@@ -64,19 +64,7 @@ $(".nameButton").click(function(){
   console.log(artistName);
 });
 
-//add to playlist?,
 
-$("#addToPlayList").click(function(){
-  var songName = $('#songName').text();
-  window.location.replace('addMusicToPlayList.php?songname=' + songName );
-  console.log(songName);
-});
-
-
-$("#addPlayListButton").click(function(){
-  $(".playlistForm").toggleClass("hide");
- console.log("Form is hidden.");
-});
   //Ha rákattintunk a playbuttonra, jelenjen meg a audió sávban
 $(document).on('click','#playbutton',function(){
   // Megkeresi a parent div elementjének az a tagjét, és a href változóját egy src változóba teszi

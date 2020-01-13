@@ -11,10 +11,10 @@ if(!isset($_SESSION['logged'])){
 }
 require_once('CONFIG/config.php');
 include('CONFIG/likes.php');
-
+$id = $_SESSION['id'];
+require_once('COMPONENTS/functions.php');
 $bio = $_SESSION['bio'];
 $profpic = $_SESSION['profpic'];
-$id = $_SESSION['id'];
 $genre = $_GET['genre'];
 ?>
 <html lang="hu">

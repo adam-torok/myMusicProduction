@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 // MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki

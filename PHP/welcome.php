@@ -11,10 +11,9 @@ if(!isset($_SESSION['logged'])){
 }
 require_once('CONFIG/config.php');
 include('CONFIG/likes.php');
-
-$bio = $_SESSION['bio'];
 $profpic = $_SESSION['profpic'];
 $id = $_SESSION['id'];
+require_once('COMPONENTS/functions.php');
 ?>
 <html lang="hu">
 <head>
@@ -74,10 +73,10 @@ $(".userButton").click(function(){
 <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/music-player.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/script.js" charset="utf-8"></script>
-<script type="text/javascript" src="../JS/music-related.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/likes.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/lightmode.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/ribbons.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/music-related.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/gridview.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/tofilter.js" charset="utf-8"></script>
 </body>

@@ -10,6 +10,7 @@ if(!isset($_SESSION['logged'])){
 $id = $_SESSION['id'];
 $uname = $_SESSION['username'];
 $password = $_POST['password'];
+require_once('COMPONENTS/functions.php');
 $sql = "SELECT bio FROM felhasznalo WHERE id = '$id'";
 $result = $dbc -> query($sql);
 while($row = $result->fetch_assoc()) {
@@ -97,21 +98,17 @@ p{
         $profileImageName = $_FILES['profile_image']['name'];
         $profileImageName = strtolower($profileImageName);
         $profileImageName = trim($profileImageName);
-        $target = "/myMusicProduction/PROFILEIMAGES/" . $profileImageName;
+        $target = "../PROFILEIMAGES/" . $profileImageName;
         if(move_uploaded_file($_FILES['profile_image']['tmp_name'],$target)){
             $sql = "UPDATE felhasznalo SET profile_image = '$profileImageName' WHERE id='$id'";
             if(mysqli_query($dbc,$sql)){
-              echo "<div id='popup' class='pop-up'>
-                  <h3>Sikeres frissítés!</h3>
-                  <p>Sikeresen frissítetted a profilképedet! </p>
-                  <a href='profile.php' onclick='closePopUp()' id='disable' class='material-button'>Rendben</a>
-                </div>";
+            showDialog("Sikersen frissítetted a profilképedet!");
             }
             else{
-                echo "<script> alert('Sikertelen)</script>.";
+            showErrorDialog();
             }
         }else{
-            echo "<script> alert('Sikertelen feltöltés.')</script>";
+          showErrorDialog();
         }
         }
         ?>

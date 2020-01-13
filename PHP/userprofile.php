@@ -13,8 +13,8 @@ $uname = $_GET['profilename'];
 $id = null;
 $profpic = null;
 $numOfUploads = null;
-$sql = "SELECT COUNT(*) FROM songs where uploadedby like '$uname'";
 
+$sql = "SELECT COUNT(*) FROM songs where uploadedby like '$uname'";
 $res = mysqli_query($dbc,$sql);
 while($row = $res->fetch_assoc()) {
       $numOfUploads = $row['COUNT(*)'];
@@ -26,6 +26,8 @@ while($row = $res -> fetch_assoc()){
   $id = $row["id"];
   $profpic = $row["profile_image"];
 }
+$id = $_SESSION['id'];
+require_once('COMPONENTS/functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

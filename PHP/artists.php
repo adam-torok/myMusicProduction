@@ -2,8 +2,9 @@
 session_start();
 // MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 require_once('CONFIG/config.php');
-//csatlakozás felépítése
-
+$id = $_SESSION['id'];
+require_once('COMPONENTS/functions.php');
+//csatlakozás felépítéses
 $bio = $_SESSION['bio'];
 $profpic = $_SESSION['profpic'];
 if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');

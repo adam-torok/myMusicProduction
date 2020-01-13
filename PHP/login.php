@@ -34,7 +34,8 @@ if(mysqli_num_rows($result) == 1){
       //Adatbázis kapcsolat bezárása.
 }
 else{
-  echo "<script> alert('Hibás adatok.')</script>";
-  header("Location: ../HTML/loginlayout.html");
+  echo "<script> alert('Hibás adatok.');
+                  window.location = '../HTML/loginlayout.html';
+        </script>";
 }
 ?>

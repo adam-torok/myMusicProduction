@@ -53,6 +53,6 @@ else{
     $dbc->close();
 }
 else{
-    echo "Need username / email";
+
 }
 ?>

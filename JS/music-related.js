@@ -1,4 +1,11 @@
 $(document).ready(function(){
+  //add to playlist?,
+
+  $("#addToPlayList").click(function(){
+    var songName = $('#songName').text();
+    window.location.replace('addMusicToPlayList.php?songname=' + songName );
+  });
+
   // Zene szüneteletése gommbal
 $("#pauseButton").click(function(){
   $("#myaudio").trigger('pause');

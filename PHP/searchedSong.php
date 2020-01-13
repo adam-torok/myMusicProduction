@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once('CONFIG/config.php');
+$id = $_SESSION['id'];
+require_once('COMPONENTS/functions.php');
 $profpic = $_SESSION['profpic'];
 $searched_song = $_POST['searchedSong'];
 $sql = "SELECT * FROM songs";
