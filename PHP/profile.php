@@ -105,10 +105,10 @@ p{
             showDialog("Sikersen frissítetted a profilképedet!");
             }
             else{
-            showErrorDialog();
+            showErrorDialog("Hiba történt a profilkép frissítése közben.");
             }
         }else{
-          showErrorDialog();
+          showErrorDialog("Hiba történt");
         }
         }
         ?>

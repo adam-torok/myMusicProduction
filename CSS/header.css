@@ -76,5 +76,11 @@ li a:active{
   align-items: center;
 }
 .disable{
-  color:grey!important;   
+  color:grey!important;
 }
+
+@media screen and (max-width: 600px) {
+.nav-dark{
+
+}
+};

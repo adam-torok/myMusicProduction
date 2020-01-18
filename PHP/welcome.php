@@ -60,7 +60,6 @@ require_once('COMPONENTS/functions.php');
 <?php include_once("COMPONENTS/footer.php");?>
 <script type="text/javascript">
 $(".userButton").click(function(){
-  console.log("URL SÁV?😏.");
   var userName = $(this).text().slice(13);
   window.location.replace('userprofile.php?profilename=' + userName);
   console.log(userName);
