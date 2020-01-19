@@ -123,6 +123,8 @@ while($row = $result -> fetch_assoc()) {?>
 <script type="text/javascript" src="../JS/ribbons.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/gridview.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/tofilter.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/show-mobile-navbar.js" charset="utf-8"></script>
+
 <script type="text/javascript">
 $(".userButton").click(function(){
   var userName = $(this).text().slice(13);

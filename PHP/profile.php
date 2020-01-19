@@ -136,7 +136,7 @@ p{
 <div class="form-center">
   <div class="form-holder">
     <h1 style="color:#fff">FELTÖLTÉS</h1>
-  <form class="form" method="post" action="#" enctype="multipart/form-data">
+  <form class="form form-mobile" method="post" action="#" enctype="multipart/form-data">
     <div>
         <div class="input">
           <h2 id="nameErrorMessage">  * Maximum 20 karakter.</h2>

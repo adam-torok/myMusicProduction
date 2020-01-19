@@ -555,6 +555,28 @@ width: 10vw;
 }
 /*MEDIA QUERIES*/
 @media screen and (max-width: 600px) {
+  .user-infos{
+    padding: 0!important;
+    width: auto;
+  }
+  .form-mobile{
+    width: 330px!important;
+  }
+  .user-info{
+    padding: 0;
+    align-items: center;
+    width: auto;
+  }
+  .user-details>img{
+    display: none;
+  }
+  .user-header>h2{
+    display: none!important;
+  }
+  .profile-track-container-featured{
+    display: none;
+
+  }
     .material-button{
           width: 75%;
     }
