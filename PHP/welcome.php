@@ -64,7 +64,6 @@ $(".userButton").click(function(){
   window.location.replace('userprofile.php?profilename=' + userName);
   console.log(userName);
 });
-
 </script>
 <script type="text/javascript" src="../JS/jquery-3.4.1.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
@@ -80,18 +79,19 @@ $(".userButton").click(function(){
 <script type="text/javascript" src="../JS/tofilter.js" charset="utf-8"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+  // Ez fontos, a telefonos navigációs sáv végett...
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
  if (isMobile) {
-   var toogle = $("<span id='toggleNav' style='z-index:999999;font-size:50px;cursor:pointer;color:white'>&#9776;</span>")
+   var toogle = $("<span id='toggleNav' style='z-index:999999;font-size:50px;cursor:pointer;color:white'>&#9776;</span>");
+   $(".fill").css("display","none");
    $(".nav-dark").append(toogle);
-   var t = $("<div class='mobile hidden animated bounceInDown delay-0s'><ul><img class='animated jackInTheBox delay-0s' style='padding-bottom: 1rem;width:100px;height:100px;' src='../IMG/myMusicLogo.png' alt=''><li><a href='#'><i style='padding:0;padding-right:1rem' class='fas fa-home fa-1x'></i>Főoldal</a></li><li ><a href='../PHP/guest.php'><i style='padding:0;padding-right:1rem' class='fas fa-sign-in-alt fa-1x'></i>Vendég</a></li><li><a href='loginlayout.html'><i style='padding:0;padding-right:1rem' class='fas fa-sign-in-alt fa-1x'></i>Bejelentkezés</a></li><li><a href='#contact'><i style='padding:0;padding-right:1rem' class='fas fa-question fa-1x'></i>Súgó</a></li></ul></div>");
+   var t = $("<div class='mobile hidden animated bounceInDown delay-0s'><ul><img class='animated jackInTheBox delay-0s' style='padding-bottom: 1rem;width:100px;height:100px;' src='../IMG/myMusicLogo.png' alt=''><li><a href='welcome.php'><i style='padding:0;padding-right:1rem' class='fas fa-home fa-1x'></i>Főoldal</a></li><li ><a href='https://github.com/woltery99/myMusic/wiki'><i style='padding:0;padding-right:1rem' class='fab fa-github fa-1x'></i>Sugó</a></li><li><a href='profile.php'><img class='image-header' src='../profileimages/5.jpg' alt=''></i>Profilod</a></li><li><a href='#contact'><i style='padding:0;padding-right:1rem' class='fas fa-question fa-1x'></i>Súgó</a></li></ul></div>");
    $(".nav-dark").append(t);
 }
  $("#toggleNav").click(function(){
    $(".mobile").toggleClass("hidden");
  })
 })
-
 </script>
 </body>
 </html>

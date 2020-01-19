@@ -655,9 +655,6 @@ width: 10vw;
         display: block;
         width: 100%;
    }
-   .row{
-     display: grid!important;
-   }
 
 }
 

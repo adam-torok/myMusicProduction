@@ -108,3 +108,22 @@ transform: scale(1.2);
 #pauseButton:hover{
 transform: scale(1.2);
 }
+@media screen and (max-width: 600px) {
+.tile-img{
+  width: 90%;
+}
+.row{
+transform: translate3d(0,0,0);
+-webkit-transform: translate3d(0,0,0);
+-webkit-overflow-scrolling: touch;
+overflow:scroll;
+}
+.music-name{
+  padding-bottom: 0.5rem;
+}
+.tile{
+  width:150px;
+}
+.userButton{
+  display: none!important;
+}
