@@ -28,24 +28,13 @@
    </head>
    <body>
       <header class="nav-dark" id="header">
-         <nav class="fill">
-            <ul>
-               <img style="width:50px;height:50px;" src="../IMG/myMusicLogoBlack.png" alt="">
-               <li><a href="#">Főoldal</a></li>
-               <li><a href="../PHP/guest.php">Böngészés</a></li>
-               <li><a href="#gallery">Média</a></li>
-               <div id="button"><a href="loginlayout.html"><i style="padding: 0" class="fas fa-sign-in-alt fa-1x"></i></a></div>
-               <li><a href="#contact">Sugó</a></li>
-             </ul>
-         </nav>
       </header>
-
-      <div class="wrapper-all">
+<div class="wrapper-all">
 <div class="form-center">
   <div class="formholder">
      <div class="form root">
         <form method="post" action="../PHP/CONFIG/connect.php">
-           <h2>Regrisztálj!</h2>
+           <h1>Regrisztálj!</h1>
            <div class="input">
              <input class="inputFields" data-aos="fade-in" type="text" onkeydown="checkUsername()" required placeholder="Felhasználónév" id="username" name="username">
              <div class="bar"></div>
@@ -122,6 +111,21 @@
       </div>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <script>
+      $(document).ready(function(){
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+       if (isMobile) {
+         var toogle = $("<span id='toggleNav' style='z-index:999999;font-size:30px;cursor:pointer;color:white'>&#9776;</span>")
+         $(".nav-dark").append(toogle);
+         var t = $("<nav class='mobile'><ul><li><a href='#'><i style='padding: 0' class='fas fa-sign-in-alt fa-1x'></i></a></li><li ><a href='../PHP/guest.php'><i style='padding: 0' class='fas fa-sign-in-alt fa-1x'></i></a></li><div  id='button'><a href='loginlayout.html'><i style='padding: 0' class='fas fa-sign-in-alt fa-1x'></i></a></div><li   ><a href='#contact'><i style='padding: 0' class='fas fa-sign-in-alt fa-1x'></i></a></li></ul></nav>");
+         $(".nav-dark").append(t);
+       } else {
+         var t = $("<nav><ul><img style='width:50px;height:50px;' src='../IMG/myMusicLogoBlack.png' alt=''><li><a href='#'>Főoldal</a></li><li><a href='../PHP/guest.php'>Böngészés</a></li><li><a href='#gallery'>Média</a></li><div id='button'><a href='loginlayout.html'><i style='padding: 0' class='fas fa-sign-in-alt fa-1x'></i></a></div><li><a href=''#contact'>Sugó</a></li></ul></nav>");
+         $(".nav-dark").append(t);
+       }
+       $("#toggleNav").click(function(){
+         $(".mobile").toggleClass("hidden");
+       })
+      })
          AOS.init();
          function checkUsername(){
              let inputForUsername = document.getElementById("username").value;

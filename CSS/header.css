@@ -80,7 +80,24 @@ li a:active{
 }
 
 @media screen and (max-width: 600px) {
+  .formholder{
+    margin-top: 10vh;
+  }
 .nav-dark{
-
+height: 10vh;
+}
+#toggleNav{
+  position: absolute;
+left: 2vw;
+}
+header nav ul{
+  margin-left: 10vw;
+}
+.hidden{
+  display: none!important;
+}
+.mobile{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 };

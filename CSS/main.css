@@ -83,10 +83,13 @@ body{
     padding: 0;
 }
 .wrapper-all{
-    font-family: 'Montserrat', sans-serif;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 6vh;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .welcome{
     height: 100vh;
@@ -565,8 +568,7 @@ width: 10vw;
         display: none;
    }
     header{
-        height: 70px!important;
-        width: 100%!important;
+
    }
     header a{
         width: 80px!important;

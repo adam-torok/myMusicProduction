@@ -5,13 +5,14 @@ form{
 }
 .form-center{
   display: flex;
-  height: 100vh;
+  height: auto;
   align-items: center;
   background-color: var(--bg-color);
   justify-content: center;
 }
 .formholder{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-items: center;
     background-size: cover;
     border-radius: 5%;
@@ -29,6 +30,7 @@ form{
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);    padding: 3rem;
     margin:3rem;
     transition: transform 3s ease-in-out;
+    width: 100%
 }
 .form:hover{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -244,4 +246,11 @@ cursor: pointer;
 #userErrorMessage2{
     display: none;
     color:var(--accent-color) ;
+}
+
+@media screen and (max-width: 600px) {
+.form{
+  padding: 3rem 0rem 2rem 0rem;
+margin: 3rem 0rem 2rem 0rem;
+}
 }
