@@ -276,6 +276,7 @@ include_once("COMPONENTS/footer.php");
 <script type="text/javascript" src="../JS/main.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/show-mobile-navbar.js" charset="utf-8"></script>
 <script type="text/javascript">
 function refreshPage(){
     window.location.reload();

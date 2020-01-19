@@ -252,9 +252,36 @@ color:var(--accent-color) ;
 }
 
 @media screen and (max-width: 600px) {
+form h1{
+  font-size: 30px;
+}
+form h2{
+  text-align: center;
+}
+h1{
+  font-size: 30px;}
 .form{
 padding: 3rem 0rem 2rem 0rem;
 margin: 3rem 0rem 2rem 0rem;
-width: auto;
+width: 330px;
+}
+.form input{
+  width: 150px;
+}
+.input{
+  width: 150px;
+}
+.popup-inside{
+  padding: 1rem;
+}
+.signupForm{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#back{
+  top:6vw;
+  position: absolute;
+  left: 45vw;
 }
 }

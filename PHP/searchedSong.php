@@ -63,6 +63,8 @@ if(!empty($real_songs_array)){
 <script src="../JS/music-player.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/show-mobile-navbar.js" charset="utf-8"></script>
+
 </div>
 </body>
 </html>

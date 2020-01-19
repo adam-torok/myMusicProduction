@@ -558,6 +558,15 @@ width: 10vw;
     .material-button{
           width: 75%;
     }
+    .track-added{
+      display: none;
+    }
+    .track{
+      flex-wrap: nowrap;
+    }
+    #playbutton:hover{
+      cursor: pointer;
+    }
     .wrapper{
         display: block;
         background-color: unset;
