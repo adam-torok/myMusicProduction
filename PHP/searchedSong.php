@@ -5,12 +5,12 @@ $id = $_SESSION['id'];
 require_once('COMPONENTS/functions.php');
 $profpic = $_SESSION['profpic'];
 $searched_song = $_POST['searchedSong'];
-$sql = "SELECT * FROM songs";
+$sql = "SELECT * FROM songs WHERE";
 $where_clause = "";
 $searched_songs = explode(" ",$searched_song);
 $songs = array();
 foreach ($searched_songs as $song) {
-    $songs[] = " WHERE name LIKE '%$song%'";
+    $songs[] = " name LIKE '%$song%'";
 }
 $real_songs_array = implode(" OR ",$songs);
 

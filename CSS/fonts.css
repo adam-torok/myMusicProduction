@@ -1,91 +1,91 @@
 h1{
-    font-size: 50px;
-    text-align: center;
-    color:white;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+font-size: 50px;
+text-align: center;
+color:white;
+text-transform: uppercase;
+font-family: 'Montserrat', sans-serif;
 }
 p{
-    color:white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+color:white;
+font-family: 'Montserrat', sans-serif;
+font-weight: 900;
 }
 h2{
-    color: grey;
-    font-size: 12px;
-    font-weight: 900;
-    line-height: 1.4;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: .08em;
-    text-transform: uppercase;
+color: grey;
+font-size: 12px;
+font-weight: 900;
+line-height: 1.4;
+font-family: 'Roboto', sans-serif;
+letter-spacing: .08em;
+text-transform: uppercase;
 }
 i{
-    color:var(--accent-color);
-    text-align: center;
+color:var(--accent-color);
+text-align: center;
 }
 a{
-    color:var(--accent-color);
-    text-decoration: none;
+color:var(--accent-color);
+text-decoration: none;
 }
 h4{
-    color:white;
-    font-family: 'Montserrat', sans-serif;
-    padding:0;
-    font-size: 16px;
-    margin: 0;
-    text-transform: capitalize;
+color:white;
+font-family: 'Montserrat', sans-serif;
+padding:0;
+font-size: 16px;
+margin: 0;
+text-transform: capitalize;
 }
 h3{
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 0!important;
-   padding: 0px;
-    margin: 0px;
-    color:white!important;
+font-family: 'Montserrat', sans-serif;
+margin-top: 0!important;
+padding: 0px;
+margin: 0px;
+color:white!important;
 }
 p{
-    color: #919496;
+color: #919496;
 }
 mark{
-    background:none;
-    color:var(--accent-color);
+background:none;
+color:var(--accent-color);
 }
 .fa, .fas {
-    font-weight: 900;
-    padding-top: 15px;
-    padding: 15px;
-    color:var(--accent-color);
+font-weight: 900;
+padding-top: 15px;
+padding: 15px;
+color:var(--accent-color);
 }
 .fa, .fas:hover{
-    color:white;
+color:white;
 }
 a:link, a:hover, a:active, a:visited {
-    transition: color 150ms;
-    text-decoration: none;
+transition: color 150ms;
+text-decoration: none;
 }
 #duration{
-    color:white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+color:white;
+font-family: 'Montserrat', sans-serif;
+font-weight: 900;
 }
 #current-time{
-    color:white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+color:white;
+font-family: 'Montserrat', sans-serif;
+font-weight: 900;
 }
 #user-title{
-  color:var(--accent-color);
-  padding: 0!important;
-  margin: 0!important;
+color:var(--accent-color);
+padding: 0!important;
+margin: 0!important;
 }
 #user-title i{
-  padding: 0!important;
-  margin-left: 1rem;
+padding: 0!important;
+margin-left: 1rem;
 }
 
 .userButton:hover{
-  cursor: pointer;
-  color:var(--accent-color);
+cursor: pointer;
+color:var(--accent-color);
 }
 .sideicon{
-    font-size: 14px!important;
+font-size: 14px!important;
 }

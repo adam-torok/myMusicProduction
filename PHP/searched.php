@@ -9,26 +9,26 @@ $id = $_SESSION['id'];
 require_once('COMPONENTS/functions.php');
 if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <?php include_once("COMPONENTS/headerMeta.php");?>
-        <title>Üdvözlünk
-            <?php echo $_SESSION['username'];?>
-        </title>
-    </head>
-    <body class="bodyblack">
-        <style>
-            .tile{
-              width: 100%;
-            }
-            .tile h2,h1{
-              text-align: center;
-            }
-            .track-container{
-              display: block;
-            }
-        </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<?php include_once("COMPONENTS/headerMeta.php");?>
+<title>Üdvözlünk
+<?php echo $_SESSION['username'];?>
+</title>
+</head>
+<body class="bodyblack">
+<style>
+.tile{
+  width: 100%;
+}
+.tile h2,h1{
+  text-align: center;
+}
+.track-container{
+  display: block;
+}
+</style>
 <?php include_once("COMPONENTS/navbar.php");?>
 <div class="divider">
 <?php include_once("COMPONENTS/sidebar.php");?>
@@ -49,7 +49,7 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
         <div class="track-number">
         <h2><?php echo $row['artist'];?></h2>
         </div>
-     <div class="track-number">
+        <div class="track-number">
         <h2><?php echo $row['id'];?></h2>
         </div>
         <div class="track-added">
@@ -66,10 +66,8 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
         </div>
         <?php
       }//while end ?>
-
-     </div>
-   </div>
-
+      </div>
+      </div>
      <?php include_once("COMPONENTS/player.php");?>
      <?php include_once("COMPONENTS/footer.php");?>
      <script type="text/javascript">

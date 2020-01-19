@@ -1,59 +1,59 @@
 .spinner {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background-color: #424242;
-  z-index: 999999999;
+height: 100vh;
+width: 100vw;
+position: fixed;
+background-color: #424242;
+z-index: 999999999;
 }
 
 .spinner svg {
-  animation: rotate 1.5s linear infinite;
-  height: 100%;
-  width: 100%;
+animation: rotate 1.5s linear infinite;
+height: 100%;
+width: 100%;
 }
 
 .spinner circle {
-  stroke-dasharray: 1,200;
-  stroke-dashoffset: 0;
-  animation:
-    dash 1.5s ease-in-out infinite 0s,
-    color 6s ease-in-out infinite -0.75s;
-  stroke-linecap: square;
-  fill: none;
-  stroke-width:2.5;
+stroke-dasharray: 1,200;
+stroke-dashoffset: 0;
+animation:
+dash 1.5s ease-in-out infinite 0s,
+color 6s ease-in-out infinite -0.75s;
+stroke-linecap: square;
+fill: none;
+stroke-width:2.5;
 }
 
 @keyframes rotate {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+100% {
+-webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+}
 }
 @keyframes dash {
-  0% {
-    stroke-dasharray: 1,200;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89,200;
-    stroke-dashoffset: -35;
-  }
-  100% {
-    stroke-dasharray: 89,200;
-    stroke-dashoffset: -124;
-  }
+0% {
+stroke-dasharray: 1,200;
+stroke-dashoffset: 0;
+}
+50% {
+stroke-dasharray: 89,200;
+stroke-dashoffset: -35;
+}
+100% {
+stroke-dasharray: 89,200;
+stroke-dashoffset: -124;
+}
 }
 @keyframes color {
-  100%, 0% {
-    stroke:#ED2553;
-  }
-  25% {
-    stroke: #ED2553;
-  }
-  50% {
-    stroke: #ED2553;
-  }
-  75% {
-    stroke: #ED2553;
-  }
+100%, 0% {
+stroke:#ED2553;
+}
+25% {
+stroke: #ED2553;
+}
+50% {
+stroke: #ED2553;
+}
+75% {
+stroke: #ED2553;
+}
 }

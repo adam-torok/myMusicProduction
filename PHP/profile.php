@@ -38,7 +38,7 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 <html lang="en">
 <head>
 <?php include_once("COMPONENTS/headerMeta.php");?>
-<title>Your profile</title>
+<title>Profilod</title>
 </head>
 <body>
 <style>
@@ -59,39 +59,42 @@ p{
   grid-template-columns:1fr 1fr;
   background:var(--bg-color);
 }
+.form{
+  padding: 0;
+}
 .form-center{
  height: auto;
  background-color: unset;
  background-image: none;
 }
- </style>
- <?php include_once("COMPONENTS/navbar.php");?>
+</style>
+<?php include_once("COMPONENTS/navbar.php");?>
 <div class="divider">
 <?php include_once('COMPONENTS/sidebar.php');?>
 <div>
 <div style="background: linear-gradient( rgb(19, 13, 10), rgba(0, 0, 0, 0.7), rgba(32, 32, 32,1)), url(../profileimages/<?php echo $profpic?>)!important;" class="user-header">
 <div class="user-infos">
-     <div class="user-info">
-     <div class="profile-image">
-         <img id="prof-image" src="../PROFILEIMAGES/<?php echo $_SESSION['profpic'];?>"  alt="profilkép">
-     </div>
-     <div class="user-details">
-       <img style="width:50px;height:50px;" src="../IMG/myMusicLogo.png" alt="">
-        <div class="user-info-type"><h2>Felhasználó</h2></div>
-        <div class="user-info-name"><h2><?php echo $_SESSION['username'];?></h2></div>
-        <div class="user-info-date"><h2>Feltöltött számok: <span id="upload-counter"><?php echo $numOfUploads;?></span></h2>
-        <h2 id="user-title"></h2>
-      </div>
-        <div class="user-info-date"><h2> BIO: <?php echo $bio;?></h2></div>
-        <form enctype="multipart/form-data" action="#" method="POST">
-          <label for="file-upload" class="material-icon">
-            <i style="color:white" class="fas fa-upload"></i>
-          </label>
-            <input class="hidden-file-input" id="file-upload" accept="image/x-png,image/gif,image/jpeg" type="file" name="profile_image" id="profile_image">
-            <label for="file-save" class="material-icon">
-            <i style="color:white" class="fas fa-save"></i>
-            </label>
-            <input class="hidden-file-input" id="file-save" type="submit" name="save_user">
+ <div class="user-info">
+ <div class="profile-image">
+     <img id="prof-image" src="../PROFILEIMAGES/<?php echo $_SESSION['profpic'];?>"  alt="profilkép">
+ </div>
+ <div class="user-details">
+   <img style="width:50px;height:50px;" src="../IMG/myMusicLogo.png" alt="">
+    <div class="user-info-type"><h2>Felhasználó</h2></div>
+    <div class="user-info-name"><h2><?php echo $_SESSION['username'];?></h2></div>
+    <div class="user-info-date"><h2>Feltöltött számok: <span id="upload-counter"><?php echo $numOfUploads;?></span></h2>
+    <h2 id="user-title"></h2>
+    </div>
+    <div class="user-info-date"><h2> BIO: <?php echo $bio;?></h2></div>
+    <form enctype="multipart/form-data" action="#" method="POST">
+      <label for="file-upload" class="material-icon">
+        <i style="color:white" class="fas fa-upload"></i>
+      </label>
+        <input class="hidden-file-input" id="file-upload" accept="image/x-png,image/gif,image/jpeg" type="file" name="profile_image" id="profile_image">
+        <label for="file-save" class="material-icon">
+        <i style="color:white" class="fas fa-save"></i>
+        </label>
+        <input class="hidden-file-input" id="file-save" type="submit" name="save_user">
         </form>
         <?php
         if(isset($_POST['save_user'])){
@@ -232,7 +235,6 @@ p{
   ?>
   </div>
 </div>
-
 <div class="profile-track-container">
     <h1 style="color:white;">Feltöltött számok</h1>
         <?php $sql = "SELECT DISTINCT * FROM songs WHERE `uploadedby` = '$uname' AND approved = 1 ORDER BY id DESC";

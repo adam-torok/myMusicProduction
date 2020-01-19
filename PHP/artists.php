@@ -11,9 +11,9 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 ?>
 <!DOCTYPE html>
 <html lang="hu">
-    <?php include_once("COMPONENTS/headerMeta.php");?>
-        <title>Artisták / Feltöltők</title>
-    </head>
+<?php include_once("COMPONENTS/headerMeta.php");?>
+<title>Artisták / Feltöltők</title>
+</head>
 <body class="bodyblack">
 <?php include_once("COMPONENTS/navbar.php");?>
 <div class="divider">
@@ -21,7 +21,6 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
   <form class="hide playlistForm"  action="createPlayList.php" method="post">
     <input style="width:50%!important;" class="uploadmusic" type="text" name="userPlaylistName" placeholder="Playlist name">
   </form>
-
   <div class="track-container">
   <div class="searched-header">
   <h2>Az összes jelenlegi</h2>
@@ -44,17 +43,16 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
           <?php
         }//while end ?>
        </div>
-<?php include_once("COMPONENTS/player.php");?>s
+       <?php include_once("COMPONENTS/player.php");?>s
+    </div>
   </div>
-</div>
-<?php include_once("COMPONENTS/footer.php");?>
-<script type="text/javascript" src="../JS/jquery-3.4.1.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="../JS/script.js" charset="utf-8"></script>
-<script type="text/javascript" src="../JS/main.js" charset="utf-8"></script>
-<script type="text/javascript" src="../JS/music-related.js" charset="utf-8"></script>
-<script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
-<script type="text/javascript" src="../JS/lightmode.js" charset="utf-8"></script>
-
+  <?php include_once("COMPONENTS/footer.php");?>
+  <script type="text/javascript" src="../JS/jquery-3.4.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../JS/script.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../JS/main.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../JS/music-related.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../JS/lightmode.js" charset="utf-8"></script>
   </body>
 </html>

@@ -32,7 +32,7 @@
 <div class="wrapper-all">
 <div class="form-center">
   <div class="formholder">
-     <div class="form root">
+     <div class="form root animated fadeInLeft delay-0s">
         <form method="post" action="../PHP/CONFIG/connect.php">
            <h1>Regrisztálj!</h1>
            <div class="input">
@@ -113,10 +113,10 @@
       <script>
       $(document).ready(function(){
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-       if (isMobile) {
-         var toogle = $("<span id='toggleNav' style='z-index:999999;font-size:30px;cursor:pointer;color:white'>&#9776;</span>")
+        if (isMobile) {
+         var toogle = $("<span id='toggleNav' style='z-index:999999;font-size:50px;cursor:pointer;color:white'>&#9776;</span>")
          $(".nav-dark").append(toogle);
-         var t = $("<nav class='mobile'><ul><li><a href='#'><i style='padding: 0' class='fas fa-sign-in-alt fa-1x'></i></a></li><li ><a href='../PHP/guest.php'><i style='padding: 0' class='fas fa-sign-in-alt fa-1x'></i></a></li><div  id='button'><a href='loginlayout.html'><i style='padding: 0' class='fas fa-sign-in-alt fa-1x'></i></a></div><li   ><a href='#contact'><i style='padding: 0' class='fas fa-sign-in-alt fa-1x'></i></a></li></ul></nav>");
+         var t = $("<div class='mobile hidden animated bounceInDown delay-0s'><ul><img class='animated jackInTheBox delay-0s' style='padding-bottom: 1rem;width:100px;height:100px;' src='../IMG/myMusicLogo.png' alt=''><li><a href='#'><i style='padding:0;padding-right:1rem' class='fas fa-home fa-1x'></i>Főoldal</a></li><li ><a href='../PHP/guest.php'><i style='padding:0;padding-right:1rem' class='fas fa-sign-in-alt fa-1x'></i>Vendég</a></li><li><a href='loginlayout.html'><i style='padding:0;padding-right:1rem' class='fas fa-sign-in-alt fa-1x'></i>Bejelentkezés</a></li><li><a href='#contact'><i style='padding:0;padding-right:1rem' class='fas fa-question fa-1x'></i>Súgó</a></li></ul></div>");
          $(".nav-dark").append(t);
        } else {
          var t = $("<nav><ul><img style='width:50px;height:50px;' src='../IMG/myMusicLogoBlack.png' alt=''><li><a href='#'>Főoldal</a></li><li><a href='../PHP/guest.php'>Böngészés</a></li><li><a href='#gallery'>Média</a></li><div id='button'><a href='loginlayout.html'><i style='padding: 0' class='fas fa-sign-in-alt fa-1x'></i></a></div><li><a href=''#contact'>Sugó</a></li></ul></nav>");

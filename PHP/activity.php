@@ -25,26 +25,26 @@ $genre = $_GET['genre'];
 <body class="bodyblack">
 <style>
 p{
-  text-align: left;
-  color: white;
+text-align: left;
+color: white;
 }
-  h2 {
-    color: grey;
-  }
-  i:hover{
-    cursor:pointer;
-  }
-  .list{
-    text-align:left!important;
-  }
-  .list i{
-    text-align:left!important;
-  }
-  .material-button{
-    margin:1rem;
-  }
+h2 {
+  color: grey;
+}
+i:hover{
+  cursor:pointer;
+}
+.list{
+  text-align:left!important;
+}
+.list i{
+  text-align:left!important;
+}
+.material-button{
+  margin:1rem;
+}
 </style>
-  <?php include_once("COMPONENTS/navbar.php");?>
+<?php include_once("COMPONENTS/navbar.php");?>
 <div class="divider">
   <?php include_once('COMPONENTS/sidebar.php');?>
   <form  class="hide playlistForm"  action="createPlayList.php" method="post">
@@ -53,58 +53,58 @@ p{
 <div class="container">
   <?php include_once("COMPONENTS/genres.php");?>
   <div class="filtered-track-container-featured">
-          <?php $sql = "SELECT * FROM songs WHERE approved = 1 AND uploadedby = '$username' ORDER BY id asc LIMIT 4";
-          $result = $dbc -> query($sql);
-   while($row = $result -> fetch_assoc()) {?>
-     <div>
+    <?php $sql = "SELECT * FROM songs WHERE approved = 1 AND uploadedby = '$username' ORDER BY id asc LIMIT 4";
+    $result = $dbc -> query($sql);
+    while($row = $result -> fetch_assoc()) {?>
+    <div>
        <img id="albumcover" class="filtered-image-container" src="../img/albumcover/<?php echo $row['covername'];?>"></a>
        <a href="searched.php?artistname=<?php echo $row['artist'];?>"><h2 style="text-align:center"><?php echo $row['artist'];?></h2></a>
-     </div>
+    </div>
           <?php
         }//while end ?>
   </div>
-  <div class="row">
-    <table>
-<thead>
-<tr>
-<th><p>Előadó</p></th>
-<th><p>Cím</p></th>
-<th><p>Feltöltés dátuma</p></th>
-<th><p>Lejátszás</p></th>
-<th><p>Kedvelem!</p></th>
-</tr>
-</thead>
+<div class="row">
+<table>
+  <thead>
+    <tr>
+      <th><p>Előadó</p></th>
+      <th><p>Cím</p></th>
+      <th><p>Feltöltés dátuma</p></th>
+      <th><p>Lejátszás</p></th>
+      <th><p>Kedvelem!</p></th>
+    </tr>
+  </thead>
 <tbody>
-  <?php // TODO: Ezt lehetne egy táblázatba, hasonlóan mitn a spotify csinálja csak profibban. ?>
-          <?php $sql = "SELECT * FROM songs WHERE uploadedby = '$username' AND approved = 1 ORDER BY id DESC";
-          $result = $dbc -> query($sql);
-   while($row = $result -> fetch_assoc()) {?>
-     <tr>
-          <td style="width:30%">
-          <a href="searched.php?artistname=<?php echo $row['artist'];?>"><h2><?php echo $row['artist'];?></h2></a>
-          </td>
-          <td>
-          <h2><?php echo $row['name'];?></h2>
-          </td>
-          <td>
-          <h2><?php echo $row['time'];?></h2>
-          </td>
-          <td>
-            <i id="playButton" class="fas fa-play fa-xs">
-              <a href="../songs/<?php echo $row['filename']; ?>"></a>
-              <a id="albumcover" href="../img/albumcover/<?php echo $row['covername']; ?>"></a>
-            </i>
-          </td>
-          <td>           <i <?php if (userLiked($row['id'])): ?>
-            class="fas fa-heart like-btn"
-          <?php else: ?>
-            class="far fa-heart like-btn"
-          <?php endif ?>
-          data-id="<?php echo $row['id'] ?>"></i>
-          </td>
-        </tr>
-          <?php
-        }//while end ?>
+<?php // TODO: Ezt lehetne egy táblázatba, hasonlóan mitn a spotify csinálja csak profibban. ?>
+<?php $sql = "SELECT * FROM songs WHERE uploadedby = '$username' AND approved = 1 ORDER BY id DESC";
+$result = $dbc -> query($sql);
+while($row = $result -> fetch_assoc()) {?>
+<tr>
+<td style="width:30%">
+<a href="searched.php?artistname=<?php echo $row['artist'];?>"><h2><?php echo $row['artist'];?></h2></a>
+</td>
+<td>
+<h2><?php echo $row['name'];?></h2>
+</td>
+<td>
+<h2><?php echo $row['time'];?></h2>
+</td>
+<td>
+<i id="playButton" class="fas fa-play fa-xs">
+<a href="../songs/<?php echo $row['filename']; ?>"></a>
+<a id="albumcover" href="../img/albumcover/<?php echo $row['covername']; ?>"></a>
+</i>
+</td>
+<td><i <?php if (userLiked($row['id'])): ?>
+class="fas fa-heart like-btn"
+<?php else: ?>
+class="far fa-heart like-btn"
+<?php endif ?>
+data-id="<?php echo $row['id'] ?>"></i>
+</td>
+</tr>
+<?php
+}//while end ?>
 </tbody>
 </table>
 </div>

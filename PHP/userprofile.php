@@ -70,7 +70,7 @@ p{
 <?php include_once("COMPONENTS/navbar.php");?>
 <div style="background: linear-gradient( rgb(19, 13, 10), rgba(0, 0, 0, 0.7), rgba(32, 32, 32,1)), url(../profileimages/<?php echo $profpic?>)!important;" class="user-header">
 <div class="user-infos">
-     <div class="user-info">
+   <div class="user-info">
      <div class="profile-image">
          <img id="prof-image" src="../PROFILEIMAGES/<?php echo $profpic;?>"  alt="profilkép">
      </div>
@@ -81,7 +81,7 @@ p{
         <div class="user-info-date"><h2>Feltöltött számok: <span id="upload-counter"><?php echo $numOfUploads;?></span></h2>
         <h2 id="user-title"></h2></div>
      </div>
-</div>
+    </div>
 </div>
 </div>
 <h1 style="color:white">Nemrég feltöltött zenék</h1>

@@ -25,28 +25,28 @@ $genre = $_GET['genre'];
 <body class="bodyblack">
 <style>
 p{
-  text-align: left;
-  color: white;
+text-align: left;
+color: white;
 }
-  h2 {
-    color: grey;
-  }
-  i:hover{
-    cursor:pointer;
-  }
-  .list{
-    text-align:left!important;
-  }
-  .list i{
-    text-align:left!important;
-  }
-  .material-button{
-    margin:1rem;
-  }
+h2 {
+color: grey;
+}
+i:hover{
+cursor:pointer;
+}
+.list{
+text-align:left!important;
+}
+.list i{
+text-align:left!important;
+}
+.material-button{
+margin:1rem;
+}
 </style>
-  <?php include_once("COMPONENTS/navbar.php");?>
+<?php include_once("COMPONENTS/navbar.php");?>
 <div class="divider">
-  <?php include_once('COMPONENTS/sidebar.php');?>
+<?php include_once('COMPONENTS/sidebar.php');?>
   <form  class="hide playlistForm"  action="createPlayList.php" method="post">
     <input style="width:50%!important;" class="uploadmusic" type="text" name="userPlaylistName" placeholder="Playlist name">
   </form>
@@ -75,36 +75,35 @@ p{
 </tr>
 </thead>
 <tbody>
-  <?php // TODO: Ezt lehetne egy táblázatba, hasonlóan mitn a spotify csinálja csak profibban. ?>
-          <?php $sql = "SELECT * FROM songs where genre = '$genre' AND approved = 1 ORDER BY id DESC";
-          $result = $dbc -> query($sql);
-   while($row = $result -> fetch_assoc()) {?>
-     <tr>
-          <td style="width:30%">
-          <a href="searched.php?artistname=<?php echo $row['artist'];?>"><h2><?php echo $row['artist'];?></h2></a>
-          </td>
-          <td>
-          <h2><?php echo $row['name'];?></h2>
-          </td>
-          <td>
-          <h2><?php echo $row['time'];?></h2>
-          </td>
-          <td>
-            <i id="playButton" class="fas fa-play fa-xs">
-              <a href="../songs/<?php echo $row['filename']; ?>"></a>
-              <a id="albumcover" href="../img/albumcover/<?php echo $row['covername']; ?>"></a>
-            </i>
-          </td>
-          <td>           <i <?php if (userLiked($row['id'])): ?>
-            class="fas fa-heart like-btn"
-          <?php else: ?>
-            class="far fa-heart like-btn"
-          <?php endif ?>
-          data-id="<?php echo $row['id'] ?>"></i>
-          </td>
-        </tr>
-          <?php
-        }//while end ?>
+  <?php $sql = "SELECT * FROM songs where genre = '$genre' AND approved = 1 ORDER BY id DESC";
+  $result = $dbc -> query($sql);
+while($row = $result -> fetch_assoc()) {?>
+<tr>
+  <td style="width:30%">
+  <a href="searched.php?artistname=<?php echo $row['artist'];?>"><h2><?php echo $row['artist'];?></h2></a>
+  </td>
+  <td>
+  <h2><?php echo $row['name'];?></h2>
+  </td>
+  <td>
+  <h2><?php echo $row['time'];?></h2>
+  </td>
+  <td>
+    <i id="playButton" class="fas fa-play fa-xs">
+      <a href="../songs/<?php echo $row['filename']; ?>"></a>
+      <a id="albumcover" href="../img/albumcover/<?php echo $row['covername']; ?>"></a>
+    </i>
+  </td>
+  <td>           <i <?php if (userLiked($row['id'])): ?>
+    class="fas fa-heart like-btn"
+  <?php else: ?>
+    class="far fa-heart like-btn"
+  <?php endif ?>
+  data-id="<?php echo $row['id'] ?>"></i>
+  </td>
+</tr>
+  <?php
+}//while end ?>
 </tbody>
 </table>
 </div>
@@ -126,13 +125,11 @@ p{
 <script type="text/javascript" src="../JS/tofilter.js" charset="utf-8"></script>
 <script type="text/javascript">
 $(".userButton").click(function(){
-  console.log("URL SÁV?😏.");
   var userName = $(this).text().slice(13);
   window.location.replace('userprofile.php?profilename=' + userName);
   console.log(userName);
 });
 $(document).on('click','#playButton',function(){
-  console.log("😪😪");
   var src = $(this).find('a').attr('href');
   var imgsrc = $(this).find('a').next().attr("href");
   var playerImage = $("#playerImage").attr('src',imgsrc);
