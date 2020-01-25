@@ -22,7 +22,7 @@ $genre = $_GET['genre'];
   <?php include_once("COMPONENTS/headerMeta.php"); ?>
   <title>Üdvözlünk <?php echo $_SESSION['username'];?></title>
 </head>
-<body class="bodyblack">
+<body oncontextmenu="return false"  class="bodyblack">
 <style>
 p{
 text-align: left;
@@ -124,6 +124,7 @@ data-id="<?php echo $row['id'] ?>"></i>
 <script type="text/javascript" src="../JS/ribbons.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/gridview.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/tofilter.js" charset="utf-8"></script>
+<script src="https://kit.fontawesome.com/75ad4010ea.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(".userButton").click(function(){
   console.log("URL SÁV?😏.");

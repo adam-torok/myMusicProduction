@@ -78,6 +78,6 @@ $(".userButton").click(function(){
 <script type="text/javascript" src="../JS/gridview.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/tofilter.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/show-mobile-navbar.js" charset="utf-8"></script>
-<script type="text/javascript" src="../JS/all.min.js" charset="utf-8"></script>
+<script src="https://kit.fontawesome.com/75ad4010ea.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@ require_once('CONFIG/config.php');
   margin: 1rem;
   }
 </style>
-<body class="bodyblack">
+<body oncontextmenu="return false"  class="bodyblack">
     <header class="nav-down" id="header">
         <nav class="fill">
             <ul>
@@ -206,5 +206,6 @@ require_once('CONFIG/config.php');
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../JS/music-related.js" charset="utf-8"></script>
 <script src="../JS/music-player.js" charset="utf-8"></script>
+<script src="https://kit.fontawesome.com/75ad4010ea.js" crossorigin="anonymous"></script>
 </body>
 </html>

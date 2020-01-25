@@ -38,7 +38,7 @@ require_once('COMPONENTS/functions.php');
 <?php
 
 ?>
-<body>
+<body oncontextmenu="return false">
 <style>
 body{
   background:var(--bg-color);
@@ -105,6 +105,7 @@ include_once("COMPONENTS/footer.php");
 <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/show-mobile-navbar.js" charset="utf-8"></script>
+<script src="https://kit.fontawesome.com/75ad4010ea.js" crossorigin="anonymous"></script>
 <script>
 function refreshPage(){
     window.location.reload();

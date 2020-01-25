@@ -64,7 +64,7 @@ if(!empty($real_songs_array)){
 <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/show-mobile-navbar.js" charset="utf-8"></script>
-
+<script src="https://kit.fontawesome.com/75ad4010ea.js" crossorigin="anonymous"></script>
 </div>
 </body>
 </html>
