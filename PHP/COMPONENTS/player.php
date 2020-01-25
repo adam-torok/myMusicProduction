@@ -3,12 +3,14 @@
       <img style="width:100px;height:auto;" id="playerImage"  src="../img/albumcover/albumcoverbase.png">
    </div>
    <div class="name">
-      <h2 >Előadó</h2>
+      <h2>Előadó</h2>
       <h2 class="nameButton" id="artistName"></h2>
       <h4 id="songName">Játsz zenét!</h4>
       <div id="buttons">
-         <i id="playButton" class="fas fa-play fa-xs"></i>
-         <i id="pauseButton" class="fas fa-pause fa-xs"></i>
+         <i id="playButton" class="fas fa-play fa-1x"></i>
+         <i id="pauseButton" class="fas fa-pause fa-1x"></i>
+         <i id="volumeUp" class="fas fa-volume-up fa-1x"></i>
+         <i id="volumeDown" class="fas fa-volume-down fa-1x"></i>
          <a id="downloadButton" class="tooltip" download="filename.mp3" href='../songs/'>
               <span class="animated pulse tooltiptext">Zene letöltése!</span>
            <i class="fas fa-download"></i></a>

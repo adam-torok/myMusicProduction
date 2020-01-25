@@ -20,7 +20,7 @@ require_once('COMPONENTS/functions.php');
   <?php include_once("COMPONENTS/headerMeta.php"); ?>
   <title>Üdvözlünk <?php echo $_SESSION['username'];?></title>
 </head>
-<body onload="loadSpinner()" class="bodyblack">
+<body oncontextmenu="return false" onload="loadSpinner()" class="bodyblack">
   <div id="loader" class="spinner">
     <svg viewBox="0 0 100 100">
       <circle cx="50" cy="50" r="15" />
@@ -78,5 +78,6 @@ $(".userButton").click(function(){
 <script type="text/javascript" src="../JS/gridview.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/tofilter.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/show-mobile-navbar.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/all.min.js" charset="utf-8"></script>
 </body>
 </html>

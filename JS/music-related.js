@@ -6,6 +6,24 @@ $(document).ready(function(){
     window.location.replace('addMusicToPlayList.php?songname=' + songName );
   });
 
+$("#volumeUp").click(function(){
+    var volume = $("#myaudio").prop("volume")+0.2;
+    console.log("Hangerő teszt FEL "+volume);
+    if(volume >1){
+        volume = 1;
+    }
+    $("#myaudio").prop("volume",volume);
+});
+
+$("#volumeDown").click(function(){
+  var volume = $("#myaudio").prop("volume")-0.2;
+  console.log("Hangerő teszt LE "+volume);
+    if(volume <0){
+        volume = 0;
+    }
+    $("#myaudio").prop("volume",volume);
+});
+
   // Zene szüneteletése gommbal
 $("#pauseButton").click(function(){
   $("#myaudio").trigger('pause');

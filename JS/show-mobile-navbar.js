@@ -10,5 +10,7 @@ $(document).ready(function(){
 }
  $("#toggleNav").click(function(){
    $(".mobile").toggleClass("hidden");
+   $("body").css("overflow-y","hidden");
+
  })
 })
