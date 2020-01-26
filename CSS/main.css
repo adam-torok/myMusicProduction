@@ -1,8 +1,9 @@
-
+/* ---------CORE CSS---------*/
 html{
     scroll-behavior: smooth!important;
     width: 100vw!important;
 }
+/*--SZÍN VÁLTOZÓK CSS--*/
 :root {
   --bg-color: #212121;
   --secondary-color:#303030;
@@ -40,7 +41,7 @@ svg{
 ::-webkit-scrollbar-thumb:hover {
   background: #424242;
 }
-
+/*--MASNIK--*/
 .ribbon3 {
   width: 50px;
   height: 50px;

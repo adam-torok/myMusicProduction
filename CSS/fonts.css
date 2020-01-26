@@ -1,3 +1,4 @@
+/* ---------FONTOK ÉS STYLING ---------*/
 @font-face {
 src: url(../FONTS/Montserrat-Medium.ttf);
 font-family: montserrat;
@@ -6,7 +7,6 @@ font-family: montserrat;
 src: url(../FONTS/Roboto-Light.ttf);
 font-family: roboto;
 }
-
 *{
 transition: all 0.3s ease-in;
 -webkit-touch-callout: none;
@@ -99,7 +99,6 @@ margin: 0!important;
 padding: 0!important;
 margin-left: 1rem;
 }
-
 .userButton:hover{
 cursor: pointer;
 color:var(--accent-color);

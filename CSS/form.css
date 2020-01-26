@@ -1,3 +1,4 @@
+/* ---------FORMOK ÉS STYLING ---------*/
 *{
 transition: all 0.3s ease-in;
 -webkit-touch-callout: none;
@@ -10,7 +11,6 @@ user-select: none;
 *{
 -webkit-appearance: none!important;
 }
-/*FORM*/
 form{
 margin: 0;
 }
