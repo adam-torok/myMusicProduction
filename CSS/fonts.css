@@ -1,3 +1,12 @@
+@font-face {
+src: url(../FONTS/Montserrat-Medium.ttf);
+font-family: montserrat;
+}
+@font-face {
+src: url(../FONTS/Roboto-Light.ttf);
+font-family: roboto;
+}
+
 *{
 transition: all 0.3s ease-in;
 -webkit-touch-callout: none;
@@ -12,11 +21,11 @@ font-size: 50px;
 text-align: center;
 color:white;
 text-transform: uppercase;
-font-family: 'Montserrat', sans-serif;
+font-family: montserrat;
 }
 p{
 color:white;
-font-family: 'Montserrat', sans-serif;
+font-family: montserrat;
 font-weight: 900;
 }
 h2{
@@ -24,7 +33,7 @@ color: grey;
 font-size: 12px;
 font-weight: 900;
 line-height: 1.4;
-font-family: 'Roboto', sans-serif;
+font-family: roboto;
 letter-spacing: .08em;
 text-transform: uppercase;
 }
@@ -38,14 +47,14 @@ text-decoration: none;
 }
 h4{
 color:white;
-font-family: 'Montserrat', sans-serif;
+font-family: montserrat;
 padding:0;
 font-size: 16px;
 margin: 0;
 text-transform: capitalize;
 }
 h3{
-font-family: 'Montserrat', sans-serif;
+font-family: montserrat;
 margin-top: 0!important;
 padding: 0px;
 margin: 0px;
@@ -73,12 +82,12 @@ text-decoration: none;
 }
 #duration{
 color:white;
-font-family: 'Montserrat', sans-serif;
+font-family: montserrat;
 font-weight: 900;
 }
 #current-time{
 color:white;
-font-family: 'Montserrat', sans-serif;
+font-family: montserrat;
 font-weight: 900;
 }
 #user-title{

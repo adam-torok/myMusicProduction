@@ -10,12 +10,11 @@ user-select: none;
 .nav-dark{
 z-index: 99999;
 position: fixed;
-font-family: 'Roboto', sans-serif;
+font-family: roboto;
 height: 46px;
 top: 0;
 background-color:#212121;
 display: flex;
-font: 100 14px/1.5 'Roboto', sans-serif;;
 -webkit-font-smoothing: subpixel-antialiased;
 align-items: center;
 justify-content: center;
@@ -28,7 +27,7 @@ header a {
 text-decoration: none;
 color: rgb(131, 131, 131);
 display: block;
-font-family: 'Roboto', sans-serif;
+font-family: roboto;
 padding: 12px 0;
 width: 104px;
 height: 46px;

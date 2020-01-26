@@ -1,3 +1,4 @@
+
 html{
     scroll-behavior: smooth!important;
     width: 100vw!important;
@@ -93,7 +94,7 @@ body{
     padding: 0;
 }
 .wrapper-all{
-  font-family: 'Montserrat', sans-serif;
+  font-family: montserrat;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -338,7 +339,7 @@ p {
 }
 .section2-list li{
     color:var(--text-color)!important;
-    font-family: 'Montserrat', sans-serif;
+    font-family: montserrat;
     font-weight: 900;
     list-style-type: none;
 }
@@ -346,7 +347,7 @@ p {
     position: relative;
     margin: 20px;
     padding: 10px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: montserrat;
     font-size: 16px;
 }
 
@@ -374,7 +375,7 @@ p {
     padding: 5px 0;
     display: flex;
     flex-flow: row nowrap;
-    font-family: 'Roboto', sans-serif;
+    font-family: roboto;
     align-items: center;
 }
 .sidebar-item:hover{
