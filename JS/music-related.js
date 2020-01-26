@@ -56,7 +56,7 @@ $(document).on('click','#playbutton',function(){
   x = $(this).parent().parent().parent().find('h2').first().text();
   songName = $(this).parent().parent().parent().find('h4').first().text();
   $("#songName").text(songName);
-  $("title").text("Now playing: " + songName);
+  $("title").text("Most játszott:" + songName);
   $("#artistName").text(x);
     //A myaudio id-jú audio tagbe kicseréli a src-t, arra a src-ra ami a volt a tag-nek volt a href-je
     // Ugyanezen elven letöltés opció.

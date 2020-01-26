@@ -53,7 +53,7 @@ svg{
   left: -8.1px;
   top: 135px;
   z-index: 55;
-  background: #ed2553;
+  background: #var(--accent-color);
 }
 .ribbon3:before, .ribbon3:after {
   content: "";
@@ -73,7 +73,7 @@ svg{
   right: -14.5px;
   border-top: 25px solid transparent;
   border-bottom: 25px solid transparent;
-  border-left: 15px solid #ed2553;
+  border-left: 15px solid var(--accent-color);
 }
 .hot{
     background-color:var(--secondary-color)!important;

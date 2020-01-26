@@ -56,15 +56,15 @@ stroke-dashoffset: -124;
 }
 @keyframes color {
 100%, 0% {
-stroke:#ED2553;
+stroke:var(--accent-color);
 }
 25% {
-stroke: #ED2553;
+stroke: var(--accent-color);
 }
 50% {
-stroke: #ED2553;
+stroke: var(--accent-color);
 }
 75% {
-stroke: #ED2553;
+stroke: var(--accent-color);
 }
 }

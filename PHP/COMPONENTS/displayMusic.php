@@ -104,7 +104,7 @@
         <h2>Felkapott zenék a myMusic közzöségben</h2>
 </div>
         <div class="row">
-        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Classical' AND  approved = 1 LIMIT 10";
+        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Classical' AND  approved = 1 ORDER BY id DESC LIMIT 10";
         $result = $dbc -> query($sql);
         while($row = $result -> fetch_assoc()) {
     ?>
@@ -137,7 +137,7 @@
         <h2>Felkapott zenék a myMusic közzöségben</h2>
       </div>
         <div class="row">
-        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Pop' AND  approved = 1 LIMIT 10";
+        <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Pop' AND  approved = 1 ORDER BY id DESC LIMIT 10";
         $result = $dbc -> query($sql);
         while($row = $result -> fetch_assoc()) {
         ?>

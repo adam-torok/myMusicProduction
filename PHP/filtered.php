@@ -138,7 +138,7 @@ $(document).on('click','#playButton',function(){
   x = $(this).parent().parent().find('h2').first().text();
   songName = $(this).parent().parent().find('h2').first().text();
   $("#songName").text(songName);
-  $("title").text("Now playing: " + songName);
+  $("title").text("Most játszott: " + songName);
   $("#artistName").text(x);
   var k = $("#myaudio").attr("src",src);
   $("#downloadButton").attr("href",src);

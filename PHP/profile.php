@@ -85,18 +85,26 @@ p{
     <div class="user-info-date"><h2>Feltöltött számok: <span id="upload-counter"><?php echo $numOfUploads;?></span></h2>
     <h2 id="user-title"></h2>
     </div>
-    <div class="user-info-date"><h2> BIO: <?php echo $bio;?></h2></div>
     <form enctype="multipart/form-data" action="#" method="POST">
+      <div class="user-info-date">
+        <input class="bio-input" name="bio-save" id="bio-upload" value="<?php echo $bio;?>">
+      </div>
       <label for="file-upload" class="material-icon">
         <i style="color:white" class="fas fa-upload"></i>
       </label>
+
+        <input class="hidden-file-input" id="bio-save" type="submit" name="save_bio">
+        <input class="hidden-file-input" id="file-save" type="submit" name="save_user">
         <input class="hidden-file-input" id="file-upload" accept="image/x-png,image/gif,image/jpeg" type="file" name="profile_image" id="profile_image">
         <label for="file-save" class="material-icon">
         <i style="color:white" class="fas fa-save"></i>
         </label>
-        <input class="hidden-file-input" id="file-save" type="submit" name="save_user">
+        <label for="bio-save" class="material-icon">
+          <i style="color:white" class="fas fa-comment"></i>
+        </label>
         </form>
         <?php
+
         if(isset($_POST['save_user'])){
         $profileImageName = $_FILES['profile_image']['name'];
         $profileImageName = strtolower($profileImageName);
@@ -113,6 +121,16 @@ p{
         }else{
           showErrorDialog("Hiba történt");
         }
+        }
+        if(isset($_POST['save_bio'])){
+          $bio = $_POST['bio-save'];
+          $sql = "UPDATE felhasznalo SET bio = '$bio' WHERE id='$id'";
+          if($dbc -> query($sql)){
+          showDialog("Sikersen frissítetted a biodat!");
+          }
+          else{
+          showErrorDialog("Hiba történt a biod frissítése közben.");
+          }
         }
         ?>
      </div>
