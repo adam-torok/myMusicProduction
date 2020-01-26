@@ -1,5 +1,5 @@
 <?php
-// MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
+// FŐOLDAL
 session_start();
 error_reporting(1);
 ini_set('display_errors', 1);

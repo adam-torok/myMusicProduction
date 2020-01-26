@@ -1,6 +1,8 @@
 <?php
+// REGISZTRÁCIÓ
+require_once('../COMPONENTS/functions.php');
+include_once("../COMPONENTS/headerMeta.php");
 require_once('config.php');
-// MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -19,11 +21,11 @@ $sql = "INSERT INTO $dbname (felhnev, jelszo, email) values ('$username', SHA('$
 if ($dbc->query($sql)){
   $mail = new PHPMailer(true);
     //Server settings
-    $mail->Username   = 'woltery99@gmail.com';              // SMTP felhnev
-    $mail->Password   = '6addtehrdk';           // SMTP jelszó
+    $mail->Username  = 'mymusicprodtestemail@gmail.com';              // SMTP felhnev
+    $mail->Password  = 'Asd12345';           // SMTP jelszó
     $mail->Port  = 587;                                    // TCP port ahova csatlakozik
     //Recipients
-    $mail->setFrom('woltery99@gmail.com');                 //Kitől kapja az üzenetet
+    $mail->setFrom('mymusicprodtestemail@gmail.com');                 //Kitől kapja az üzenetet
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPSecure = 'tls';
     $mail->isSMTP();
@@ -31,9 +33,9 @@ if ($dbc->query($sql)){
     $mail->CharSet = 'UTF-8';
     $mail->Mailer = "smtp";
     $mail->addAddress($email);                     // Felhasználó email címe
-    $mail->addReplyTo('woltery99@gmail.com', 'Information');         //Kinek válaszoljon
-    $mail->addCC('woltery99@outlook.hu');
-    $mail->addBCC('wolter99@outlook.hu');             //kinek küldje el még
+    $mail->addReplyTo('mymusicprodtestemail@gmail.com', 'Information');         //Kinek válaszoljon
+    $mail->addCC('mymusicprodtestemail@gmail.com');
+    $mail->addBCC('mymusicprodtestemail@gmail.com');             //kinek küldje el még
     // EMAIL KÜLDÉS
     $mail->isHTML(true);                          // Set email format to HTML
     $mail->Subject = 'Sikeres regrisztáció';
@@ -45,8 +47,7 @@ if ($dbc->query($sql)){
   header("Location: \mymusic\HTML\loginlayout.html");
 }
 else{
-echo "Error: ". $sql ."
-". $dbc->error;
+    showErrorDialog("Hiba történt :(");
 }
 $dbc->close();
 }

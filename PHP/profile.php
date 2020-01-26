@@ -1,7 +1,7 @@
 <?php
+// FELHASZNÁLÓI PROFIL
 session_start();
 error_reporting(0);
-// MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 require_once('CONFIG/config.php');
 // Megnézem, hogy bevan e jelentkezve az illető
 if(!isset($_SESSION['logged'])){

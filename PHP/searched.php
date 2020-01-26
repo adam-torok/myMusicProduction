@@ -1,6 +1,6 @@
 <?php
+// KERESETT ZENESZÁM
 session_start();
-// MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 include_once('CONFIG/config.php');
 $bio = $_SESSION['bio'];
 $profpic = $_SESSION['profpic'];

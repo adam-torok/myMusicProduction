@@ -1,6 +1,6 @@
 <?php
+// ELFELEJTETT JELSZÓ ESETÉN EMAIL-BE KÜLDÉS
 require_once('CONFIG/config.php');
-// MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;

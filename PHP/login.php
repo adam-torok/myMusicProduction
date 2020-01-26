@@ -4,8 +4,6 @@ session_start();
 include_once("CONFIG/config.php");
 require_once('COMPONENTS/functions.php');
 include_once("COMPONENTS/headerMeta.php");
-
-// MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 // Config file, itt tárolom a connection-hoz való adatokat.
 //Ezek a bejelentkező formból nyert adatok
 $username = mysqli_real_escape_string($dbc,$_POST['username']); //A form-ba beírt felhasználónév

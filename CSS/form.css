@@ -104,6 +104,8 @@ color: white;
 
 #back{
 position: fixed;
+top: 1vw;
+left: 49vw;
 background: #ed2553;
 width: 56px;
 height: 56px;
