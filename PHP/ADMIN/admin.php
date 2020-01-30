@@ -1,41 +1,14 @@
-
+<?php
+require_once('authorize.php');
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <?php include_once("adminHeaderMeta.php"); ?>
   <title>Admin felület</title>
 </head>
 <body>
-<style>
-*{
-  text-align:center!important;
-}
-table{
-  padding:1rem!important;
-}
-h3{
-  color:white;
-}
-th{
-  position: sticky;
-  top: 45px;
-  background-color:grey;
-}
-h2{
-  color:white;
-}
-p{
-  color:red;
-}
-.wrapper{
-  grid-template-columns:1fr;
-  margin:3rem;
-}
-header a{
-    border: none!important;
-}
-</style>
+
 <header class="nav-dark" id="header">
     <div><a href="admin.php">ZENÉK</a></div>
      <div><a href="users.php">FELHASZNÁLÓK</a> </div>

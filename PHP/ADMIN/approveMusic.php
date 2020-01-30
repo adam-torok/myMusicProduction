@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+require_once('authorize.php');
+?>
 <html lang="en">
 <head>
 <?php include_once("../COMPONENTS/headerMeta.php"); ?>

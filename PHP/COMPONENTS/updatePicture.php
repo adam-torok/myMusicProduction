@@ -1,15 +1,17 @@
 <?php
 session_start();
-// MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
-require_once('../CONFIG/config.php');
-//csatlakozás felépítése
-$id = $_SESSION['id'];
+if(empty($_FILES)){
+  die(var_dump($_FILES['profile_image']));
+}
+
+require_once('../CONFIG/config.php');$id = $_SESSION['id'];
 if(isset($_POST['save_user'])){
+$allowedImagesTypes = array('image/gif');
 $profileImageName = $_FILES['profile_image']['name'];
 $profileImageName = strtolower($profileImageName);
 $profileImageName = trim($profileImageName);
 // TODO: CHECK FOR SIZE, AND THINGS BEFORE UPLOAD
-$target = 'C:\wamp64\www\mymusic\PROFILEIMAGES/' . $profileImageName;
+$target = 'C:\wamp64\www\mymusic\PROFILEIMAGES/' . $profileImageName; //ezzel lehetnek még bajok.
 if(move_uploaded_file($_FILES['profile_image']['tmp_name'],$target)){
     $sql = "UPDATE felhasznalo SET profile_image = '$profileImageName' WHERE id='$id'";
     if(mysqli_query($dbc,$sql)){

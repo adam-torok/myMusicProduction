@@ -3,7 +3,7 @@
 session_start();
 error_reporting(0);
 require_once('CONFIG/config.php');
-// Megnézem, hogy bevan e jelentkezve az illető
+define('GW_MAXFILESIZE',1000000);
 if(!isset($_SESSION['logged'])){
     header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 }
@@ -76,23 +76,29 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
         </label>
         </form>
         <?php
-
         if(isset($_POST['save_user'])){
         $profileImageName = $_FILES['profile_image']['name'];
         $profileImageName = strtolower($profileImageName);
         $profileImageName = trim($profileImageName);
+        $profileImageSize = $_FILES['profile_image']['size'];
+        $profileImageType = $_FILES['profile_image']['type'];
         $target = "../PROFILEIMAGES/" . $profileImageName;
-        if(move_uploaded_file($_FILES['profile_image']['tmp_name'],$target) && !empty($_FILES['profile_image'])){
-            $sql = "UPDATE felhasznalo SET profile_image = '$profileImageName' WHERE id='$id'";
-            if(mysqli_query($dbc,$sql)){
-            showDialog("Sikersen frissítetted a profilképedet!");
+        if(($profileImageType == 'image/png') || ($profileImageType == 'image/jpg') ||
+         ($profileImageType == 'image/jpeg') && !empty($_FILES['profile_image']) &&
+          $profileImageSize > 0 && $profileImageSize <= GW_MAXFILESIZE){
+          if(move_uploaded_file($_FILES['profile_image']['tmp_name'],$target)){
+              $sql = "UPDATE felhasznalo SET profile_image = '$profileImageName' WHERE id='$id'";
+                if(mysqli_query($dbc,$sql)){
+                showDialog("Sikersen frissítetted a profilképedet!");
+                }
+                else{
+                showErrorDialog("Hiba történt a profilkép frissítése közben.");
+                }
+            }else{
+              showErrorDialog("Hiba történt");
+              }
             }
-            else{
-            showErrorDialog("Hiba történt a profilkép frissítése közben.");
-            }
-        }else{
-          showErrorDialog("Hiba történt");
-        }
+            else showErrorDialog("Túl nagy kép / nem kép formátum!");
         }
         if(isset($_POST['save_bio'])){
           $bio = $_POST['bio-save'];
@@ -257,42 +263,15 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 </div>
 </div>
 </div>
-<a style="background-color:black" id="github" href="#"><img style="width:50px;height:50px;" src="../IMG/myMusicLogo.png" alt="">
-</a><?php
-include_once("COMPONENTS/footer.php");
-?>
+<a style="background-color:black" id="github" href="#"><img style="width:50px;height:50px;" src="../IMG/myMusicLogo.png" alt=""></a>
+<?php include_once("COMPONENTS/footer.php");?>
 <script type="text/javascript" src="../JS/jquery-3.4.1.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/script.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/main.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/jquery.easy-autocomplete.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/validate-music.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/show-mobile-navbar.js" charset="utf-8"></script>
 <script src="https://kit.fontawesome.com/75ad4010ea.js" crossorigin="anonymous"></script>
-<script type="text/javascript">
-function refreshPage(){
-    window.location.reload();
-  }
-function closePopUp(){
-      var x = document.getElementById("popup");
-   if (x.style.display === "none") {
-     x.style.display = "block";
-   } else {
-     x.style.display = "none";
-   }
-}
-function checkMusicName() {
-    let inputForUsername = document.getElementById("musicName").value;
-    if (inputForUsername.length == null || inputForUsername.length < 20) {
-      var errormsg = document.getElementById("nameErrorMessage").style.display = "none";
-    } else var errormsg = document.getElementById("nameErrorMessage").style.display = "block";
-  }
-function checkArtistName() {
-  let inputForUsername = document.getElementById("artistName").value;
-  if (inputForUsername.length == null || inputForUsername.length < 20) {
-  var errormsg = document.getElementById("artistErrorMessage").style.display = "none";
-  }
-   else var errormsg = document.getElementById("artistErrorMessage").style.display = "block";
- }
-</script>
 </body>
 </html>
