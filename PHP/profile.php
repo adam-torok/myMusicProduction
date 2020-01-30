@@ -33,41 +33,14 @@ while($row = $res->fetch_assoc()) {
 $numOfUploads = $_SESSION['$numOfUploads'];
 if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <?php include_once("COMPONENTS/headerMeta.php");?>
+<link rel="stylesheet" href="../css/profile.css">
 <title>Profilod</title>
 </head>
 <body oncontextmenu="return false">
-<style>
-body{
-  background:var(--bg-color);
-}
-p{
-  text-align: left;
-}
-.form input{
- color:white;
-}
-.form input::placeholder{
- color:white;
-}
-.container{
-  display: grid;
-  grid-template-columns:1fr 1fr;
-  background:var(--bg-color);
-}
-.form{
-  padding: 0;
-}
-.form-center{
- height: auto;
- background-color: unset;
- background-image: none;
-}
-</style>
 <?php include_once("COMPONENTS/navbar.php");?>
 <div class="divider">
 <?php include_once('COMPONENTS/sidebar.php');?>
@@ -92,7 +65,6 @@ p{
       <label for="file-upload" class="material-icon">
         <i style="color:white" class="fas fa-upload"></i>
       </label>
-
         <input class="hidden-file-input" id="bio-save" type="submit" name="save_bio">
         <input class="hidden-file-input" id="file-save" type="submit" name="save_user">
         <input class="hidden-file-input" id="file-upload" accept="image/x-png,image/gif,image/jpeg" type="file" name="profile_image" id="profile_image">
@@ -110,7 +82,7 @@ p{
         $profileImageName = strtolower($profileImageName);
         $profileImageName = trim($profileImageName);
         $target = "../PROFILEIMAGES/" . $profileImageName;
-        if(move_uploaded_file($_FILES['profile_image']['tmp_name'],$target)){
+        if(move_uploaded_file($_FILES['profile_image']['tmp_name'],$target) && !empty($_FILES['profile_image'])){
             $sql = "UPDATE felhasznalo SET profile_image = '$profileImageName' WHERE id='$id'";
             if(mysqli_query($dbc,$sql)){
             showDialog("Sikersen frissítetted a profilképedet!");
@@ -158,17 +130,17 @@ p{
     <div>
         <div class="input">
           <h2 id="nameErrorMessage">  * Maximum 20 karakter.</h2>
-            <input class="inputFields"  onkeydown="checkMusicName()" id="musicName" type="text" placeholder="Zene neve"  name="nameofmusic" required>
+          <i class="fas fa-signature"></i><input class="inputFields"  onkeydown="checkMusicName()" id="musicName" type="text" placeholder="Zene neve"  name="nameofmusic" required>
             <div class="bar"></div>
         </div>
         <div class="input">
           <h2 id="artistErrorMessage">  * Maximum 20 karakter.</h2>
-            <input  class="inputFields" onkeydown="checkArtistName()" id="artistName" type="text" placeholder="Előadója"  name="artistofmusic" required>
+        <i class="fas fa-signature"></i><input  class="inputFields" onkeydown="checkArtistName()" id="artistName" type="text" placeholder="Előadója"  name="artistofmusic" required>
             <div class="bar"></div>
         </div>
         <br>
       <p>Műfaj</p>
-      <select class="select-tex" name="genreofmusic" required>
+      <i class="fas fa-headset"></i><select class="select-tex" name="genreofmusic" required>
       <option value="Rap">Rap</option>
       <option value="Classical">Classical</option>
       <option value="Future">Future House</option>
@@ -179,9 +151,9 @@ p{
     </div>
     <div>
       <p>Album fotó</p>
-      <input accept="image/*" class="" type="file" name="albumUpload"  id="albumUpload" required>
+      <i class="fas fa-file-signature"></i><input accept="image/*" class="" type="file" name="albumUpload"  id="albumUpload" required>
       <p>Zene file</p>
-      <input accept="audio/*" class="" type="file" name="musicUpLoad" id="musicUpLoad" required>
+      <i class="fas fa-file-signature"></i><input accept="audio/*" class="" type="file" name="musicUpLoad" id="musicUpLoad" required>
       <br>
       <button class="material-button" type="submit" class="btn" id="save_music" name="save_music">Feltöltés!</button>
     </div>

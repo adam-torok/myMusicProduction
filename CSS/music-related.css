@@ -1,13 +1,5 @@
 /* ---------ZENÉVEL KAPCSOLATOS---------*/
-*{
-transition: all 0.3s ease-in;
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-}
+
 .row {
 padding: 0 10px;
 margin: 0;
@@ -119,9 +111,24 @@ transform: scale(1.2);
 #pauseButton:hover{
 transform: scale(1.2);
 }
+@media screen and (max-width: 1100px) {
+  .logo{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #progress{
+    display: none;
+  }
+}
+
 @media screen and (max-width: 600px) {
 .tile-img{
   width: 90%;
+}
+.logo{
+  display: none
 }
 .row{
 transform: translate3d(0,0,0);

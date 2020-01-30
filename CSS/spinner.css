@@ -1,13 +1,5 @@
 /* ---------TÖLTŐ KÉPERNYŐ---------*/
-*{
-transition: all 0.3s ease-in;
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-}
+
 .spinner {
 height: 100vh;
 width: 100vw;

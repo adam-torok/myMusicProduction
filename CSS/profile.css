@@ -1,0 +1,43 @@
+body{
+  background:var(--bg-color);
+}
+p{
+  text-align: left;
+}
+.form input{
+ color:white;
+}
+.form input::placeholder{
+ color:white;
+}
+.container{
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  background:var(--bg-color);
+}
+.form{
+  padding: 0;
+  width: 80%;
+}
+.form-holder{
+  width: 100%;
+}
+.form-center{
+ height: auto;
+ background-color: unset;
+ background-image: none;
+}
+.profile-track-container {
+    display: grid;
+    flex-flow: column wrap;
+    flex-direction: row;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    height: 50vh;
+    padding: 1rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.profile-track-container:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}

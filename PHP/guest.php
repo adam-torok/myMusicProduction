@@ -1,6 +1,6 @@
 <?php
 require_once('CONFIG/config.php');
-// MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
+session_start();
 //Csatlakozás felépítése
 ?>
 <!DOCTYPE html>

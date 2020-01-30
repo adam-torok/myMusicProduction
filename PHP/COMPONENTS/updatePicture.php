@@ -8,6 +8,7 @@ if(isset($_POST['save_user'])){
 $profileImageName = $_FILES['profile_image']['name'];
 $profileImageName = strtolower($profileImageName);
 $profileImageName = trim($profileImageName);
+// TODO: CHECK FOR SIZE, AND THINGS BEFORE UPLOAD
 $target = 'C:\wamp64\www\mymusic\PROFILEIMAGES/' . $profileImageName;
 if(move_uploaded_file($_FILES['profile_image']['tmp_name'],$target)){
     $sql = "UPDATE felhasznalo SET profile_image = '$profileImageName' WHERE id='$id'";

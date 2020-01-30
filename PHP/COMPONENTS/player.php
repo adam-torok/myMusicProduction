@@ -11,16 +11,18 @@
          <i id="pauseButton" class="fas fa-pause fa-1x"></i>
          <i id="volumeUp" class="fas fa-volume-up fa-1x"></i>
          <i id="volumeDown" class="fas fa-volume-down fa-1x"></i>
-         <a id="downloadButton" class="tooltip" download="filename.mp3" href='../songs/'>
-              <span class="animated pulse tooltiptext">Zene letöltése!</span>
-           <i class="fas fa-download"></i></a>
+         <?php if(isset($_SESSION['logged'])){
+           echo ' <a id="downloadButton" class="tooltip" download="filename.mp3" href="../songs/">
+                 <span class="animated pulse tooltiptext">Zene letöltése!</span>
+              <i class="fas fa-download"></i></a>';
+         }?>
       </div>
    </div>
    <h2 style="padding-right:1rem; font-size:13px; color:#ed2553" id="current-time"></h2>
    <canvas id="progress" width="500" height="5"></canvas>
    <i id="addToPlayList" class="fas fa-plus-circle  fa-1"></i>
    <h2  style=" padding-left:1rem;" id="duration"></h2>
-   <img style="margin-left: 2rem;width:100px;height:100px;" src="../IMG/myMusicLogo.png" alt="">
+   <img class="logo" style="margin-left: 2rem;width:100px;height:100px;" src="../IMG/myMusicLogo.png" alt="">
    <audio ontimeupdate="updateBar()" id="myaudio"  id="player" autoplay>
       <source src="../songs/" type="audio/mpeg">
       Your browser does not support the audio element.

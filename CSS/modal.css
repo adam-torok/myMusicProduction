@@ -1,13 +1,5 @@
 /* ---------MODALOK ÉS POPUPOK---------*/
-*{
-transition: all 0.3s ease-in;
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-}
+
 .content {
 width: 650px;
 margin: 0 auto;
@@ -25,13 +17,14 @@ margin-right: auto;
 padding: 2rem;
 position: fixed;
 z-index: 5000000000000;
-top: 50%;
-left: 50%;
+width: 250px;
 font-family: montserrat;
 border-radius: 3px;
-margin-top: -100px;
-margin-left: -280px;
 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
 }
 
 .tooltip {

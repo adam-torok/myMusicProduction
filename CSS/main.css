@@ -53,7 +53,7 @@ svg{
   left: -8.1px;
   top: 135px;
   z-index: 55;
-  background: #var(--accent-color);
+  background: var(--accent-color);
 }
 .ribbon3:before, .ribbon3:after {
   content: "";
@@ -298,7 +298,7 @@ button:active{
     color: var(--text-color);
 }
 .name{
-    padding:3rem;
+    padding:1.5rem;
 }
 
 .filtering-container{
@@ -411,19 +411,7 @@ p {
     padding: 1rem;
 }
 
-.profile-track-container{
-  display: grid;
-  flex-flow: column wrap;
-  flex-direction: row;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  height: 50vh;
-  overflow: scroll;
-  overflow-x: hidden;
-}
-.profile-track-container:hover{
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
+
 .filtered-image-container{
 width: 10vw;
 }
@@ -532,8 +520,8 @@ width: 10vw;
     align-items: flex-end;
 }
 .profile-image img{
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -700,9 +688,16 @@ width: 10vw;
    }
 
 }
-
+@media screen and (max-width: 1100px) {
+  .profile-image img{
+    height: 100px;
+    width: 100px;
+  }
+  .name{
+    padding: 0rem 0rem 0rem 1rem;
+  }
+}
 @media (min-width: 768px) and (max-width: 1024px) {
-
   .row-inner{
     transform: scale(0.9);
   }
