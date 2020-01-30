@@ -1,27 +1,17 @@
 <?php
 require_once('authorize.php');
+require_once('../CONFIG/config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <?php include_once("adminHeaderMeta.php"); ?>
-    <title>Biztosan törölsz?</title>
+<?php include_once("adminHeaderMeta.php"); ?>
+<title>Biztosan?</title>
 </head>
 <body>
-    <style>
-    .wrapper{
-    grid-template-columns:1fr;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    margin:3rem;
-    }
-    </style>
-<div class="wrapper">
-
+<div class="delete-section">
+  <div class="delete-card">
 <?php
-//require_once('CONFIG/authorize.php');
-require_once("CONFIG/config.php");
 // Két féle reagálás, GET / POST esetében.
 if(isset($_GET['id']) && isset($_GET['artist']) && isset($_GET['name']) && isset($_GET['genre'])){
     $id = $_GET['id'];
@@ -29,7 +19,6 @@ if(isset($_GET['id']) && isset($_GET['artist']) && isset($_GET['name']) && isset
     $name = $_GET['name'];
     $genre = $_GET['genre'];
 }
-
 else if(isset($_POST['id']) && isset($_POST['artist']) && isset($_POST['name']) && isset($_POST['genre'])){
 //Pontszámok kinyerése a POST  tömbből
     $id = $_POST['id'];
@@ -42,33 +31,33 @@ else {
 }
 // --- --- ----- --- --
 if(isset($_POST['submit'])){
-    if($_POST['confirm'] == 'Yes'){
-        $dbc = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname);
+    if(true){
         $query = "DELETE FROM songs WHERE id=$id LIMIT 1";
         mysqli_query($dbc,$query);
         mysqli_close($dbc);
-        echo '<p>'. $artist .$name.' törölve az adatbázisból!</p>';
+        echo '<p>'. $name .' törölve  az adatbázisból!</p>';
     }
     else{
         echo '<p> A zene nem lett törölve.</p>';
     }
 }
 else if(isset($id) && isset($artist) && isset($name) && isset($genre) ){
-echo '<p>Biztosan kitörlöd ezt a számot? <br>'.$artist . " " .$name . '</p>';
+echo '<p>Biztosan kitörlöd ezt a zenét?<br> "'.$artist." - " . $name.'"</p>';
 echo '<form action="removeMusic.php" method="POST">';
-echo '<input  type="radio" name="confirm" value="Yes" /><h2> IGEN </h2>';
-echo '<input  type="radio" name="confirm" value="No" /><h2> NEM </h2> ';
 echo '<br>';
-echo '<input class="uploadmusic" type="submit" name="submit" value="Törlés"/>';
 echo '<input type="hidden" name="id" value="'.$id.'"/>';
 echo '<input type="hidden" name="artist" value="'.$artist.'"/>';
 echo '<input type="hidden" name="name" value="'.$name.'"/>';
 echo '<input type="hidden" name="genre" value="'.$genre.'"/>';
+echo '<input class="material-button-delete" type="submit" name="submit" value="TÖRLÉS"/>';
 echo '</form>';
 }
-echo '<h2><a href="admin.php">Vissza az admin oldalra!</a></p>';
-
-?></div>
-
+echo '<h2><a class="material-button" href="songs.php">Vissza az admin oldalra!</a></p>';
+?>
+</div>
+</div>
 </body>
+<?php
+echo include_once("COMPONENTS/footer.php");
+?>
 </html>
