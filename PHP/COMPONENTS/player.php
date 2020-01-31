@@ -1,6 +1,6 @@
 <div class="player">
-   <div style="padding-left:3rem;">
-      <img style="width:100px;height:auto;" id="playerImage"  src="../img/albumcover/albumcoverbase.png">
+   <div class="player-image-container" style="padding-left:3rem;">
+      <img style="width:100px;height:auto;" id="playerImage"  src="../IMG/ALBUMCOVER/albumcoverbase.png">
    </div>
    <div class="name">
       <h2>Előadó</h2>
@@ -24,7 +24,7 @@
    <h2  style=" padding-left:1rem;" id="duration"></h2>
    <img class="logo" style="margin-left: 2rem;width:100px;height:100px;" src="../IMG/myMusicLogo.png" alt="">
    <audio ontimeupdate="updateBar()" id="myaudio"  id="player" autoplay>
-      <source src="../songs/" type="audio/mpeg">
+      <source src="../SONGS/" type="audio/mpeg">
       Your browser does not support the audio element.
    </audio>
 </div>

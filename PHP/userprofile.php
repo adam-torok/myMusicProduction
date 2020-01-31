@@ -1,15 +1,9 @@
 <?php
 // KERESETT PROFIL
 session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-// MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 require_once('CONFIG/config.php');
-// Megnézem, hogy bevan e jelentkezve az illető
-if(!isset($_SESSION['logged'])){
-    header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-}
+require_once('COMPONENTS/functions.php');
+isLogged($_SESSION['logged']);
 $uname = $_GET['profilename'];
 $id = null;
 $profpic = null;

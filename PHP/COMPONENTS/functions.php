@@ -1,10 +1,15 @@
 <?php
-
 function sanitiseInput($dbc,$input){
   $sanitizedInput = mysqli_real_escape_string($dbc,$input);
   $sanitizedInput = ucfirst($input);
   $sanitizedInput = trim($input);
   return $sanitizedInput;
+}
+
+function isLogged($user){
+  if(!isset($user)){
+    header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+  }
 }
 
 function funnyDebugTool(){

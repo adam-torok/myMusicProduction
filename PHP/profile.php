@@ -3,6 +3,7 @@
 session_start();
 require_once('CONFIG/config.php');
 require_once('COMPONENTS/functions.php');
+isLogged($_SESSION['logged']);
 funnyDebugTool();
 define('GW_MAXFILESIZE',1000000);
 if(!isset($_SESSION['logged'])){

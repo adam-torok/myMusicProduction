@@ -2,10 +2,11 @@
 session_start();
 // MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 require_once('./CONFIG/config.php');
+require_once('COMPONENTS/functions.php');
+isLogged($_SESSION['logged']);
 $bio = $_SESSION['bio'];
 $profpic = $_SESSION['profpic'];
 $id = $_SESSION['id'];
-require_once('COMPONENTS/functions.php');
 if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 ?>
 <!DOCTYPE html>

@@ -1,16 +1,10 @@
 <?php
 // MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 session_start();
-error_reporting(1);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-// Megnézem, hogy bevan e jelentkezve az illető
-if(!isset($_SESSION['logged'])){
-  header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-}
 require_once('CONFIG/config.php');
 include('CONFIG/likes.php');
+require_once('COMPONENTS/functions.php');
+isLogged($_SESSION['logged']);
 $id = $_SESSION['id'];
 $username = $_SESSION['username'];
 require_once('COMPONENTS/functions.php');

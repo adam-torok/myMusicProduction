@@ -11,13 +11,7 @@ html{
   --text-color:white;
 }
 *{
-transition: all 0.3s ease-in;
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+
 }
 svg{
   color: var(--accent-color);
@@ -574,7 +568,14 @@ width: 10vw;
     width: auto;
   }
   .form-mobile{
-    width: 330px!important;
+    width: 80%!important;
+  }
+  .form-holder{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   .user-info{
     padding: 0;
@@ -649,6 +650,45 @@ width: 10vw;
    }
     h1{
    }
+   .tile-img{
+     width: 90%;
+   }
+   .logo{
+     display: none
+   }
+   .row{
+   transform: translate3d(0,0,0);
+   -webkit-transform: translate3d(0,0,0);
+   -webkit-overflow-scrolling: touch;
+   overflow:scroll;
+   }
+   .music-name{
+     padding-bottom: 0.5rem;
+   }
+   .tile{
+     width:150px;
+   }
+   .userButton{
+     display: none!important;
+   }
+   .name{
+     text-align: center;
+   }
+   #addToPlayList{
+     display: none;
+   }
+   #current-time{
+     display: none;
+   }
+   #duration{
+     display: none;
+   }
+   .name{
+     padding: 0!important;
+   }
+   .player:nth-child(1){
+     padding: 0!important;
+   }
    .genres{
     grid-template-columns: 1fr 1fr!important;
     display: grid!important;
@@ -659,7 +699,9 @@ width: 10vw;
        width:150px;
    }
    .player{
-       display: none!important;
+     flex-direction: column;
+     height: auto;
+     padding: 1rem 0rem 0rem 0rem;
    }
    .footer{
        grid-template-columns: 1fr 1fr!important;

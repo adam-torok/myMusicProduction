@@ -14,9 +14,9 @@
               <h4 class="music-name"><?php echo $row['name']; ?></h4>
               <h2 class="userButton">Feltöltötte: <?php echo $row['uploadedby']; ?></h4>
             <div class="tile-media">
-              <img class="tile-img" src="../img/albumcover/<?php echo $row['covername'];?> ">
+              <img class="tile-img" src="../IMG/ALBUMCOVER/<?php echo $row['covername'];?> ">
               <div>
-                <a href="../songs/<?php echo $row['filename']; ?>"></a>
+                <a href="../SONGS/<?php echo $row['filename']; ?>"></a>
                 <i id="playbutton" class="fas fa-play playbutton"></i>
                 <i <?php if (userLiked($row['id'])): ?>
                 class="fas fa-heart like-btn"
@@ -48,9 +48,9 @@
         <h4 class="music-name"><?php echo $row['name']; ?></h4>
         <h2 class="userButton">Feltöltötte: <?php echo $row['uploadedby']; ?></h4>
         <div class="tile-media">
-          <img class="tile-img"  onclick="play()" src=../img/albumcover/<?php echo $row['covername'];?> ">
+          <img class="tile-img"  onclick="play()" src=../IMG/ALBUMCOVER/<?php echo $row['covername'];?> ">
           <div>
-            <a href="../songs/<?php echo $row['filename']; ?>"></a>
+            <a href="../SONGS/<?php echo $row['filename']; ?>"></a>
             <i id="playbutton" class="fas fa-play playbutton"></i>
             <i <?php if (userLiked($row['id'])): ?>
             class="fas fa-heart like-btn"
@@ -81,9 +81,9 @@
         <h4 class="music-name"><?php echo $row['name']; ?></h4>
         <h2 class="userButton">Feltöltötte: <?php echo $row['uploadedby']; ?></h4>
         <div class="tile-media">
-          <img class="tile-img"  onclick="play()" src=../img/albumcover/<?php echo $row['covername'];?> ">
+          <img class="tile-img"  onclick="play()" src=../IMG/ALBUMCOVER/<?php echo $row['covername'];?> ">
           <div>
-            <a href="../songs/<?php echo $row['filename']; ?>"></a>
+            <a href="../SONGS/<?php echo $row['filename']; ?>"></a>
             <i id="playbutton" class="fas fa-play playbutton"></i>
             <i <?php if (userLiked($row['id'])): ?>
             class="fas fa-heart like-btn"
@@ -114,9 +114,9 @@
         <h4 class="music-name"><?php echo $row['name']; ?></h4>
         <h2 class="userButton">Feltöltötte: <?php echo $row['uploadedby']; ?></h4>
         <div class="tile-media">
-          <img class="tile-img"  onclick="play()" src=../img/albumcover/<?php echo $row['covername'];?> ">
+          <img class="tile-img"  onclick="play()" src=../IMG/ALBUMCOVER/<?php echo $row['covername'];?> ">
           <div>
-            <a href="../songs/<?php echo $row['filename']; ?>"></a>
+            <a href="../SONGS/<?php echo $row['filename']; ?>"></a>
             <i id="playbutton" class="fas fa-play playbutton"></i>
             <i <?php if (userLiked($row['id'])): ?>
             class="fas fa-heart like-btn"
@@ -147,9 +147,9 @@
         <h4 class="music-name"><?php echo $row['name']; ?></h4>
         <h2 class="userButton">Feltöltötte: <?php echo $row['uploadedby']; ?></h4>
         <div class="tile-media">
-          <img class="tile-img" src=../img/albumcover/<?php echo $row['covername'];?> ">
+          <img class="tile-img" src=../IMG/ALBUMCOVER/<?php echo $row['covername'];?> ">
           <div>
-            <a href="../songs/<?php echo $row['filename']; ?>"></a>
+            <a href="../SONGS/<?php echo $row['filename']; ?>"></a>
             <i id="playbutton" class="fas fa-play playbutton"></i>
             <i <?php if (userLiked($row['id'])): ?>
             class="fas fa-heart like-btn"
@@ -181,9 +181,9 @@
         <h4 class="music-name"><?php echo $row['name']; ?></h4>
         <h2 class="userButton">Feltöltötte: <?php echo $row['uploadedby']; ?></h4>
         <div class="tile-media">
-          <img class="tile-img" src=../img/albumcover/<?php echo $row['covername'];?> ">
+          <img class="tile-img" src=../IMG/ALBUMCOVER/<?php echo $row['covername'];?> ">
           <div>
-            <a href="../songs/<?php echo $row['filename']; ?>"></a>
+            <a href="../SONGS/<?php echo $row['filename']; ?>"></a>
             <i id="playbutton" class="fas fa-play playbutton"></i>
             <i <?php if (userLiked($row['id'])): ?>
             class="fas fa-heart like-btn"

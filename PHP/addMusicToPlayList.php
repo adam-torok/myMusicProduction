@@ -1,7 +1,8 @@
 <?php
 session_start();
 // MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
-error_reporting(E_ALL);
+require_once('COMPONENTS/functions.php');
+isLogged($_SESSION['logged']);
 require_once('CONFIG/config.php');
 $id = $_SESSION['id'];
 $songName = $_GET['songname'];

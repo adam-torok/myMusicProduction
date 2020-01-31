@@ -2,11 +2,12 @@
 // KERESETT ZENESZÁM
 session_start();
 include_once('CONFIG/config.php');
+require_once('COMPONENTS/functions.php');
+isLogged($_SESSION['logged']);
 $bio = $_SESSION['bio'];
 $profpic = $_SESSION['profpic'];
 $artistName = $_GET["artistname"];
 $id = $_SESSION['id'];
-require_once('COMPONENTS/functions.php');
 if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 ?>
 <!DOCTYPE html>
@@ -39,7 +40,7 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
         <h1>  <?php echo $artistName;?></h1>
       </div>
   </div>
-        <?php $sql = "SELECT * FROM songs WHERE artist = '$artistName'";
+        <?php $sql = "SELECT * FROM songs WHERE artist = '$artistName' AND approved = 1";
         $result = $dbc -> query($sql);
         while($row = $result -> fetch_assoc()) {?>
         <div class="track">

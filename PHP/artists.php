@@ -2,9 +2,9 @@
 session_start();
 // MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 require_once('CONFIG/config.php');
-$id = $_SESSION['id'];
 require_once('COMPONENTS/functions.php');
-//csatlakozás felépítéses
+isLogged($_SESSION['logged']);
+$id = $_SESSION['id'];
 $bio = $_SESSION['bio'];
 $profpic = $_SESSION['profpic'];
 if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
@@ -26,7 +26,7 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
   <h2>Az összes jelenlegi</h2>
   <h1 style="color:white">ZENÉSZEK</h1>
   </div>
-          <?php $sql = "SELECT DISTINCT artist, genre FROM songs ORDER BY genre";
+          <?php $sql = "SELECT DISTINCT artist, genre FROM songs WHERE approved = 1  ORDER BY genre";
           $result = $dbc -> query($sql);
    while($row = $result -> fetch_assoc()) {?>
           <div class="track">
