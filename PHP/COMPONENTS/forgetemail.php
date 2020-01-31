@@ -38,7 +38,7 @@ if(isset($_POST['email']) AND isset($_POST['username'])){
         $mail->addBCC('wolter99@outlook.hu');             //kinek küldje el még
         // EMAIL KÜLDÉS
         $mail->isHTML(true);                          // Set email format to HTML
-        $mail->Subject = 'Hírlevél';
+        $mail->Subject = 'Elfelejtett jelszó';
         $mail->Body    = '<h1>Kedves felhasználó!,</h1> <br>
         Sajnáljuk a dolgot, a jelszója!  <br> '. $pass['jelszo'].'<br>
         My music csapata!';

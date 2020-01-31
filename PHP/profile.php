@@ -1,16 +1,15 @@
 <?php
 // FELHASZNÁLÓI PROFIL
 session_start();
-error_reporting(0);
 require_once('CONFIG/config.php');
+require_once('COMPONENTS/functions.php');
+funnyDebugTool();
 define('GW_MAXFILESIZE',1000000);
 if(!isset($_SESSION['logged'])){
     header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 }
 $id = $_SESSION['id'];
 $uname = $_SESSION['username'];
-$password = $_POST['password'];
-require_once('COMPONENTS/functions.php');
 $sql = "SELECT bio FROM felhasznalo WHERE id = '$id'";
 $result = $dbc -> query($sql);
 while($row = $result->fetch_assoc()) {
@@ -75,42 +74,35 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
           <i style="color:white" class="fas fa-comment"></i>
         </label>
         </form>
-        <?php
-        if(isset($_POST['save_user'])){
-        $profileImageName = $_FILES['profile_image']['name'];
-        $profileImageName = strtolower($profileImageName);
-        $profileImageName = trim($profileImageName);
-        $profileImageSize = $_FILES['profile_image']['size'];
-        $profileImageType = $_FILES['profile_image']['type'];
-        $target = "../PROFILEIMAGES/" . $profileImageName;
-        if(($profileImageType == 'image/png') || ($profileImageType == 'image/jpg') ||
-         ($profileImageType == 'image/jpeg') && !empty($_FILES['profile_image']) &&
-          $profileImageSize > 0 && $profileImageSize <= GW_MAXFILESIZE){
-          if(move_uploaded_file($_FILES['profile_image']['tmp_name'],$target)){
-              $sql = "UPDATE felhasznalo SET profile_image = '$profileImageName' WHERE id='$id'";
-                if(mysqli_query($dbc,$sql)){
-                showDialog("Sikersen frissítetted a profilképedet!");
+            <?php
+            if(isset($_POST['save_user'])){
+            $profileImageName = $_FILES['profile_image']['name'];
+            sanitiseInput($dbc,$profileImageName);
+            $profileImageSize = $_FILES['profile_image']['size'];
+            $profileImageType = $_FILES['profile_image']['type'];
+            $target = "../PROFILEIMAGES/" . $profileImageName;
+            if(($profileImageType == 'image/png') || ($profileImageType == 'image/jpg') ||
+             ($profileImageType == 'image/jpeg') && !empty($_FILES['profile_image']) &&
+              $profileImageSize > 0 && $profileImageSize <= GW_MAXFILESIZE){
+              if(move_uploaded_file($_FILES['profile_image']['tmp_name'],$target)){
+                  $sql = "UPDATE felhasznalo SET profile_image = '$profileImageName' WHERE id='$id'";
+                    if(mysqli_query($dbc,$sql)){
+                    showDialog("Sikersen frissítetted a profilképedet!");
+                    }
+                    else{
+                    showErrorDialog("Hiba történt a profilkép frissítése közben.");
+                    }
+                }else{
+                  showErrorDialog("Hiba történt");
+                  }
                 }
-                else{
-                showErrorDialog("Hiba történt a profilkép frissítése közben.");
-                }
-            }else{
-              showErrorDialog("Hiba történt");
-              }
+                else showErrorDialog("Túl nagy kép / nem kép formátum!");
             }
-            else showErrorDialog("Túl nagy kép / nem kép formátum!");
-        }
-        if(isset($_POST['save_bio'])){
-          $bio = $_POST['bio-save'];
-          $sql = "UPDATE felhasznalo SET bio = '$bio' WHERE id='$id'";
-          if($dbc -> query($sql)){
-          showDialog("Sikersen frissítetted a biodat!");
-          }
-          else{
-          showErrorDialog("Hiba történt a biod frissítése közben.");
-          }
-        }
-        ?>
+            if(isset($_POST['save_bio'])){
+            $bio = htmlentities($_POST['bio-save']);
+            saveBio($bio,$dbc,$id);
+            }
+            ?>
      </div>
 </div>
 </div>
@@ -136,12 +128,12 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
     <div>
         <div class="input">
           <h2 id="nameErrorMessage">  * Maximum 20 karakter.</h2>
-          <i class="fas fa-signature"></i><input class="inputFields"  onkeydown="checkMusicName()" id="musicName" type="text" placeholder="Zene neve"  name="nameofmusic" required>
+          <i class="fas fa-signature"></i><input class="inputFields" maxlength="30" onkeydown="checkMusicName()" id="musicName" type="text" placeholder="Zene neve"  name="nameofmusic" required>
             <div class="bar"></div>
         </div>
         <div class="input">
           <h2 id="artistErrorMessage">  * Maximum 20 karakter.</h2>
-        <i class="fas fa-signature"></i><input  class="inputFields" onkeydown="checkArtistName()" id="artistName" type="text" placeholder="Előadója"  name="artistofmusic" required>
+        <i class="fas fa-signature"></i><input  class="inputFields" maxlength="30" onkeydown="checkArtistName()" id="artistName" type="text" placeholder="Előadója"  name="artistofmusic" required>
             <div class="bar"></div>
         </div>
         <br>
@@ -164,71 +156,31 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
       <button class="material-button" type="submit" class="btn" id="save_music" name="save_music">Feltöltés!</button>
     </div>
   </form>
-  <?php
-  if(isset($_POST['save_music'])){
-   $musicFileName = $_FILES['musicUpLoad']['name'];
-   $musicFileName = strtolower($musicFileName);
-   $musicName =  mysqli_real_escape_string($dbc,$_POST['nameofmusic']);
-   //$genre = mysqli_real_escape_string($link,$_POST['genreofmusic']);
-   $genre = mysqli_real_escape_string($dbc,$_POST['genreofmusic']);
-   switch ($genre) {
-      case 'Rap':
-          $genre= 'Rap';
-          break;
-          case 'Alternatív':
-          $genre= 'Alternatív';
-          break;
-          case 'Classical':
-          $genre= 'Classical';
-          break;
-          case 'Pop':
-          $genre= 'Pop';
-          break;
-          case 'Tropical':
-          $genre= 'Tropical';
-          break;
-          case 'Future':
-          $genre= 'Future';
-          break;
-  }
-
-   $artist = mysqli_real_escape_string($dbc,$_POST['artistofmusic']);
-   $username =  mysqli_real_escape_string($dbc,$_SESSION['username']);
-   $musicName = strtolower($musicName);
-   $coverName = $_FILES['albumUpload']['name'];
-   $coverName = strtolower($coverName);
-
-   $a = $artist;
-   $mn = $musicName;
-   $g = $genre;
-   $mfn = $musicFileName;
-   $c = $coverName;
-   $u = $username;
-
-   $target = '../songs/' . $musicFileName;
-   $targetForAlbum = '../img/albumcover/'. $coverName;
-  //PREPARED STATEMENTEK, A VÉDELEM ÉRDEKÉBEN
-  if(move_uploaded_file($_FILES['musicUpLoad']['tmp_name'],$target) && (move_uploaded_file($_FILES['albumUpload']['tmp_name'],$targetForAlbum))) {
-      $sql = "INSERT INTO songs (artist, name, genre, filename, covername, uploadedby, approved) VALUES (?, ?, ?, ?, ?, ?,?)";
-      $stmt = mysqli_stmt_init($dbc);
-      $approveStartValue = 0;
-      if(!mysqli_stmt_prepare($stmt,$sql)){
-          echo "Hiba a feltöltés során.";
-      }
-      else{
-          mysqli_stmt_bind_param($stmt, "sssssss",$a,$mn,$g,$mfn,$c,$u,$approveStartValue);
-          // azért a fura változó nevek mert belekavarodtam és így egyszerűbb volt.
-          mysqli_stmt_execute($stmt);
-          $result = mysqli_stmt_get_result($stmt);
-        echo "<div id='popup' class='pop-up'>
-            <h3>Sikeres frissítés!</h3>
-            <p>Sikeresen feltölttél egy zenét, már csak az admin jóváhagyása szükséges! </p>
-            <a href='profile.php' onclick='closePopUp()' id='disable' class='material-button'>Rendben</a>
-          </div>";
-      }
-    }
-  }
-  ?>
+        <?php
+        if(isset($_POST['save_music'])){
+         $musicFileName = $_FILES['musicUpLoad']['name'];
+         $musicFileName = sanitiseInput($dbc,$musicFileName);
+         $musicName = sanitiseInput($dbc,$_POST['nameofmusic']);
+         $genre = mysqli_real_escape_string($dbc,$_POST['genreofmusic']);
+         getGenre($genre);
+         $artist = sanitiseInput($dbc,$_POST['artistofmusic']);
+         $username =  mysqli_real_escape_string($dbc,$_SESSION['username']);
+         $coverName = $_FILES['albumUpload']['name'];
+         $coverName = strtolower($coverName);
+         $target = '../songs/' . $musicFileName;
+         $targetForAlbum = '../img/albumcover/'. $coverName;
+            if (strlen($artist) <= 25 && strlen($musicName) <= 25) {
+              if(move_uploaded_file($_FILES['musicUpLoad']['tmp_name'],$target) && (move_uploaded_file($_FILES['albumUpload']['tmp_name'],$targetForAlbum))) {
+                  uploadMusic($dbc,$artist,$musicName,$genre,$musicFileName,$coverName,$username);
+                }else{
+                  showDialog("Hiba a szerver elérésében.");
+                    }
+                  }
+            else{
+              showDialog("Túl hosszú név/előadónév");
+            }
+          }
+        ?>
   </div>
 </div>
 <div class="profile-track-container">
