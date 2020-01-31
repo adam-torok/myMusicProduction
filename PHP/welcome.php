@@ -19,24 +19,10 @@ $id = $_SESSION['id'];
       <circle cx="50" cy="50" r="15" />
     </svg>
   </div>
-<style>
-  h2 {
-    color: grey;
-  }
-  i:hover{
-    cursor:pointer;
-  }
-  .list{
-    text-align:left!important;
-  }
-  .list i{
-    text-align:left!important;
-  }
-  .material-button{
-    margin:1rem;
-  }
-</style>
-  <?php include_once("COMPONENTS/navbar.php");?>
+<?php
+showWelcomeExtraCss();
+include_once("COMPONENTS/navbar.php");
+?>
 <div class="divider">
   <?php include_once('COMPONENTS/sidebar.php');?>
   <form  class="hide playlistForm"  action="createPlayList.php" method="post">

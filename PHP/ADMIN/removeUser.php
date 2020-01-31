@@ -1,6 +1,7 @@
 <?php
 require_once('authorize.php');
 require_once('../CONFIG/config.php');
+require_once('../COMPONENTS/functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,27 +31,11 @@ else {
     echo "Sajnáljuk, nem választott ki felhasználót!";
 }
 // --- --- ----- --- --
-if(isset($_POST['submit'])){
-    if(true){
-        $query = "DELETE FROM felhasznalo WHERE id=$id LIMIT 1";
-        mysqli_query($dbc,$query);
-        mysqli_close($dbc);
-        echo '<p>'. $felhnev .' törölve az adatbázisból!</p>';
-    }
-    else{
-        echo '<p> A felhasználó nem lett törölve.</p>';
-    }
+if(isset($_POST['delete'])){
+  deleteUser($id,$dbc,$felhnev);
 }
 else if(isset($id) && isset($felhnev) && isset($jelszo) && isset($email) ){
-echo '<p>Biztosan kitörlöd ezt a felhasználót?<br> "'.$felhnev .'"</p>';
-echo '<form action="removeUser.php" method="POST">';
-echo '<br>';
-echo '<input type="hidden" name="id" value="'.$id.'"/>';
-echo '<input type="hidden" name="felhnev" value="'.$felhnev.'"/>';
-echo '<input type="hidden" name="jelszo" value="'.$jelszo.'"/>';
-echo '<input type="hidden" name="email" value="'.$email.'"/>';
-echo '<input class="material-button-delete" type="submit" name="submit" value="TÖRLÉS"/>';
-echo '</form>';
+  makeSureToDeleteUser($id,$felhnev,$jelszo,$email);
 }
 echo '<h2><a class="material-button" href="admin.php">Vissza az admin oldalra!</a></p>';
 ?>

@@ -1,6 +1,8 @@
 <?php
 require_once('authorize.php');
 require_once('../CONFIG/config.php');
+require_once('../COMPONENTS/functions.php');
+funnyDebugTool();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +18,7 @@ require_once('../CONFIG/config.php');
 if(isset($_GET['id']) && isset($_GET['artist']) && isset($_GET['name']) && isset($_GET['genre'])){
     $id = $_GET['id'];
     $artist = $_GET['artist'];
+    $fileName = $_GET['filename'];
     $name = $_GET['name'];
     $genre = $_GET['genre'];
 }
@@ -32,9 +35,11 @@ else {
 // --- --- ----- --- --
 if(isset($_POST['submit'])){
     if(true){
+        $target = dirname(__FILE__,3)."/SONGS/";
         $query = "DELETE FROM songs WHERE id=$id LIMIT 1";
         mysqli_query($dbc,$query);
         mysqli_close($dbc);
+        deleteFromServer($target,$_POST['filename']);
         echo '<p>'. $name .' törölve  az adatbázisból!</p>';
     }
     else{
@@ -46,6 +51,7 @@ echo '<p>Biztosan kitörlöd ezt a zenét?<br> "'.$artist." - " . $name.'"</p>';
 echo '<form action="removeMusic.php" method="POST">';
 echo '<br>';
 echo '<input type="hidden" name="id" value="'.$id.'"/>';
+echo '<input type="hidden" name="filename" value="'.$fileName .'"/>';
 echo '<input type="hidden" name="artist" value="'.$artist.'"/>';
 echo '<input type="hidden" name="name" value="'.$name.'"/>';
 echo '<input type="hidden" name="genre" value="'.$genre.'"/>';

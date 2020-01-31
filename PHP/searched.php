@@ -19,18 +19,10 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 </title>
 </head>
 <body oncontextmenu="return false"  class="bodyblack">
-<style>
-.tile{
-  width: 100%;
-}
-.tile h2,h1{
-  text-align: center;
-}
-.track-container{
-  display: block;
-}
-</style>
-<?php include_once("COMPONENTS/navbar.php");?>
+<?php
+showSearchedExtraCss();
+include_once("COMPONENTS/navbar.php");
+?>
 <div class="divider">
 <?php include_once("COMPONENTS/sidebar.php");?>
 <div class="track-container">

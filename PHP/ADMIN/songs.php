@@ -1,6 +1,7 @@
 <?php
 require_once('authorize.php');
 require_once('../CONFIG/config.php');
+require_once('../COMPONENTS/functions.php');
 ?>
 <html lang="hu">
 <head>
@@ -60,7 +61,7 @@ require_once('../CONFIG/config.php');
     }?>
     </td>
     <td>
-    <?php echo '<a href="removeMusic.php?id=' . $row['id'] . '&amp;artist='. $row['artist'] . '&amp;name=' . $row['name'] .
+    <?php echo '<a href="removeMusic.php?id=' . $row['id'] . '&amp;filename='.$row['filename'] . '&amp;artist='. $row['artist'] . '&amp;name=' . $row['name'] .
     '&amp;genre=' . $row['genre'].'"><h2 style=" color:#f05123 ;">Törlés</a>'?>
     </td>
   </tr>

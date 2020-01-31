@@ -34,35 +34,10 @@ require_once('COMPONENTS/functions.php');
 
 ?>
 <body oncontextmenu="return false">
-<style>
-body{
-  background:var(--bg-color);
-}
-p{
-   text-align:left;
-}
-.form{
- background-color:#424242;
-}
-.form input{
- background-color:#424242;
- color:white;
-}
-.form input::placeholder{
- color:white;
-}
-.container{
-  display: grid;
-  grid-template-columns:1fr 1fr;
-  background:var(--bg-color);
-}
-.form-center{
- height: auto;
- background-color: unset;
- background-image: none;
-}
- </style>
-<?php include_once("COMPONENTS/navbar.php");?>
+<?php
+showUserProfileExtraCss();
+include_once("COMPONENTS/navbar.php");
+?>
 <div style="background: linear-gradient( rgb(19, 13, 10), rgba(0, 0, 0, 0.7), rgba(32, 32, 32,1)), url(../profileimages/<?php echo $profpic?>)!important;" class="user-header">
 <div class="user-infos">
    <div class="user-info">

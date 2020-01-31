@@ -1,6 +1,7 @@
 <?php
 require_once('authorize.php');
 require_once('../CONFIG/config.php');
+require_once('../COMPONENTS/functions.php');
 ?>
 <html lang="hu">
 <head>

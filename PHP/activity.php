@@ -17,28 +17,10 @@ $genre = $_GET['genre'];
   <title>Üdvözlünk <?php echo $_SESSION['username'];?></title>
 </head>
 <body oncontextmenu="return false"  class="bodyblack">
-<style>
-p{
-text-align: left;
-color: white;
-}
-h2 {
-  color: grey;
-}
-i:hover{
-  cursor:pointer;
-}
-.list{
-  text-align:left!important;
-}
-.list i{
-  text-align:left!important;
-}
-.material-button{
-  margin:1rem;
-}
-</style>
-<?php include_once("COMPONENTS/navbar.php");?>
+<?php
+showActivityExtraCss();
+include_once("COMPONENTS/navbar.php")
+;?>
 <div class="divider">
   <?php include_once('COMPONENTS/sidebar.php');?>
   <form  class="hide playlistForm"  action="createPlayList.php" method="post">
