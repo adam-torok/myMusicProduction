@@ -5,10 +5,9 @@ require_once('CONFIG/config.php');
 include('CONFIG/likes.php');
 require_once('COMPONENTS/functions.php');
 isLogged($_SESSION['logged']);
+$profpic = $_SESSION['profpic'];
 $id = $_SESSION['id'];
 $username = $_SESSION['username'];
-require_once('COMPONENTS/functions.php');
-$profpic = $_SESSION['profpic'];
 $genre = $_GET['genre'];
 ?>
 <html lang="hu">
@@ -51,7 +50,6 @@ include_once("COMPONENTS/navbar.php")
     </tr>
   </thead>
 <tbody>
-<?php // TODO: Ezt lehetne egy táblázatba, hasonlóan mitn a spotify csinálja csak profibban. ?>
 <?php $sql = "SELECT * FROM songs WHERE uploadedby = '$username' AND approved = 1 ORDER BY id DESC";
 $result = $dbc -> query($sql);
 while($row = $result -> fetch_assoc()) {?>
@@ -94,6 +92,7 @@ data-id="<?php echo $row['id'] ?>"></i>
 <script type="text/javascript" src="../JS/main.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/ajax-search.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/music-player.js" charset="utf-8"></script>
+<script type="text/javascript" src="../JS/activity-music-player.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/script.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/likes.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/lightmode.js" charset="utf-8"></script>
@@ -101,27 +100,6 @@ data-id="<?php echo $row['id'] ?>"></i>
 <script type="text/javascript" src="../JS/gridview.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/tofilter.js" charset="utf-8"></script>
 <script src="https://kit.fontawesome.com/75ad4010ea.js" crossorigin="anonymous"></script>
-<script type="text/javascript">
-$(".userButton").click(function(){
-  console.log("URL SÁV?😏.");
-  var userName = $(this).text().slice(13);
-  window.location.replace('userprofile.php?profilename=' + userName);
-  console.log(userName);
-});
-$(document).on('click','#playButton',function(){
-  console.log("😪😪");
-  var src = $(this).find('a').attr('href');
-  var imgsrc = $(this).find('a').next().attr("href");
-  var playerImage = $("#playerImage").attr('src',imgsrc);
-  x = $(this).parent().parent().find('h2').first().text();
-  songName = $(this).parent().parent().find('h2').first().text();
-  $("#songName").text(songName);
-  $("title").text("Most játszott: " + songName);
-  $("#artistName").text(x);
-  var k = $("#myaudio").attr("src",src);
-  $("#downloadButton").attr("href",src);
-  $("#downloadButton").attr("download",src);
-})
-</script>
+
 </body>
 </html>

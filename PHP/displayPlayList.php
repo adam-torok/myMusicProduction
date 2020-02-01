@@ -1,13 +1,11 @@
 <?php
 session_start();
-// MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 require_once('./CONFIG/config.php');
 require_once('COMPONENTS/functions.php');
 isLogged($_SESSION['logged']);
 $bio = $_SESSION['bio'];
 $profpic = $_SESSION['profpic'];
 $id = $_SESSION['id'];
-if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,14 +15,10 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 </title>
 </head>
 <body oncontextmenu="return false"  class="bodyblack">
-  <style>
-      .row{
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      height:auto;
-      }
-  </style>
-<?php include_once('COMPONENTS/navbar.php');?>
+<?php
+showDisplayPlayListExtraCss();
+include_once('COMPONENTS/navbar.php');
+?>
 <div class="divider">
 <?php include_once('COMPONENTS/sidebar.php');?>
 <div class="container">

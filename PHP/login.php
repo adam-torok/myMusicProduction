@@ -4,10 +4,9 @@ session_start();
 include_once("CONFIG/config.php");
 require_once('COMPONENTS/functions.php');
 include_once("COMPONENTS/headerMeta.php");
-// Config file, itt tárolom a connection-hoz való adatokat.
 //Ezek a bejelentkező formból nyert adatok
-$username = mysqli_real_escape_string($dbc,$_POST['username']); //A form-ba beírt felhasználónév
-$password = mysqli_real_escape_string($dbc,$_POST['password']); //A form-ba beírt jelszó
+$username = mysqli_real_escape_string($dbc,$_POST['username']);
+$password = mysqli_real_escape_string($dbc,$_POST['password']); 
 $sql = "SELECT * FROM felhasznalo WHERE felhnev = '$username' AND jelszo = SHA('$password')";
 $result = $dbc -> query($sql);
 //A result változóba tárolom el a lekérdezést

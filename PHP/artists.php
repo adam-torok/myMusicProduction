@@ -7,7 +7,6 @@ isLogged($_SESSION['logged']);
 $id = $_SESSION['id'];
 $bio = $_SESSION['bio'];
 $profpic = $_SESSION['profpic'];
-if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -26,22 +25,22 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
   <h2>Az összes jelenlegi</h2>
   <h1 style="color:white">ZENÉSZEK</h1>
   </div>
-          <?php $sql = "SELECT DISTINCT artist, genre FROM songs WHERE approved = 1  ORDER BY genre";
-          $result = $dbc -> query($sql);
-   while($row = $result -> fetch_assoc()) {?>
-          <div class="track">
-          <div class="thing">
-          <i id="addPlayListButton" class="fas fa-plus-circle  fa-1x"></i>
-          </div>
-          <div class="track-number">
-          <a href="searched.php?artistname=<?php echo $row['artist'];?>"><h2><?php echo $row['artist'];?></h2></a>
-          </div>
-           <div class="track-added">
-          <h2><?php echo "műfaj: ".$row['genre'];?></h2>
-          </div>
-          </div>
-          <?php
-        }//while end ?>
+<?php $sql = "SELECT DISTINCT artist, genre FROM songs WHERE approved = 1  ORDER BY genre";
+$result = $dbc -> query($sql);
+while($row = $result -> fetch_assoc()) {?>
+<div class="track">
+<div class="thing">
+<i id="addPlayListButton" class="fas fa-plus-circle  fa-1x"></i>
+</div>
+<div class="track-number">
+<a href="searched.php?artistname=<?php echo $row['artist'];?>"><h2><?php echo $row['artist'];?></h2></a>
+</div>
+ <div class="track-added">
+<h2><?php echo "műfaj: ".$row['genre'];?></h2>
+</div>
+</div>
+<?php
+}//while end ?>
        </div>
        <?php include_once("COMPONENTS/player.php");?>s
     </div>

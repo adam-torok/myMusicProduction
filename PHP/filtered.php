@@ -1,5 +1,4 @@
 <?php
-// MŰKÖDÉSRŐL BŐVEBBEN : https://github.com/woltery99/myMusic/wiki
 session_start();
 require_once('CONFIG/config.php');
 include('CONFIG/likes.php');
@@ -16,28 +15,10 @@ $genre = $_GET['genre'];
   <title>Üdvözlünk <?php echo $_SESSION['username'];?></title>
 </head>
 <body oncontextmenu="return false"  class="bodyblack">
-<style>
-p{
-text-align: left;
-color: white;
-}
-h2 {
-color: grey;
-}
-i:hover{
-cursor:pointer;
-}
-.list{
-text-align:left!important;
-}
-.list i{
-text-align:left!important;
-}
-.material-button{
-margin:1rem;
-}
-</style>
-<?php include_once("COMPONENTS/navbar.php");?>
+<?php
+showFilteredExtraCss();
+include_once("COMPONENTS/navbar.php");
+?>
 <div class="divider">
 <?php include_once('COMPONENTS/sidebar.php');?>
   <form  class="hide playlistForm"  action="createPlayList.php" method="post">

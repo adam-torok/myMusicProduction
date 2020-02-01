@@ -1,6 +1,6 @@
 <?php
 
-/* --- HIBAKERESÉS ESZKÖZEIM */
+/* --- HIBAKERESÉS ESZKÖZEIM --- */
 
 function funnyDebugTool(){
   ini_set('display_errors', 1);
@@ -245,4 +245,37 @@ function showSearchedExtraCss(){
   </style>";
 }
 
- ?>
+function showFilteredExtraCss(){
+  echo "<style>
+  p{
+  text-align: left;
+  color: white;
+  }
+  h2 {
+  color: grey;
+  }
+  i:hover{
+  cursor:pointer;
+  }
+  .list{
+  text-align:left!important;
+  }
+  .list i{
+  text-align:left!important;
+  }
+  .material-button{
+  margin:1rem;
+  }
+  </style>";
+}
+
+function showDisplayPlayListExtraCss(){
+  echo "<style>
+        .row{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        height:auto;
+        }
+    </style>";
+}
+/* --- DALOK MEGJELENÍTÉSE ---

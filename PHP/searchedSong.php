@@ -1,9 +1,9 @@
 <?php
 session_start();
 require_once('CONFIG/config.php');
-$id = $_SESSION['id'];
 require_once('COMPONENTS/functions.php');
 isLogged($_SESSION['logged']);
+$id = $_SESSION['id'];
 $profpic = $_SESSION['profpic'];
 $searched_song = $_POST['searchedSong'];
 $sql = "SELECT * FROM songs WHERE";

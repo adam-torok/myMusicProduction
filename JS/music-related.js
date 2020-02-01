@@ -15,6 +15,14 @@ $("#volumeUp").click(function(){
     $("#myaudio").prop("volume",volume);
 });
 
+$(".userButton").click(function(){
+  console.log("URL SÁV?😏.");
+  var userName = $(this).text().slice(13);
+  window.location.replace('userprofile.php?profilename=' + userName);
+  console.log(userName);
+});
+
+
 $("#volumeDown").click(function(){
   var volume = $("#myaudio").prop("volume")-0.2;
   console.log("Hangerő teszt LE "+volume);
