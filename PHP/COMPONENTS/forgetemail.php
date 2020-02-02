@@ -1,58 +1,48 @@
 <?php
-// ELFELEJTETT JELSZÓ ESETÉN EMAIL-BE KÜLDÉS
-require_once('CONFIG/config.php');
+require_once('C:\wamp64\www\mymusic\PHP\CONFIG\config.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-require 'PHPMailer/Exception.php';
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
+ini_set('display_errors', '1');
+require('../PHPMailer/Exception.php');
+require('../PHPMailer/PHPMailer.php');
+require('../PHPMailer/SMTP.php');
 
-if(isset($_POST['email']) AND isset($_POST['username'])){
-    $dbc = new mysqli ($host, $dbusername, $dbpassword, $dbname);
-    $email = mysqli_real_escape_string($dbc,$_POST['email']);
-    $uname = mysqli_real_escape_string($dbc,$_POST['username']);
-    // Create dbcection
-
-    $sql = "SELECT jelszo FROM felhasznalo WHERE email = '$email' AND felhnev = '$uname'";
-    $result = mysqli_query($dbc,$sql);
-    $pass = mysqli_fetch_assoc($result);
-    if ($dbc->query($sql)){
-        $mail = new PHPMailer(true);
-        //Server settings
-        $credens = parse_ini_file('credentials.ini');                  // Az ini filet webrooton kívülre kell helyezni
-        $mail->Username   = $credens['username'];              // SMTP felhnev
-        $mail->Password   = $credens['password'];         // SMTP jelszó
-        $mail->Port  = 587;                                    // TCP port ahova csatlakozik
-        //Recipients
-        $mail->setFrom('woltery99@gmail.com');                 //Kitől kapja az üzenetet
-        $mail->Host = "smtp.gmail.com";
-        $mail->SMTPSecure = 'tls';
-        $mail->isSMTP();
-        $mail->SMTPAuth = true; // This Must Be True
-        $mail->CharSet = 'UTF-8';
-        $mail->Mailer = "smtp";
-        $mail->addAddress($email);                     // Felhasználó email címe
-        $mail->addReplyTo('woltery99@gmail.com', 'Information');         //Kinek válaszoljon
-        $mail->addCC('woltery99@outlook.hu');
-        $mail->addBCC('wolter99@outlook.hu');             //kinek küldje el még
-        // EMAIL KÜLDÉS
-        $mail->isHTML(true);                          // Set email format to HTML
-        $mail->Subject = 'Elfelejtett jelszó';
-        $mail->Body    = '<h1>Kedves felhasználó!,</h1> <br>
-        Sajnáljuk a dolgot, a jelszója!  <br> '. $pass['jelszo'].'<br>
-        My music csapata!';
-        $mail->AltBody = 'Köszönjük hogy minket választott'; // ez a body ha nem támogatja a böngésző a html emailt
-        $mail->send();
-        header("Location: ../HTML/index.html");
-    }
-else{
-    echo "Error: ". $sql ."
-    ". $dbc->error;
-    }
-    $dbc->close();
+$email = mysqli_real_escape_string($dbc,$_POST['email']);
+// Create connection
+$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+$sql = "INSERT INTO newsletter (email) values ('$email')";
+if ($conn->query($sql)){
+  $mail = new PHPMailer(true);
+    //Server settings
+    $mail->Username = 'mymusicprodtestemail@gmail.com';              // SMTP felhnev
+    $mail->Password  = 'asdqwert12345D';           // SMTP jelszó
+    $mail->Port  = 587;                                    // TCP port ahova csatlakozik
+    //Recipients
+    $mail->setFrom('mymusicprodtestemail@gmail.com');                 //Kitől kapja az üzenetet
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPSecure = 'tls';
+    $mail->isSMTP();
+    $mail->SMTPAuth = true; // This Must Be True
+    $mail->CharSet = 'UTF-8';
+    $mail->Mailer = "smtp";
+    $mail->addAddress($email);                     // Felhasználó email címe
+    $mail->addReplyTo('mymusicprodtestemail@gmail.com', 'Information');         //Kinek válaszoljon
+    $mail->addCC('mymusicprodtestemail@gmail.com');
+    $mail->addBCC('mymusicprodtestemail@gmail.com');             //kinek küldje el még
+    // EMAIL KÜLDÉS
+    $mail->isHTML(true);                          // Set email format to HTML
+    $mail->Subject = 'Hírlevél';
+    $mail->Body    = '<h1>Kedves feliratkozó!,</h1> <br>
+    Köszönjük, hogy feliratkozott! <br>
+    My music csapata!';
+    $mail->AltBody = 'Köszönjük hogy minket választott'; // ez a body ha nem támogatja a böngésző a html emailt
+    $mail->send();
+    header("Location: \mymusic\HTML\index.html");
 }
 else{
-
+echo "Error: ". $sql ."
+". $conn->error;
 }
+$conn->close();
 ?>

@@ -15,13 +15,13 @@ $sql = "INSERT INTO newsletter (email) values ('$email')";
 if ($conn->query($sql)){
   $mail = new PHPMailer(true);
     //Server settings
-    $mail->Username   = 'mymusicprodtestemail@gmail.com';              // SMTP felhnev
-    $mail->Password   = 'Asd12345';           // SMTP jelszó
+    $mail->Username = "mymusicprodtestemail@gmail.com";            // SMTP felhnev
+    $mail->Password   = 'asdqwert12345D';           // SMTP jelszó
     $mail->Port  = 587;                                    // TCP port ahova csatlakozik
     //Recipients
     $mail->setFrom('mymusicprodtestemail@gmail.com');                 //Kitől kapja az üzenetet
     $mail->Host = "smtp.gmail.com";
-    $mail->SMTPSecure = 'tls';
+    $mail->SMTPSecure = 'ssl';
     $mail->isSMTP();
     $mail->SMTPAuth = true; // This Must Be True
     $mail->CharSet = 'UTF-8';
