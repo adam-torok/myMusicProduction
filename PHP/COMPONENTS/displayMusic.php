@@ -32,10 +32,43 @@
         <?php
       }//while end ?>
 </div>
+<div  id="Rock" class="banner">
+  <h3>Rock</h2>
+    <h2>Felkapott zenék a myMusic közzöségben</h2>
+</div>
+    <div class="row">
+      <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Rock'  AND  approved = 1 LIMIT 10";
+      $result = $dbc -> query($sql);
+      while($row = $result -> fetch_assoc()){
+      ?>
+        <div class="row-inner">
+          <div class="tile">
+            <h2 class="nameButton"><?php echo $row['artist'];?></h2>
+            <h4 class="music-name"><?php echo $row['name']; ?></h4>
+            <h2 class="userButton">Feltöltötte: <?php echo $row['uploadedby']; ?></h4>
+          <div class="tile-media">
+            <img class="tile-img" src="../IMG/ALBUMCOVER/<?php echo $row['covername'];?> ">
+            <div>
+              <a href="../SONGS/<?php echo $row['filename']; ?>"></a>
+              <i id="playbutton" class="fas fa-play playbutton"></i>
+              <i <?php if (userLiked($row['id'])): ?>
+              class="fas fa-heart like-btn"
+            <?php else: ?>
+              class="far fa-heart like-btn"
+            <?php endif ?>
+            data-id="<?php echo $row['id'] ?>"></i>
+            <span class="likes"><?php echo getLikes($row['id']); ?></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php
+    }//while end ?>
+</div>
      <div id="Tropical" class="banner">
         <h3>Tropical</h3>
         <h2>Felkapott zenék a myMusic közzöségben</h2>
-</div>
+        </div>
         <div  class="row">
         <?php $sql = "SELECT * FROM songs  WHERE `genre` = 'Tropical' AND  approved = 1 LIMIT 10";
         $result = $dbc -> query($sql);
@@ -198,5 +231,72 @@
         </div>
         <?php
       }//while end ?>
+    </div>
+    <div id="Jazz" class="banner">
+   <h3>Jazz</h2>
+   <h2>Felkapott zenék a myMusic közzöségben</h2>
+   </div>
+       <div class="row">
+       <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Jazz' AND  approved = 1 LIMIT 10";
+       $result = $dbc -> query($sql);
+       while($row = $result -> fetch_assoc()) {
+     //A lekérdezésnek megfelelően egy row változóba teszem a resultot
+   ?>
+       <div class="row-inner">
+       <div class="tile">
+       <h2 class="nameButton"><?php echo $row['artist'];?></h2>
+       <h4 class="music-name"><?php echo $row['name']; ?></h4>
+       <h2 class="userButton">Feltöltötte: <?php echo $row['uploadedby']; ?></h4>
+       <div class="tile-media">
+         <img class="tile-img" src=../IMG/ALBUMCOVER/<?php echo $row['covername'];?> ">
+         <div>
+           <a href="../SONGS/<?php echo $row['filename']; ?>"></a>
+           <i id="playbutton" class="fas fa-play playbutton"></i>
+           <i <?php if (userLiked($row['id'])): ?>
+           class="fas fa-heart like-btn"
+         <?php else: ?>
+           class="far fa-heart like-btn"
+         <?php endif ?>
+         data-id="<?php echo $row['id'] ?>"></i>
+         <span class="likes"><?php echo getLikes($row['id']); ?></span>
+         </div>
+       </div>
+     </div>
+       </div>
+       <?php
+     }//while end ?>
+   </div>
+    <div  id="Metál" class="banner">
+      <h3>Metál</h2>
+        <h2>Felkapott zenék a myMusic közzöségben</h2>
+    </div>
+        <div class="row">
+          <?php $sql = "SELECT * FROM songs WHERE `genre` = 'Metál'  AND  approved = 1 LIMIT 10";
+          $result = $dbc -> query($sql);
+          while($row = $result -> fetch_assoc()){
+          ?>
+            <div class="row-inner">
+              <div class="tile">
+                <h2 class="nameButton"><?php echo $row['artist'];?></h2>
+                <h4 class="music-name"><?php echo $row['name']; ?></h4>
+                <h2 class="userButton">Feltöltötte: <?php echo $row['uploadedby']; ?></h4>
+              <div class="tile-media">
+                <img class="tile-img" src="../IMG/ALBUMCOVER/<?php echo $row['covername'];?> ">
+                <div>
+                  <a href="../SONGS/<?php echo $row['filename']; ?>"></a>
+                  <i id="playbutton" class="fas fa-play playbutton"></i>
+                  <i <?php if (userLiked($row['id'])): ?>
+                  class="fas fa-heart like-btn"
+                <?php else: ?>
+                  class="far fa-heart like-btn"
+                <?php endif ?>
+                data-id="<?php echo $row['id'] ?>"></i>
+                <span class="likes"><?php echo getLikes($row['id']); ?></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php
+        }//while end ?>
     </div>
     </div>

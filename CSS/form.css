@@ -274,6 +274,22 @@ display: none;
 color:var(--accent-color) ;
 }
 
+#pwdErrorMessage{
+display: none;
+color:var(--accent-color);
+transition: all 0.5s ease;
+}
+
+#pwdErrorMessage2{
+display: none;
+color:var(--accent-color) ;
+}
+
+#emailErrorMessage{
+  display: none;
+  color:var(--accent-color);
+}
+
 @media screen and (max-width: 600px) {
 form h1{
   font-size: 30px;

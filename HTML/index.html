@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="../CSS/animations.css">
       <script src="../JS/jquery-3.4.1.min.js" charset="utf-8"></script>
       <script src="../JS/main.js" charset="utf-8"></script>
+      <script src="../JS/reg-validate.js" charset="utf-8"></script>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="width=device-width, initial-scale=1, content="width=1000" maximum-scale=1, user-scalable=no"/>
@@ -31,22 +32,25 @@
 <div class="form-center">
   <div class="formholder">
      <div class="form root animated fadeInLeft delay-0s">
-        <form method="post" action="../PHP/CONFIG/connect.php">
-           <h1>Regrisztálj!</h1>
+        <form method="post" action="../PHP/registrate.php">
+           <h1>Regisztrálj!</h1>
            <div class="input">
-             <input class="inputFields" data-aos="fade-in" type="text" onkeydown="checkUsername()" required placeholder="Felhasználónév" id="username" name="username">
+               <input class="inputFields" data-aos="fade-in" type="text" onblur="checkUsername()" required placeholder="Felhasználónév" id="username" name="username">
              <div class="bar"></div>
            </div>
-           <h2 id="userErrorMessage">  * felhasználónév legalább 10 karakter.</h2>
-           <h2 id="userErrorMessage2">  * felhasználónév maximum 20 karakter.</h2>
+             <span id="userErrorMessage">  * felhasználónév legalább 10 karakter.</span>
+             <span id="userErrorMessage2">  * felhasználónév maximum 20 karakter.</span>
            <div class="input">
-             <input class="inputFields" data-aos="fade-in" type="email" required placeholder="Email" id="email" name="email">
+             <input class="inputFields" data-aos="fade-in" type="email"  onblur="checkEmail()" required placeholder="Email" id="email" name="email">
              <div class="bar"></div>
            </div>
+           <span id="emailErrorMessage">  * Nem megfelelő email formátum.</span>
            <div class="input">
-             <input class="inputFields" data-aos="fade-in" type="password" required placeholder="Jelszó" id="password" name="password">
+             <input class="inputFields" data-aos="fade-in" type="password" onblur="checkPassword()"  required placeholder="Jelszó" id="password" name="password">
              <div class="bar"></div>
            </div>
+           <span id="pwdErrorMessage">  * jelszó legalább 10 karakter.</span>
+           <span id="pwdErrorMessage2">  * jelszó maximum 20 karakter.</span>
            <br>
            <br>
            <input class="material-button" type="submit" value="Ingyenes regrisztáció!">
@@ -57,10 +61,10 @@
        <img class="animated jackInTheBox delay-0s" style="width:100px;height:100px;" src="../IMG/myMusicLogo.png" alt="">
         <h1 style="color:#fff">Szereted a zenét?</h1>
         <div class="popup-inside">
-           <form method="POST" action="../PHP/COMPONENTS/sendmail.php">
+           <form id="newsletter" method="POST" action="../PHP/sendmail.php">
               <h2>Iratkozz fel hírlevelünkre!</h2>
                  <div class="input">
-                   <input class="inputFields" type="email" name="email" id="email" placeholder="Email címed" required>
+                   <input id="emailinput" class="inputFields" type="email" name="email" onblur="checkEmail()" id="email" placeholder="Email címed" required>
                    <div class="bar"></div>
                  </div>
               <h2>Heti hírlevelünkre feliratkozva, információkat küldünk neked!</h2>
@@ -108,7 +112,7 @@
       </div>
       <script>
       $(document).ready(function(){
-        // HA MOBILRÓL NÉZI MEG AZ OLDALT A USER-AGENT, AKKOR DROPDOWN MENÜ LESZ A NAVIGÁCIÓ (DINAMIKUSAN)
+        // HA MOBILRÓL NÉZI MEG AZ OLDALT A USER  -AGENT, AKKOR DROPDOWN MENÜ LESZ A NAVIGÁCIÓ (DINAMIKUSAN)
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (isMobile) {
          var toogle = $("<span id='toggleNav' style='z-index:999999;font-size:50px;cursor:pointer;color:white'>&#9776;</span>")
@@ -123,31 +127,6 @@
          $(".mobile").toggleClass("hidden");
        })
       })
-         AOS.init();
-         function checkUsername(){
-             let inputForUsername = document.getElementById("username").value;
-             for(i=0; i>inputForUsername.length; i++){
-             if(isNaN(inputForUsername.length[i])){
-                 }
-                }
-             if(inputForUsername.length == null){
-                 var errormsg = document.getElementById("userErrorMessage2").style.display = "none";
-                 var errormsg = document.getElementById("userErrorMessage").style.display = "none";
-             }
-             if(inputForUsername.length < 10 ){
-                 console.log("i should be none.");
-                 var errormsg = document.getElementById("userErrorMessage").style.display = "block";
-             }
-             else{
-                 var errormsg = document.getElementById("userErrorMessage").style.display = "none";
-             }
-             if(inputForUsername.length > 20){
-                 var errormsg = document.getElementById("userErrorMessage2").style.display = "block";
-             }
-             else{
-                 var errormsg = document.getElementById("userErrorMessage2").style.display = "none";
-             }
-         }
       </script>
    </body>
 </html>

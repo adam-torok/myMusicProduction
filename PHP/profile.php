@@ -43,6 +43,31 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
 <body oncontextmenu="return false">
 <?php include_once("COMPONENTS/navbar.php");?>
 <div class="divider">
+  <div class="modal">
+  <div class="modal-content">
+    <span class="close-modal">
+    <i class="fas fa-times"></i>
+  </span>
+    <h2>Jelszóváltoztatás</h2>
+    <form class="modal-form" action="#" method="POST">
+      <input class="modal-input" type="text" name="password-renew" placeholder="Új jelszó">
+      <input class="modal-input" type="text" name="password-renew" placeholder="Új jelszó mégegyszer">
+      <input class="material-button" type="submit" name="save_password" value="Mentés">
+    </form>
+  </div>
+</div>
+<?php
+if(isset($_POST["save_password"])){
+  $pass = $_POST['password-renew'];
+  sanitiseInput($dbc,$pass);
+  if(strlen($pass) >= 20){
+    showDialog("jelszó maximum 20 karakter.","profile.php");
+  }
+  else{
+    updatePassword($dbc,$pass,$id);
+  }
+}
+?>
 <?php include_once('COMPONENTS/sidebar.php');?>
 <div>
 <div style="background: linear-gradient( rgb(19, 13, 10), rgba(0, 0, 0, 0.7), rgba(32, 32, 32,1)), url(../profileimages/<?php echo $profpic?>)!important;" class="user-header">
@@ -52,7 +77,6 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
      <img id="prof-image" src="../PROFILEIMAGES/<?php echo $_SESSION['profpic'];?>"  alt="profilkép">
  </div>
  <div class="user-details">
-   <img style="width:50px;height:50px;" src="../IMG/myMusicLogo.png" alt="">
     <div class="user-info-type"><h2>Felhasználó</h2></div>
     <div class="user-info-name"><h2><?php echo $_SESSION['username'];?></h2></div>
     <div class="user-info-date"><h2>Feltöltött számok: <span id="upload-counter"><?php echo $numOfUploads;?></span></h2>
@@ -74,6 +98,7 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
         <label for="bio-save" class="material-icon">
           <i style="color:white" class="fas fa-comment"></i>
         </label>
+            <i id="change-password" style="color:white" class="fas fa-key"></i>
         </form>
             <?php
             if(isset($_POST['save_user'])){
@@ -86,22 +111,19 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
              ($profileImageType == 'image/jpeg') && !empty($_FILES['profile_image']) &&
               $profileImageSize > 0 && $profileImageSize <= GW_MAXFILESIZE){
               if(move_uploaded_file($_FILES['profile_image']['tmp_name'],$target)){
-                  $sql = "UPDATE felhasznalo SET profile_image = '$profileImageName' WHERE id='$id'";
-                    if(mysqli_query($dbc,$sql)){
-                    showDialog("Sikersen frissítetted a profilképedet!");
-                    }
-                    else{
-                    showErrorDialog("Hiba történt a profilkép frissítése közben.");
-                    }
-                }else{
-                  showErrorDialog("Hiba történt");
-                  }
+                  uploadProfilePicture($dbc,$profileImageName,$id);
                 }
-                else showErrorDialog("Túl nagy kép / nem kép formátum!");
+                else{
+                    showDialog("Hiba történt a profilkép frissítése közben.");
+                }
+              }
+              else{
+                showDialog("Túl nagy kép / nem kép formátum!","profile.php");
+              }
             }
             if(isset($_POST['save_bio'])){
-            $bio = htmlentities($_POST['bio-save']);
-            saveBio($bio,$dbc,$id);
+              $bio = htmlentities($_POST['bio-save']);
+              saveBio($bio,$dbc,$id);
             }
             ?>
      </div>
@@ -120,6 +142,12 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
         <?php
       }//while end ?>
 </div>
+</div>
+<div class="user-favorites">
+  <h1>Kedvenc zenéid</h1>
+  <div class="flex">
+    <?php showFavorites($dbc,$id);?>
+  </div>
 </div>
 <div class="container">
 <div class="form-center">
@@ -146,6 +174,9 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
       <option value="Tropical">Tropical</option>
       <option value="Pop">Pop</option>
       <option value="Alternatív">Alternatív</option>
+      <option value="Jazz">Jazz</option>
+      <option value="Rock">Rock</option>
+      <option value="Metál">Metál</option>
       </select>
     </div>
     <div>
@@ -160,15 +191,15 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
         <?php
         if(isset($_POST['save_music'])){
          $musicFileName = $_FILES['musicUpLoad']['name'];
+         $coverName = $_FILES['albumUpload']['name'];
          $musicFileName = sanitiseInput($dbc,$musicFileName);
          $musicName = sanitiseInput($dbc,$_POST['nameofmusic']);
-         $genre = mysqli_real_escape_string($dbc,$_POST['genreofmusic']);
-         getGenre($genre);
+         $genre = sanitiseInput($dbc,$_POST['genreofmusic']);
          $artist = sanitiseInput($dbc,$_POST['artistofmusic']);
-         $username =  mysqli_real_escape_string($dbc,$_SESSION['username']);
-         $coverName = $_FILES['albumUpload']['name'];
-         $coverName = strtolower($coverName);
+         $username =  sanitiseInput($dbc,$_SESSION['username']);
+         $coverName = sanitiseInput($dbc,$coverName);
          $target = '../songs/' . $musicFileName;
+         getGenre($genre);
          $targetForAlbum = '../img/albumcover/'. $coverName;
             if (strlen($artist) <= 25 && strlen($musicName) <= 25) {
               if(move_uploaded_file($_FILES['musicUpLoad']['tmp_name'],$target) && (move_uploaded_file($_FILES['albumUpload']['tmp_name'],$targetForAlbum))) {

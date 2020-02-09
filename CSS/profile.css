@@ -5,10 +5,10 @@ p{
   text-align: left;
 }
 .form input{
- color:white;
+  color:white;
 }
 .form input::placeholder{
- color:white;
+  color:white;
 }
 .container{
   display: grid;
@@ -22,21 +22,29 @@ p{
 .form-holder{
   width: 100%;
 }
-.form-center{
- height: auto;
- background-color: unset;
- background-image: none;
+.form-center {
+  height: auto;
+  background-color: unset;
+  background-image: none;
 }
 .profile-track-container {
-    display: grid;
-    flex-flow: column wrap;
-    flex-direction: row;
-    margin-bottom: 15px;
-    border-radius: 3px;
-    height: 50vh;
-    padding: 1rem;
-    overflow: scroll;
-    overflow-x: hidden;
+  display: grid;
+  flex-flow: column wrap;
+  flex-direction: row;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  height: 50vh;
+  padding: 1rem;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.user-favorites{
+  display: flex;
+  height: 40vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 .profile-track-container:hover{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);

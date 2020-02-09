@@ -23,6 +23,15 @@ $(".material-button").hover(function(){
   $(this).toggleClass("animated pulse delay-0s");
 })
 
+$(document).on("click", "#change-password", function(){
+  $(".modal").css("display","flex");
+})
+
+$(document).on("click", ".close-modal", function(){
+  $(".modal").css("display","none");
+})
+
+
 $("#send-mail").click(function(){
   console.log("added");
   $("#mail-holder").addClass("animated bounceOutUp delay-0s");

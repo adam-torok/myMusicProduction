@@ -42,12 +42,6 @@ include_once("COMPONENTS/navbar.php");
         <div class="track-number">
         <h2><?php echo $row['artist'];?></h2>
         </div>
-        <div class="track-number">
-        <h2><?php echo $row['id'];?></h2>
-        </div>
-        <div class="track-added">
-        <h2><?php echo $row['time'];?></h2>
-        </div>
         <div class="track-audio">
         <a href="../songs/<?php echo $row['filename']; ?>"></a>
         <i id="playbutton" class="fas fa-play-circle"></i>

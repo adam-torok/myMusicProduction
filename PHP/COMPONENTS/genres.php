@@ -5,4 +5,7 @@
 <button data-id="Classical"   class="material-button" type="button">Classical</button>
 <button  data-id="Pop" class="material-button" type="button">Pop</button>
 <button  data-id="Future"  class="material-button" type="button">Future</button>
+<button  data-id="Rock"  class="material-button" type="button">Rock</button>
+<button  data-id="Jazz"  class="material-button" type="button">Jazz</button>
+<button  data-id="Metál"  class="material-button" type="button">Metál</button>
 </div>

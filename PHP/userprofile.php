@@ -56,8 +56,8 @@ include_once("COMPONENTS/navbar.php");
 </div>
 <h1 style="color:white">Nemrég feltöltött zenék</h1>
 <div class="profile-track-container-featured">
-        <?php $sql = "SELECT * FROM songs WHERE `uploadedby` = '$uname' AND approved = 1 ORDER BY id DESC LIMIT 4 ";
-        $result = $dbc -> query($sql);
+        <?php $sql = "SELECT * FROM songs WHERE `uploadedby` = '$uname' AND approved = 1 ORDER BY id DESC LIMIT 3";
+        $result = $dbc -> query($sql);  
  while($row = $result -> fetch_assoc()) {?>
    <div>
      <img id="albumcover" class="track-container-picture" src="../img/albumcover/<?php echo $row['covername'];?>"></a>

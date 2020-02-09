@@ -27,10 +27,10 @@ include_once("COMPONENTS/navbar.php");
 <div class="container">
   <?php include_once("COMPONENTS/genres.php");?>
   <div class="filtered-track-container-featured">
-          <?php $sql = "SELECT * FROM songs WHERE genre = '$genre' AND approved = 1 ORDER BY id asc LIMIT 4";
+          <?php $sql = "SELECT * FROM songs WHERE genre = '$genre' AND approved = 1 ORDER BY id asc LIMIT 3";
           $result = $dbc -> query($sql);
    while($row = $result -> fetch_assoc()) {?>
-     <div>
+     <div style="display:flex;justify-content:center;align-items:center;flex-direction:column;">
        <img id="albumcover" class="filtered-image-container" src="../img/albumcover/<?php echo $row['covername'];?>"></a>
        <a href="searched.php?artistname=<?php echo $row['artist'];?>"><h2 style="text-align:center"><?php echo $row['artist'];?></h2></a>
      </div>
@@ -43,7 +43,6 @@ include_once("COMPONENTS/navbar.php");
 <tr>
 <th><p>Előadó</p></th>
 <th><p>Cím</p></th>
-<th><p>Feltöltés dátuma</p></th>
 <th><p>Lejátszás</p></th>
 <th><p>Kedvelem!</p></th>
 </tr>
@@ -58,9 +57,6 @@ while($row = $result -> fetch_assoc()) {?>
   </td>
   <td>
   <h2><?php echo $row['name'];?></h2>
-  </td>
-  <td>
-  <h2><?php echo $row['time'];?></h2>
   </td>
   <td>
     <i id="playButton" class="fas fa-play fa-xs">

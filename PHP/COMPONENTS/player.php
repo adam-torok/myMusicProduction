@@ -1,6 +1,6 @@
 <div class="player">
    <div class="player-image-container" style="padding-left:3rem;">
-      <img style="width:100px;height:auto;" id="playerImage"  src="../IMG/ALBUMCOVER/albumcoverbase.png">
+      <img id="playerImage"  src="../IMG/ALBUMCOVER/albumcoverbase.png">
    </div>
    <div class="name">
       <h2>Előadó</h2>

@@ -12,13 +12,11 @@ h1{
 font-size: 50px;
 text-align: center;
 color:white;
-text-transform: uppercase;
 font-family: montserrat;
 }
 p{
 color:white;
 font-family: montserrat;
-font-weight: 900;
 }
 h2{
 color: grey;
@@ -97,4 +95,7 @@ color:var(--accent-color);
 }
 .sideicon{
 font-size: 14px!important;
+}
+.explore-genres h2{
+  color:white!important;
 }

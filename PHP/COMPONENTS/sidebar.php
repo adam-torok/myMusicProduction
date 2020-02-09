@@ -5,9 +5,9 @@
   <div class="sidebar-items">
       <a href="welcome.php" class="sidebar-item">
           <i  class="fas fa-plus-circle  fa-1x"></i>
-          <span><h2><?php echo $_SESSION['username'];?></h2></span>
+          <span><h2>Kezdőlap</h2></span>
       </a>
-        <a href="welcome.php" class="sidebar-item">
+        <a href="explore.php" class="sidebar-item">
             <i  class="fas fa-plus-circle  fa-1x"></i>
             <span><h2>Böngészés</h2></span>
         </a>
