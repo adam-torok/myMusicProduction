@@ -19,9 +19,8 @@ $result = $dbc -> query($query);
   while($row = $result -> fetch_assoc()) {
     $playlistID = $row['id'];
   }
-echo $song_ID . "user-id" .$id. "playlist-id" .$playlistID;
 $query = "INSERT INTO playlist_songs (playlist_id, song_id) VALUES ('$playlistID','$song_ID')";
 if(mysqli_query($dbc,$query)){
 header("Location:  displayPlayList.php");
 }
-mysqli_close();
+mysqli_close($dbc);

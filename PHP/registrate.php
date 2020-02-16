@@ -3,12 +3,12 @@
 require_once('COMPONENTS/functions.php');
 include_once("COMPONENTS/headerMeta.php");
 require_once('CONFIG/config.php');
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
 require('PHPMailer/Exception.php');
 require('PHPMailer/PHPMailer.php');
 require('PHPMailer/SMTP.php');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 $username = filter_input(INPUT_POST, 'username');
 $password = filter_input(INPUT_POST, 'password');
 $email = filter_input(INPUT_POST, 'email');

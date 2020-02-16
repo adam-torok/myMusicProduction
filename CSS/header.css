@@ -6,7 +6,7 @@ position: fixed;
 font-family: roboto;
 height: 46px;
 top: 0;
-background-color:#212121;
+background-color: var(--bg-color);
 display: flex;
 -webkit-font-smoothing: subpixel-antialiased;
 align-items: center;
@@ -40,11 +40,11 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.24), 0 3px 2px rgba(0,0,0,0.24);
 }
 header a {
 text-decoration: none;
-color: rgb(131, 131, 131);
+color: white;
 display: block;
-font-family: roboto;
+font-family: montserrat;
 padding: 12px 0;
-width: 104px;
+width: 120px;
 height: 46px;
 box-sizing: border-box;
 text-align: center;

@@ -521,7 +521,7 @@ p {
 
 .sidebar{
     padding: 15px;
-    background: #212121;
+    background: var(--bg-color);
     color: #aaaaaa;
     position: sticky;
     top: 45px;

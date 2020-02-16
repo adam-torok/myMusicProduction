@@ -36,6 +36,7 @@ if ($conn->query($sql)){
     $mail->Subject = 'Új jelszó';
     $mail->Body    = '<h1>Kedves felhasznáó!,</h1> <br>
     Az igényelt új jelszója: '.$newPassword.' <br>
+    Lehetőség szerint, minnél hamarabb változtassa meg! <br>
     My music csapata!';
     $mail->AltBody = 'Köszönjük hogy minket választott'; // ez a body ha nem támogatja a böngésző a html emailt
     $mail->send();

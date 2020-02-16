@@ -81,7 +81,7 @@ cursor: pointer;
 }
 
 .player{
-position: fixed;
+position: sticky;
 padding: 2rem 0rem 2rem 0rem;
 transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 width: 100%;
@@ -91,7 +91,7 @@ z-index:555;
 flex-direction: row;
 align-items: center;
 width: 100vw;
-background-color: #212121;
+background: var(--bg-color);
 bottom: 0;
 }
 

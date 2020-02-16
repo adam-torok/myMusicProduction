@@ -5,8 +5,8 @@ include_once("CONFIG/config.php");
 require_once('COMPONENTS/functions.php');
 include_once("COMPONENTS/headerMeta.php");
 //Ezek a bejelentkező formból nyert adatok
-$username = mysqli_real_escape_string($dbc,$_POST['username']);
-$password = mysqli_real_escape_string($dbc,$_POST['password']);
+$username = sanitiseInput($dbc,$_POST['username']);
+$password = sanitiseInput($dbc,$_POST['password']);
 $sql = "SELECT * FROM felhasznalo WHERE felhnev = '$username' AND jelszo = SHA('$password')";
 $result = $dbc -> query($sql);
 //A result változóba tárolom el a lekérdezést

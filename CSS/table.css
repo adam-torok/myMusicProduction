@@ -26,3 +26,42 @@ min-width: 8em;
 max-width: 8em;
 word-break: break-all;
 }
+
+.admin-table{
+table-layout: fixed;
+width: 100%
+}
+
+.admin-tr{
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.admin-td{
+  font-family: Roboto-Medium;
+  font-size: 15px;
+  line-height: 1.4;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: #999999;
+}
+
+.admin-tbody{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.admin-th{
+  font-family: Roboto-Bold;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.newsletter-container{
+    padding: 3rem;
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+}

@@ -193,6 +193,7 @@ if(isset($_POST["save_password"])){
          $musicFileName = $_FILES['musicUpLoad']['name'];
          $coverName = $_FILES['albumUpload']['name'];
          $musicFileName = sanitiseInput($dbc,$musicFileName);
+         $musicFileName = appendDateTimeToFileName($musicFileName);
          $musicName = sanitiseInput($dbc,$_POST['nameofmusic']);
          $genre = sanitiseInput($dbc,$_POST['genreofmusic']);
          $artist = sanitiseInput($dbc,$_POST['artistofmusic']);

@@ -170,6 +170,10 @@ function uploadProfilePicture($dbc,$profileImageName,$id){
   }
 }
 
+ function appendDateTimeToFileName($fileName) {
+   return time().$fileName;
+}
+
 function uploadMusic($dbc,$artist,$musicName,$genre,$musicFileName,$coverName,$username){
   //PREPARED STATEMENTEK, A VÉDELEM ÉRDEKÉBEN
   $sql = "INSERT INTO songs (artist, name, genre, filename, covername, uploadedby, approved) VALUES (?, ?, ?, ?, ?, ?,?)";
@@ -339,10 +343,10 @@ function showFilteredExtraCss(){
 
 function showDisplayPlayListExtraCss(){
   echo "<style>
-        .row{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        height:auto;
-        }
+    .row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    height:auto;
+    }
     </style>";
 }

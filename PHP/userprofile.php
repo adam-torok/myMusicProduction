@@ -57,7 +57,7 @@ include_once("COMPONENTS/navbar.php");
 <h1 style="color:white">Nemrég feltöltött zenék</h1>
 <div class="profile-track-container-featured">
         <?php $sql = "SELECT * FROM songs WHERE `uploadedby` = '$uname' AND approved = 1 ORDER BY id DESC LIMIT 3";
-        $result = $dbc -> query($sql);  
+        $result = $dbc -> query($sql);
  while($row = $result -> fetch_assoc()) {?>
    <div>
      <img id="albumcover" class="track-container-picture" src="../img/albumcover/<?php echo $row['covername'];?>"></a>
@@ -87,20 +87,7 @@ function closePopUp(){
    } else {
      x.style.display = "none";
    }
-    }
-function checkMusicName() {
-		let inputForUsername = document.getElementById("musicName").value;
-		if (inputForUsername.length == null || inputForUsername.length < 20) {
-			var errormsg = document.getElementById("nameErrorMessage").style.display = "none";
-		} else var errormsg = document.getElementById("nameErrorMessage").style.display = "block";
-	}
-function checkArtistName() {
-	let inputForUsername = document.getElementById("artistName").value;
-	if (inputForUsername.length == null || inputForUsername.length < 20) {
-	var errormsg = document.getElementById("artistErrorMessage").style.display = "none";
-	}
-   else var errormsg = document.getElementById("artistErrorMessage").style.display = "block";
- }
+}
 </script>
 </body>
 </html>

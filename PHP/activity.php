@@ -28,7 +28,7 @@ include_once("COMPONENTS/navbar.php")
 <div class="container">
   <?php include_once("COMPONENTS/genres.php");?>
   <div class="filtered-track-container-featured">
-    <?php $sql = "SELECT * FROM songs WHERE approved = 1 AND uploadedby = '$username' ORDER BY id asc LIMIT 4";
+    <?php $sql = "SELECT * FROM songs WHERE approved = 1 AND uploadedby = '$username' ORDER BY id asc LIMIT 3";
     $result = $dbc -> query($sql);
     while($row = $result -> fetch_assoc()) {?>
     <div>
