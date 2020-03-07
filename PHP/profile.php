@@ -50,8 +50,8 @@ if(mysqli_connect_error()) die('nem sikerült a db csatlakozás');
   </span>
     <h2>Jelszóváltoztatás</h2>
     <form class="modal-form" action="#" method="POST">
-      <input class="modal-input" type="text" name="password-renew" placeholder="Új jelszó">
-      <input class="modal-input" type="text" name="password-renew" placeholder="Új jelszó mégegyszer">
+      <input id="password" class="modal-input" type="text" name="password-renew" placeholder="Új jelszó">
+      <input id="passwordagain" class="modal-input" type="text" name="password-renew" placeholder="Új jelszó mégegyszer">
       <input class="material-button" type="submit" name="save_password" value="Mentés">
     </form>
   </div>
@@ -258,5 +258,19 @@ if(isset($_POST["save_password"])){
 <script type="text/javascript" src="../JS/validate-music.js" charset="utf-8"></script>
 <script type="text/javascript" src="../JS/show-mobile-navbar.js" charset="utf-8"></script>
 <script src="https://kit.fontawesome.com/75ad4010ea.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("input[name='save_password']").click(function(){
+      var val1 = $("#password").val();
+      var val2 = $("#passwordagain").val();
+      if(val1 != val2){
+        alert("fck");
+      }
+      else{
+        alert("yes");
+      }
+    })
+});
+</script>
 </body>
 </html>

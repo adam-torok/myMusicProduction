@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond ${REQUEST_FILENAME} !-d
+RewriteCond ${REQUEST_FILENAME} !-f
+RewriteCond $1 !^(CSS|FONTS|HTML|IMG|JS|PHP|PROFILEIMAGES|SONGS)
+
+RewriteRule ^(.+)$ HTML/loginlayout.html
