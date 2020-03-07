@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2020. Jan 18. 23:32
+-- Létrehozás ideje: 2020. Már 07. 23:04
 -- Kiszolgáló verziója: 10.4.11-MariaDB
 -- PHP verzió: 7.4.1
 
@@ -45,53 +45,27 @@ CREATE TABLE `felhasznalo` (
 --
 
 INSERT INTO `felhasznalo` (`id`, `felhnev`, `jelszo`, `email`, `profile_image`, `time`, `bio`) VALUES
-(79, 'sze8torada', '628a5698d8f740d7eeeb156c67ac7159c6f2ecc8', 'myemail@email.hu', '5.jpg', '2019-12-22', 'I\'ts a me, mario!'),
-(80, 'testuser123', 'test', 'testuser@gg.com', 'user.png', '2019-10-16', NULL),
-(81, 'mytestuser', 'testpassword', 'testuser@gmail.com', '1571398700_guitarist.jpeg', '2019-10-18', NULL),
-(83, 'test1234567', 'test123', 'test@test.cu', '1571399330_bg.jpg', '2019-10-18', NULL),
-(87, 'mackolacko1235', 'macilacika', 'mackolaci@maci.hu', 'user.png', '2019-10-18', NULL),
-(91, 'mylittleaccount', 'SHA(userpassword)', 'mlittleaccount@acc.hu', 'user.png', '2019-10-12', NULL),
-(92, 'SHATEST1234', '5f2aabb641bf30dc81f9e0db0c931422c789704f', 'shatest@test.hu', 'user.png', '2019-11-12', NULL),
-(93, 'Badassllamaa', '45725db5c028dd4d4b5e1855ce3a8289cd2a731e', 'fanniaradi@gmail.com', 'user.png', '2019-11-12', NULL),
-(94, 'ajelszom12345', '8cb2237d0679ca88db6464eac60da96345513964', 'lolol@lol.hu', 'user.png', '2019-11-15', NULL),
-(95, 'matematemate', 'da802cf788e6824b225de1691320fe46715eef67', 'mate@mate.hu', 'user.png', '2019-11-15', NULL),
-(96, 'testfelhasznalo', 'baf870c3d85b0d0bdd8e25756dee5e76ad807310', 'test@testtesth.hu', 'user.png', '2019-11-16', NULL),
-(97, 'nemtudom123', '04bab00df4b5fb35b9e6e8801b29ab1d84bb3f95', 'nemtudom@nemtudom.hu', 'user.png', '2019-11-19', NULL),
-(100, '?', '?', '?', 'user.png', '2019-11-19', NULL),
-(113, 'ajelszoaztitok', 'titok', 'j@j.hu', 'user.png', '2019-11-19', NULL),
-(117, 'errorinsqlsyntax', '11f9578d05e6f7bb58a3cdd00107e9f4e3882671', 'a@a.hu', 'user.png', '2019-11-19', NULL),
-(119, 'aradiakárki', 'a5d3de20e35e17fe7b2dd2f424f961ce1c320f18', 'arad@arad.hu', 'user.png', '2019-11-19', NULL),
-(121, 'Török Ádám', '2a69ae61f7b909f7c05619394e8b0b70916da441', '2@asdfasdf.hu', 'user.png', '2019-11-19', NULL),
-(122, 'finaltest123', 'd594c2cc0a53025004791399d80e20852af4c988', 'f@f.hu', 'user.png', '2019-11-19', NULL),
-(124, 'wetmangolia', '86d6a1c1f85e5e55129129b846263c215dce2d3a', 'ma@ma.hu', 'user.png', '2019-11-19', NULL),
-(127, 'ananászkirály', 'b0421a7684a2e342ecf03b2b204cd2e5fef93325', 'ana@ana.hu', 'user.png', '2019-11-19', NULL),
-(129, 'karinthyfrigyeske', '5628bda34969e71ae8053c0e0b583c18dd9070ff', 'k@k.hu', 'user.png', '2019-11-19', NULL),
-(136, 'nemmdukodikmiert', '30cd36993ffbf58c9e5704cd8aa468fc1d7de055', 'miert@nemar.hu', 'user.png', '2019-11-19', NULL),
-(141, 'aranyjanostoldi', '506adbdbbea6f9ddca96f21a782812b5f4d7a289', 'aranyjanos@f.hu', 'user.png', '2019-11-19', NULL),
-(142, 'Emesed', 'd99eccaa11877fc852747728a01c0a94c367b669', 'valami@valami.hu', 'user.png', '2019-12-27', NULL),
-(145, 'tesztfelhasznalo', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@testamentum.hu', 'bg.jpg', '2019-12-03', NULL),
-(146, 'asd123', 'f10e2821bbbea527ea02200352313bc059445190', 'asd123@asd.hu', 'user.png', '2019-12-13', NULL),
-(147, 'TesztElekMa', '34228a532093278fcdc65c3a1338482e8bdc44f6', 'teszt@teszt.kam', 'spionge.png', '2019-12-22', NULL),
-(151, 'csharpmentesss', '7d131e7229d5b1b8a2fcc4a5a40a245239cf7fc4', 'cmentes@mentes.hu', '', '0001-01-01', NULL),
-(173, 'fasdfsad', '01ce26dc69094af9246ea7e7ce9970aff2b81cc9', 'asfasfas', 'user.png', '2019-12-03', NULL),
-(174, 'russelke', '30a518b67dcd7af15b369ccb1518ab3cad8e8b2c', 'russel@rus.hu', 'user.png', '2019-12-24', NULL),
-(180, 'russeltwo', '3da541559918a808c2402bba5012f6c60b27661c', 'russl@fg.hu', '1571399330_bg.jpg', '2019-12-18', NULL),
-(181, 'pesta', '44b269031d4dc8ac5dd48f1215dfa6c5616b2899', 'asdfasd', '1571399330_bg.jpg', '2020-01-14', NULL),
-(182, 'NewUser', 'c24d5149dd3e785c972936df3178ea81b542c539', 'nw@gw.hu', 'user.png', '2019-11-30', NULL),
-(192, 'adsadsdas', '6d89b6cdd650e689ef35710b7e64d0a59a4720ac', 'asdads', '1571399330_bg.jpg', '2019-12-23', NULL),
-(195, 'kakamajom', 'f10e2821bbbea527ea02200352313bc059445190', 'kaka@kaka.hu', 'user.png', '2019-12-11', NULL),
-(196, 'aasdadsfasdf', '54adbc768978d9574b682470bd1f568f5a3f43da', 'kkkk@kk.hus', 'user.png', '2019-12-27', NULL),
-(198, 'aasdadsfaaassdf', '92429d82a41e930486c6de5ebda9602d55c39986', 'kkkafk@kk.hus', 'user.png', '2019-12-27', NULL),
-(199, 'aasdadsfaaasfsdf', '4c286e182bc4d1832a8739b18c19ecaf9262c37a', 'kkkafk@kdk.hus', 'user.png', '2019-12-27', NULL),
-(200, 'aasfaaasfsdf', '7d6bab8b68fcca31259a7c2748ec6da0a28bfc8e', 'kkkaafk@kdk.hus', 'user.png', '2019-12-27', NULL),
-(202, 'aaasfsdf', '7606c344ab9be169f7cf30f1ad1b2ec1f86a1a59', 'kks@kdk.hus', 'user.png', '2019-12-27', NULL),
-(203, 'aaasfsdfkddd', 'f10e2821bbbea527ea02200352313bc059445190', 'kks@kdk.hsus', 'user.png', '2019-12-27', NULL),
-(206, 'asdf12312251', '56cf9d1d016283487f483df128425414cdbc9f02', 'kkadfs@kdk.hsus', 'user.png', '2019-12-27', NULL),
-(209, 'asdf12312sasad251', 'e552884a581c322ab8a74e2d1811569eda42b28c', 'kicsi1214@freemdaail.hu', 'user.png', '2019-12-27', NULL),
-(210, 'asdf12312s', 'e46bdf35c5f252387dbfb800b0f83a7a9f3b2c93', 'kicsi1a214@freemdaail.hu', 'user.png', '2019-12-27', NULL),
-(211, 'asdf123sdaa', '43644461287e1c9963a510c1bfa3f78a7ca2b986', 'kicsi1a214@dfmdaail.hu', 'user.png', '2019-12-27', NULL),
-(212, 'teszt123412312', '79437f5edda13f9c0669b978dd7a9066dd2059f1', 'adsf@dfmdaail.hu', 'user.png', '2019-12-27', NULL),
-(213, 'roliroliroli', '24b149e151649c3d30c73f9051e844e170a70d2a', 'roli@roli.hu', 'user.png', '2020-01-05', NULL);
+(1, 'wmccoveney', 'jS3abeFuK', 'acandy0@bbb.org', 'user.png', '2019-10-22', 'amet diam in magna bibendum imperdiet nullam orci '),
+(2, 'ggoodson11', 'hWTfggcZG8sB', 'ekeasy1@reuters.com', 'user.png', '2019-10-13', 'sit amet erat nulla tempus vivamus in felis'),
+(3, 'sriguard2', 'DApGDgFxBoGw', 'sbrockbank2@ihg.com', 'user.png', '2019-06-12', 'lacinia eget tincidunt eget tempus vel pede morbi '),
+(4, 'wlamond3', 'Z0gJ6VeQR', 'moffner3@nhs.uk', 'user.png', '2019-10-23', 'justo etiam pretium iaculis justo in'),
+(5, 'rshipton4', 'j3hl4UVxTs', 'xrey4@hostgator.com', 'user.png', '2019-09-03', 'lacus curabitur at ipsum ac'),
+(6, 'kmeysham5', 'KKyrK9eIgddddd', 'wnunn5@squidoo.com', 'user.png', '2019-05-19', 'proin interdum mauris non ligula pellentesque ultr'),
+(7, 'mvane6', 'IalmkHbXEwrJ', 'jgerrett6@ca.gov', 'user.png', '2019-06-26', 'vestibulum sed magna at nunc commodo placerat prae'),
+(8, 'llafayette7', 'iPUqlkA', 'ssitlington7@cnn.com', 'user.png', '2019-07-06', 'neque vestibulum eget vulputate ut ultrices vel au'),
+(9, 'mharrower8', 'G5bWEE8JiY', 'cpeealess8@topsy.com', 'user.png', '2019-10-02', 'in purus eu magna vulputate'),
+(10, 'sdrache9', 'tdQ3Way', 'ggaraway9@businessweek.com', 'user.png', '2019-09-03', 'lorem id ligula suspendisse ornare consequat'),
+(11, 'eboylanda', 'yQMmGZY', 'ablaascha@archive.org', 'user.png', '2019-11-25', 'sagittis sapien cum sociis natoque penatibus'),
+(12, 'grodmellb', '22ornc3b3', 'seulerb@cbslocal.com', 'user.png', '2019-12-27', 'hendrerit at vulputate vitae nisl aenean lectus'),
+(13, 'atironc', 'MOhIRJXsc8', 'sculkinc@dmoz.org', 'user.png', '2020-01-22', 'augue luctus tincidunt nulla mollis molestie lorem'),
+(14, 'ntousond', 'GrIhU1XDu5', 'arummeryd@dedecms.com', 'user.png', '2019-07-17', 'lobortis convallis tortor risus dapibus augue vel '),
+(15, 'jfilinkove', 'MpZGJBkmmx', 'mmcphadene@omniture.com', 'user.png', '2019-11-23', 'felis ut at dolor quis odio consequat varius integ'),
+(16, 'abokenf', 'gqeJZEWWHVj', 'cclemoesf@weather.com', 'user.png', '2020-02-01', 'non lectus aliquam sit amet'),
+(17, 'dcharlesg', 'iTeYN3', 'mremnantg@wikia.com', 'user.png', '2019-05-06', 'odio consequat varius integer ac leo pellentesque'),
+(18, 'vwohlerh', 'YI9fjbnr6', 'jsteeth@angelfire.com', 'user.png', '2019-09-29', 'elit ac nulla sed vel'),
+(19, 'mpottberryi', '1oNya270PBG', 'ecotterilli@booking.com', 'user.png', '2019-07-25', 'nisi venenatis tristique fusce congue diam id'),
+(20, 'ngebhardtj', 'H2ataqW', 'cbrandassij@wp.com', 'user.png', '2020-02-21', 'nulla integer pede justo lacinia eget tincidunt eg'),
+(21, 'sze8torada', '1fae3ce0905862435d03af3ce72aa80d4463f445', 'woltery99@outlook.hu', 'rendyweston.jpg', '2020-03-07', 'ADam');
 
 -- --------------------------------------------------------
 
@@ -110,29 +84,59 @@ CREATE TABLE `likes` (
 --
 
 INSERT INTO `likes` (`userId`, `songId`, `action`) VALUES
+(21, 2, 'like'),
+(21, 6, 'like'),
+(21, 45, 'like'),
+(21, 46, 'like'),
+(21, 47, 'like'),
+(21, 52, 'like'),
+(21, 53, 'like'),
+(21, 54, 'like'),
+(21, 55, 'like'),
+(21, 56, 'like'),
+(21, 58, 'like'),
+(21, 59, 'like'),
+(21, 61, 'like'),
+(21, 62, 'like'),
+(21, 63, 'like'),
+(21, 64, 'like'),
+(21, 65, 'like'),
+(21, 66, 'like'),
+(21, 67, 'like'),
+(21, 68, 'like'),
+(21, 69, 'like'),
+(21, 70, 'like'),
+(21, 74, 'like'),
+(21, 163, 'like'),
+(21, 215, 'like'),
+(21, 223, 'like'),
+(21, 227, 'like'),
 (79, 2, 'like'),
 (79, 6, 'like'),
+(79, 7, 'like'),
 (79, 8, 'like'),
 (79, 9, 'like'),
 (79, 43, 'like'),
 (79, 44, 'like'),
-(79, 45, 'like'),
 (79, 46, 'like'),
-(79, 47, 'like'),
 (79, 48, 'like'),
 (79, 49, 'like'),
 (79, 50, 'like'),
 (79, 52, 'like'),
-(79, 53, 'like'),
+(79, 54, 'like'),
+(79, 55, 'like'),
 (79, 56, 'like'),
+(79, 57, 'like'),
 (79, 58, 'like'),
 (79, 59, 'like'),
 (79, 60, 'like'),
 (79, 61, 'like'),
-(79, 62, 'like'),
 (79, 63, 'like'),
 (79, 64, 'like'),
+(79, 65, 'like'),
 (79, 66, 'like'),
+(79, 67, 'like'),
+(79, 68, 'like'),
 (79, 69, 'like'),
 (79, 70, 'like'),
 (79, 71, 'like'),
@@ -144,13 +148,37 @@ INSERT INTO `likes` (`userId`, `songId`, `action`) VALUES
 (79, 80, 'like'),
 (79, 84, 'like'),
 (79, 86, 'like'),
+(79, 87, 'like'),
 (79, 88, 'like'),
 (79, 89, 'like'),
+(79, 90, 'like'),
+(79, 91, 'like'),
+(79, 95, 'like'),
+(79, 98, 'like'),
 (79, 122, 'like'),
+(79, 126, 'like'),
 (79, 129, 'like'),
 (79, 133, 'like'),
 (79, 146, 'like'),
+(79, 152, 'like'),
 (79, 162, 'like'),
+(79, 163, 'like'),
+(79, 164, 'like'),
+(79, 165, 'like'),
+(79, 166, 'like'),
+(79, 171, 'like'),
+(79, 173, 'like'),
+(79, 174, 'like'),
+(79, 193, 'like'),
+(79, 202, 'like'),
+(79, 203, 'like'),
+(79, 205, 'like'),
+(79, 206, 'like'),
+(79, 214, 'like'),
+(79, 215, 'like'),
+(79, 222, 'like'),
+(79, 223, 'like'),
+(79, 227, 'like'),
 (94, 2, 'like'),
 (94, 6, 'like'),
 (94, 7, 'like'),
@@ -207,7 +235,7 @@ INSERT INTO `likes` (`userId`, `songId`, `action`) VALUES
 --
 
 CREATE TABLE `newsletter` (
-  `emailid` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `email` varchar(30) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
@@ -215,15 +243,27 @@ CREATE TABLE `newsletter` (
 -- A tábla adatainak kiíratása `newsletter`
 --
 
-INSERT INTO `newsletter` (`emailid`, `email`) VALUES
-(1, 'woltery99@outlook.hu'),
-(2, 'woltery99@outlook.hu'),
-(3, ''),
-(4, ''),
-(5, ''),
-(6, ''),
-(7, ''),
-(8, 'adam-torok@outlook.hu');
+INSERT INTO `newsletter` (`id`, `email`) VALUES
+(2, 'aconway1@deviantart.com'),
+(16, 'asimkinsf@shutterfly.com'),
+(20, 'bnijssenj@cyberchimps.com'),
+(17, 'bnorkuttg@hexun.com'),
+(6, 'dbertomier5@toplist.cz'),
+(13, 'efaulksc@china.com.cn'),
+(19, 'ekinchini@csmonitor.com'),
+(3, 'etanby2@icio.us'),
+(14, 'fmandeld@hud.gov'),
+(8, 'gvonoertzen7@howstuffworks.com'),
+(7, 'hmacalister6@samsung.com'),
+(12, 'jdennertb@jalbum.net'),
+(10, 'jsiemens9@hubpages.com'),
+(15, 'kcremene@yellowbook.com'),
+(1, 'lklyn0@microsoft.com'),
+(11, 'mduncana@ca.gov'),
+(9, 'ndickens8@macromedia.com'),
+(18, 'sclousleyh@amazon.co.uk'),
+(4, 'swalley3@1und1.de'),
+(5, 'vscranny4@people.com.cn');
 
 -- --------------------------------------------------------
 
@@ -241,8 +281,7 @@ CREATE TABLE `playlists` (
 --
 
 INSERT INTO `playlists` (`id`, `user_id`) VALUES
-(25, 79),
-(24, 94);
+(26, 21);
 
 -- --------------------------------------------------------
 
@@ -260,8 +299,8 @@ CREATE TABLE `playlist_songs` (
 --
 
 INSERT INTO `playlist_songs` (`playlist_id`, `song_id`) VALUES
-(25, 66),
-(25, 66);
+(26, 9),
+(26, 214);
 
 -- --------------------------------------------------------
 
@@ -288,27 +327,23 @@ CREATE TABLE `songs` (
 INSERT INTO `songs` (`id`, `artist`, `name`, `genre`, `filename`, `covername`, `uploadedby`, `time`, `approved`) VALUES
 (2, 'Michael Buble', 'Feeling Good', 'Classical', 'feelinggood.mp3', 'buble.jpg', 'sze8torada', '2019-11-07 18:44:49', 1),
 (6, 'Kós János', 'Kislány a zongoránál', 'Classical', 'kislany.mp3', 'kos.jpg', 'sze8torada', '2019-11-07 19:16:40', 1),
-(7, 'Shawn Mendez', 'Senorita', 'Pop', 'senorita.mp3', 'senorita.png', 'testuser123', '2019-11-12 16:47:53', 1),
+(7, 'Shawn Mendez', 'Senorita', 'Pop', 'senorita.mp3', 'senorita.png', 'testuser123', '2020-03-07 13:46:34', 0),
 (8, '30Y', 'Felhő', 'Alternatív', 'felho.mp3', '30y.jpg', 'testuser123', '2019-12-26 23:43:28', 1),
 (9, 'Ocho Macho', 'Jó nekem', 'Alternatív', 'jon.mp3', 'ocho.jpeg', 'testuser123', '2019-12-26 23:43:33', 1),
-(43, 'Khalid Billie Eilish', 'lovely', 'Pop', 'eilish.mp3', 'albumc.png', 'sze8torada', '2019-11-12 16:47:28', 1),
 (44, 'Shawn Mendez', 'there is nothing', 'Pop', 'theresnothing.mp3', 'shawn.jpg', 'sze8torada', '2019-11-07 19:16:45', 1),
 (45, 'Nirvana', 'heart shaped box', 'Alternatív', 'maluma.mp3', 'nirvanapic.jpeg', 'sze8torada', '2019-12-20 19:42:07', 1),
 (46, 'Nirvana', 'all apologies', 'Alternatív', 'nirvana - all apologies.mp3', 'nirvanapic.jpeg', 'sze8torada', '2019-11-07 19:17:05', 1),
 (47, '30Y', 'Öltöztetnéd megint', 'Alternatív', 'oltoztetned.mp3', '30yalbumc.jpg', 'sze8torada', '2019-11-07 18:53:00', 1),
 (48, 'G-Eazy', 'sober', 'Pop', 'sober.mp3', 'g-eazy.png', 'sze8torada', '2019-11-07 18:52:53', 1),
 (49, 'Nirvana', 'lithium', 'Alternatív', 'nirvana - lithium.mp3', 'nirvanapic.jpeg', 'sze8torada', '2019-11-07 18:56:13', 1),
-(50, 'test', 'test', 'Pop', 'sober.mp3', 'albumc.png', 'sze8torada', '2019-11-07 19:17:12', 1),
-(51, 'test2', 'test2', 'Pop', 'shawn.jpg', '30yalbumc.jpg', 'sze8torada', '2019-11-12 16:47:20', 1),
 (52, 'Elvis Presley', 'cant help ', 'Classical', 'canthelp.mp3', 'elvis.jpg', 'sze8torada', '2019-12-26 23:31:34', 1),
 (53, 'Louis Armstrong', 'wonderful world', 'Classical', 'world.mp3', 'louis.jpg', 'sze8torada', '2019-11-12 16:01:17', 1),
-(54, 'Sting', 'english man', 'Classical', 'englishman.mp3', 'stingalbum.jpg', 'sze8torada', '2019-11-12 15:56:47', 1),
+(54, 'Sting', 'english man', 'Classical', 'englishman.mp3', 'stingalbum.jpg', 'sze8torada', '2020-01-30 13:46:15', 1),
 (55, 'Sting', 'shape of my heart', 'Classical', 'shape.mp3', 'stingalbum.jpg', 'sze8torada', '2019-11-12 15:54:26', 1),
-(56, 'Ben E King', 'stand by me', 'Classical', 'standby.mp3', 'beneking.jpg', 'sze8torada', '2019-11-07 19:17:59', 1),
+(56, 'Ben E King', 'stand by me', 'Classical', 'standby.mp3', 'beneking.jpg', 'sze8torada', '2020-01-30 13:47:23', 1),
 (57, 'Emilio', 'get down on it', 'Classical', 'geddown.mp3', 'onit.jpg', 'testuser123', '2019-11-07 19:17:54', 1),
 (58, 'Joyner Lucas', 'adhd', 'Rap', 'adhd.mp3', 'joyner.jpg', 'testuser123', '2019-11-12 15:54:17', 1),
 (59, 'NF', 'real', 'Rap', 'nf - real.mp3', 'nfalbum.jpg', 'testuser123', '2019-11-07 19:18:08', 1),
-(60, 'Joyner Lucas', 'broke and stupid', 'Rap', 'jjoyner.mp3', 'joyner2.jpg', 'testuser123', '2019-11-07 19:16:29', 1),
 (61, 'Eminem', 'kamikaze', 'Rap', 'eminem - kamikaze (lyrics).mp3', 'emicov.jpg', 'testuser123', '2019-11-07 19:18:03', 1),
 (62, 'Eminem', 'white america', 'Rap', 'wa.mp3', 'eminemcov2.jpg', 'testuser123', '2019-11-07 19:16:34', 1),
 (63, 'Eminem', 'river', 'Rap', 'river.mp3', 'emicov3.jpg', 'testuser123', '2019-11-07 19:17:49', 1),
@@ -321,61 +356,48 @@ INSERT INTO `songs` (`id`, `artist`, `name`, `genre`, `filename`, `covername`, `
 (70, 'Pharell Williams', 'safari', 'Tropical', 'safari.mp3', 'megusta.jpg', 'sze8torada', '2019-11-07 18:59:33', 1),
 (71, 'Oliver Heldens', 'TTL', 'Future', 'turnmeon.mp3', 'oliverheldens.jpg', 'sze8torada', '2019-11-07 18:59:30', 1),
 (72, 'Meduza', 'piece of your heart', 'Future', 'meduza.mp3', 'medusa.jpg', 'sze8torada', '2019-12-20 19:44:04', 1),
-(73, 'EntityFramework', 'Teszt C#', 'Rap', 'short.mp3', 'shawn.jpg', 'sze8torada', '2019-12-13 23:00:00', 0),
 (74, 'Hopsin', 'dont want', 'Rap', 'hops.mp3', 'hopsin.jpg', 'sze8torada', '2019-11-07 18:59:14', 1),
 (75, 'Logic', 'commando', 'Rap', 'commando.mp3', 'logic.jpg', 'sze8torada', '2019-11-07 18:53:15', 1),
-(76, 'ACDC', 'black in black', 'Rap', 'acdc.mp3', 'acdc.jpg', 'aradifeca', '2019-11-07 18:53:12', 1),
-(77, 'test', 'testmusic', 'Rap', 'short.mp3', 'acdc.jpg', 'sze8torada', '2019-11-07 18:53:10', 1),
-(78, 'Teszt Elek', 'teszt zene', 'Rap', 'short.mp3', 'bg.png', 'sze8torada', '2019-11-19 11:06:37', 0),
-(79, 'TesztEtelke', 'teszt', 'Rap', 'short.mp3', 'logic.jpg', 'sze8torada', '2019-11-19 11:07:56', 0),
-(80, 'TesztEtelke', 'teszt', 'Rap', 'short.mp3', 'logic.jpg', 'sze8torada', '2019-12-21 16:55:57', 1),
-(82, 'ad', 'asdf', 'Rap', 'short.mp3', 'acdc.jpg', 'sze8torada', '2019-11-19 11:11:32', 0),
-(83, 'ad', 'asdf', 'Rap', 'short.mp3', 'acdc.jpg', 'sze8torada', '2019-11-19 11:11:48', 0),
-(84, 'ad', 'asdf', 'Rap', 'short.mp3', 'acdc.jpg', 'sze8torada', '2019-11-19 22:23:05', 1),
-(86, 'ad', 'asdf', 'Rap', 'short.mp3', 'acdc.jpg', 'sze8torada', '2019-11-19 22:22:19', 1),
 (87, 'Török Ádám', 'teszt zene', 'Classical', 'short.mp3', 'pic1.jpg', 'sze8torada', '2019-12-01 22:14:32', 1),
-(88, 'testzene', 'testzene', 'Tropical', 'short.mp3', 'sale.jpg', 'sze8torada', '2019-12-04 11:38:09', 1),
-(89, 'Török Ádám', 'testnew', 'Alternatív', 'short.mp3', 'well.jpg', 'sze8torada', '2019-12-20 19:57:48', 1),
-(90, 'Török Ádám', 'testnew', 'Tropical', 'short.mp3', 'well.jpg', 'sze8torada', '2019-12-20 19:56:59', 1),
-(91, 'Russian Minister', 'cica kutya', 'Pop', 'short.mp3', 'asd.jpg', 'sze8torada', '2019-12-21 16:54:41', 1),
-(92, 'asd', 'asd', 'Future', 'short.mp3', 'shawn.jpg', 'sze8torada', '2019-12-21 14:06:23', 0),
-(94, 'asd', 'asd', 'Future', 'short.mp3', 'shawn.jpg', 'sze8torada', '2019-12-21 14:07:14', 0),
-(95, 'Török Ádám', 'testnew', 'Future', 'short.mp3', 'buttonbg.png', 'sze8torada', '2019-12-21 16:56:28', 1),
-(96, 'Teszt Árpi', 'teszt zene', 'Rap', 'short.mp3', 'shawn.jpg', 'sze8torada', '2019-12-21 17:49:20', 0),
-(97, 'Kék Bálna', 'asd', 'Alternatív', 'short.mp3', 'shawn.jpg', 'sze8torada', '2019-12-21 17:50:57', 0),
-(98, 'Török Ádám', 'testnew', 'Classical', 'short.mp3', 'shawn.jpg', 'sze8torada', '2019-12-21 18:27:47', 1),
-(99, 'asdfsa', 'asdf', 'Alternatív', 'commando.mp3', 'shawn.jpg', 'sze8torada', '2019-12-21 18:58:41', 0),
-(100, 'asdfsa', 'asdf', 'Alternatív', 'commando.mp3', 'shawn.jpg', 'sze8torada', '2019-12-21 18:58:42', 0),
-(101, 'ddd', 'ddd', 'Future', 'balvin.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 19:57:41', 0),
-(102, 'Teszt ', 'cica kutya', 'Alternatív', 'edda-a hutlen.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 20:01:22', 0),
-(103, 'kaka', 'das', 'Pop', 'short.mp3', 'shrek.jpg', 'sze8torada', '2019-12-21 20:03:32', 0),
-(104, 'LP', 'muddywater', 'Rap', 'clandet.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 20:21:09', 0),
-(105, 'LP', 'muddywater', 'Rap', 'clandet.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 20:22:08', 0),
-(106, 'LP', 'muddywater', 'Rap', 'clandet.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 20:43:24', 0),
-(107, 'Nagy Árpi', 'testnew', 'Rap', 'canthelp.mp3', '5.jpg', 'sze8torada', '2019-12-21 20:54:10', 0),
-(108, 'Nagy Árpi', 'testnew', 'Rap', 'canthelp.mp3', '5.jpg', 'sze8torada', '2019-12-21 20:55:18', 0),
-(109, 'asd', 'asd', 'Rap', 'balvin.mp3', '5.jpg', 'sze8torada', '2019-12-21 21:40:53', 0),
-(110, 'asd', 'asd', 'Rap', 'balvin.mp3', '5.jpg', 'sze8torada', '2019-12-21 21:43:01', 0),
-(111, 'asd', 'asd', 'Rap', 'balvin.mp3', '5.jpg', 'sze8torada', '2019-12-21 21:43:59', 0),
-(112, 'Török Ádám', 'testnew', 'Rap', 'clandet.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 21:44:07', 0),
-(113, 'Török Ádám', 'testnew', 'Rap', 'clandet.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 21:44:32', 0),
-(114, 'asdasdasd', 'asdf', 'Rap', 'adhd.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 21:44:42', 0),
-(115, 'asdasdasd', 'asdf', 'Rap', 'adhd.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 21:45:22', 0),
-(116, 'asdasdasd', 'asdf', 'Rap', 'adhd.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 21:47:11', 0),
-(117, 'asdasdasd', 'asdf', 'Rap', 'adhd.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 21:47:58', 0),
-(119, 'asdasdasd', 'asdf', 'Rap', 'adhd.mp3', 'dasdas.jpg', 'sze8torada', '2019-12-21 21:49:31', 0),
-(122, 'éN', 'testnew', 'Rap', 'short.mp3', 'well.jpg', 'sze8torada', '2019-12-26 23:25:49', 1),
-(124, 'éN', 'testnew', 'Rap', 'short.mp3', 'well.jpg', 'sze8torada', '2019-12-21 23:38:25', 0),
-(126, 'Török Ádám', 'testnew', 'Future', 'short.mp3', 'shrek.jpg', 'TesztElekMa', '2019-12-22 17:36:07', 1),
-(127, 'Török Ádám', 'testnew', 'Future', 'short.mp3', 'shrek.jpg', 'TesztElekMa', '2019-12-22 17:36:14', 0),
-(128, 'Török Ádám', 'testnew', 'Future', 'short.mp3', 'shrek.jpg', 'TesztElekMa', '2019-12-22 17:36:17', 0),
-(129, 'Török Ádám', 'testnew', 'Future', 'short.mp3', 'shrek.jpg', 'TesztElekMa', '2019-12-22 17:38:11', 1),
-(133, 'éN', 'asda', 'Rap', 'short.mp3', 'well.jpg', 'sze8torada', '2019-12-26 23:13:25', 1),
-(146, 'éN', 'asda', 'Rap', 'short.mp3', 'well.jpg', 'sze8torada', '2019-12-21 23:38:19', 1),
-(147, 'C#', 'TESZT', 'Rap', 'short.mp3', 'well.jpg', 'sze8torada', '2019-12-26 23:39:43', 0),
-(152, 'Kós János', 'test20191228', 'Tropical', 'filename (1).mp3', 'mymusiclogo.png', 'sze8torada', '2019-12-28 20:15:20', 0),
-(161, 'Kós János', '2123', 'Alternatív', 'filename.mp3', 'asd.jpg', 'sze8torada', '2019-12-28 20:24:12', 0),
-(162, 'Russ', 'meyou', 'Rap', 'russ.mp3', 'russ.png', 'sze8torada', '2020-01-11 20:44:40', 1);
+(162, 'Russ', 'meyou', 'Rap', 'russ.mp3', 'russ.png', 'sze8torada', '2020-01-11 20:44:40', 1),
+(163, 'Adele', 'someone like you', 'Pop', 'short.mp3', 'adele.jpg', 'sze8torada', '2020-01-26 21:07:36', 1),
+(164, 'Ed Sheeran', 'shape of you', 'Pop', 'short.mp3', 'divide.jpg', 'sze8torada', '2020-01-26 21:06:38', 1),
+(165, 'Billie Eilish', 'bad guy', 'Pop', 'short.mp3', 'bili.jpg', 'sze8torada', '2020-01-26 21:10:33', 1),
+(166, 'The Weekend', 'end', 'Pop', 'short.mp3', 'thewee.jpg', 'sze8torada', '2020-01-26 21:10:33', 1),
+(167, 'Belga', 'politikusok', 'Alternatív', 'kamehame-unknown-7636_hifi.mp3', 'belga.jpg', 'sze8torada', '2020-01-26 21:12:24', 1),
+(168, 'Twenty One Pilots', 'monday', 'Pop', '_songs_short (1).mp3', 'o1p.jpg', 'sze8torada', '2020-01-26 21:15:05', 1),
+(169, 'Juno', 'future of man', 'Future', 'short m??solata.mp3', 'fth.jpg', 'sze8torada', '2020-01-26 21:21:08', 1),
+(170, 'Atlantic Records', 'fhw3', 'Future', 'short.mp3', 'futureee.jpg', 'sze8torada', '2020-01-26 21:21:08', 1),
+(171, 'Armin', 'deep house', 'Future', 'short.mp3', 'detroit.jpg', 'sze8torada', '2020-01-26 21:22:55', 1),
+(172, 'IZEDI', 'you dont know me', 'Future', '_songs_short (1).mp3', 'izedi.jpg', 'sze8torada', '2020-01-26 21:25:59', 1),
+(173, 'Statis', 'goner', 'Future', '_songs_short (1).mp3', 'cmon.jpg', 'sze8torada', '2020-01-26 21:27:42', 1),
+(174, 'Russ', 'murder me', 'Rap', '_songs_short (2).mp3', '12312312.webp', 'sze8torada', '2020-01-30 13:46:44', 1),
+(191, 'Russ', 'manifest', 'Rap', '_songs_short (2).mp3', '1.webp', 'sze8torada', '2020-01-31 15:44:39', 1),
+(192, 'Russ', 'compton', 'Rap', '_songs_short (3).mp3', '1.webp', 'sze8torada', '2020-01-31 15:46:06', 1),
+(202, 'Slipknot', 'Duality', 'Metál', 'tmph3o88c10.mp3', 'slipknot.jpg', 'sze8torada', '2020-02-09 19:19:59', 1),
+(203, 'Artic Monkeys', 'Do I Wanna Know?', 'Rock', 'tmph3o88c10.mp3', 'articmonkey.jpg', 'sze8torada', '2020-02-09 19:22:37', 1),
+(204, 'Frank Sinatra', 'Merry Christmas', 'Jazz', 'tmph3o88c10.mp3', 'franks.jpg', 'sze8torada', '2020-02-09 19:26:13', 1),
+(205, 'Metallica', 'Nothing Else Matter', 'Rock', '_songs_short.mp3', 'metallica.jpg', 'sze8torada', '2020-02-09 19:32:54', 1),
+(206, 'Metallica', 'Enter Sandman', 'Rock', '_songs_short.mp3', 'metallica.jpg', 'sze8torada', '2020-02-09 19:33:01', 1),
+(207, 'Metallica', 'Unforgiven', 'Rock', '_songs_short.mp3', 'metallica.jpg', 'sze8torada', '2020-02-09 19:32:56', 1),
+(208, 'Guns N\' Roses', 'November Rain', 'Rock', '_songs_short.mp3', 'gnsroses.png', 'sze8torada', '2020-02-09 19:36:19', 1),
+(209, 'Guns N\' Roses', 'Dont Cry', 'Rock', '_songs_short.mp3', 'gr2.jpg', 'sze8torada', '2020-02-09 19:36:15', 1),
+(210, 'Scorpions', 'Still Loving You', 'Rock', '_songs_short.mp3', 'scropions.jpg', 'sze8torada', '2020-02-09 19:39:05', 1),
+(211, 'Scorpions', 'Wind Of Change', 'Rock', '_songs_short.mp3', 'scropions.jpg', 'sze8torada', '2020-02-09 19:39:10', 1),
+(212, 'Scorpions', 'Hurricane', 'Rock', '_songs_short.mp3', 'scropions.jpg', 'sze8torada', '2020-02-09 19:39:07', 1),
+(214, 'Slipknot', 'Sulfur', 'Metál', '_songs_short.mp3', 'slipknot2.jpg', 'sze8torada', '2020-02-09 19:42:21', 1),
+(215, 'Slipknot', 'Wait And Bleed', 'Metál', '_songs_short.mp3', 'slipknot2.jpg', 'sze8torada', '2020-02-09 19:42:24', 1),
+(216, 'John Coltrane', 'Mr Pc', 'Jazz', '_songs_short.mp3', 'johncoltrane.jpg', 'sze8torada', '2020-02-09 19:59:38', 1),
+(217, 'John Coltrane', 'Equinox', 'Jazz', '_songs_short.mp3', 'johncoltrane.jpg', 'sze8torada', '2020-02-09 19:59:38', 1),
+(218, 'John Coltrane', 'Slave for the Blues', 'Jazz', '_songs_short.mp3', 'johncoltrane.jpg', 'sze8torada', '2020-02-09 19:59:38', 1),
+(219, 'John Coltrane', 'Tenderly', 'Jazz', '_songs_short.mp3', 'johncoltrane.jpg', 'sze8torada', '2020-02-09 19:59:38', 1),
+(220, 'Frank Sinatra', 'Strangers', 'Jazz', '_songs_short.mp3', 'franks.jpg', 'sze8torada', '2020-02-09 19:54:58', 1),
+(221, 'Frank Sinatra', 'My Way', 'Jazz', '_songs_short.mp3', 'franks.jpg', 'sze8torada', '2020-02-09 19:56:03', 1),
+(222, 'Slipknot', 'Unsainted', 'Metál', '_songs_short.mp3', 'slipknot.jpg', 'sze8torada', '2020-03-01 20:54:03', 1),
+(223, 'Slipknot', 'Before I Forget', 'Metál', '_songs_short.mp3', 'slipknot.jpg', 'sze8torada', '2020-03-01 20:54:03', 1),
+(224, 'John Coltrane', 'Teszt', 'Jazz', '_SONGS_wa.mp3', 'ge.png', 'sze8torada', '2020-03-01 20:54:03', 1),
+(227, 'Slipknot', 'TesztGenre3', 'Metál', '1581793528short.mp3', 'dasdas.jpg', 'sze8torada', '2020-03-01 20:54:03', 1),
+(228, 'ssss', 'TesztGenr3', 'Metál', '1581793636short.mp3', 'dasdas.jpg', 'sze8torada', '2020-03-01 20:54:03', 1);
 
 --
 -- Indexek a kiírt táblákhoz
@@ -387,7 +409,8 @@ INSERT INTO `songs` (`id`, `artist`, `name`, `genre`, `filename`, `covername`, `
 ALTER TABLE `felhasznalo`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `felhnev` (`felhnev`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD KEY `email_2` (`email`);
 
 --
 -- A tábla indexei `likes`
@@ -399,7 +422,8 @@ ALTER TABLE `likes`
 -- A tábla indexei `newsletter`
 --
 ALTER TABLE `newsletter`
-  ADD PRIMARY KEY (`emailid`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- A tábla indexei `playlists`
@@ -429,25 +453,25 @@ ALTER TABLE `songs`
 -- AUTO_INCREMENT a táblához `felhasznalo`
 --
 ALTER TABLE `felhasznalo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT a táblához `newsletter`
 --
 ALTER TABLE `newsletter`
-  MODIFY `emailid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT a táblához `playlists`
 --
 ALTER TABLE `playlists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT a táblához `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=229;
 
 --
 -- Megkötések a kiírt táblákhoz
