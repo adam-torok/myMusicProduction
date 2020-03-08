@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2020. Már 07. 23:04
+-- Létrehozás ideje: 2020. Már 08. 16:51
 -- Kiszolgáló verziója: 10.4.11-MariaDB
 -- PHP verzió: 7.4.1
 
@@ -36,7 +36,7 @@ CREATE TABLE `felhasznalo` (
   `jelszo` varchar(40) COLLATE utf8_hungarian_ci NOT NULL,
   `email` varchar(30) COLLATE utf8_hungarian_ci DEFAULT NULL,
   `profile_image` varchar(100) COLLATE utf8_hungarian_ci DEFAULT 'user.png',
-  `time` date NOT NULL DEFAULT current_timestamp(),
+  `time` datetime NOT NULL DEFAULT current_timestamp(),
   `bio` varchar(50) COLLATE utf8_hungarian_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
@@ -65,7 +65,8 @@ INSERT INTO `felhasznalo` (`id`, `felhnev`, `jelszo`, `email`, `profile_image`, 
 (18, 'vwohlerh', 'YI9fjbnr6', 'jsteeth@angelfire.com', 'user.png', '2019-09-29', 'elit ac nulla sed vel'),
 (19, 'mpottberryi', '1oNya270PBG', 'ecotterilli@booking.com', 'user.png', '2019-07-25', 'nisi venenatis tristique fusce congue diam id'),
 (20, 'ngebhardtj', 'H2ataqW', 'cbrandassij@wp.com', 'user.png', '2020-02-21', 'nulla integer pede justo lacinia eget tincidunt eg'),
-(21, 'sze8torada', '1fae3ce0905862435d03af3ce72aa80d4463f445', 'woltery99@outlook.hu', 'rendyweston.jpg', '2020-03-07', 'ADam');
+(21, 'sze8torada', '1fae3ce0905862435d03af3ce72aa80d4463f445', 'woltery99@outlook.hu', 'rendyweston.jpg', '2020-03-07', 'ADam'),
+(29, 'Tesztfelhasználó', 'atesztjelszóm', 'kicsi1214@freemail.hu', 'user.png', '2020-03-08', 'Leírás');
 
 -- --------------------------------------------------------
 
@@ -86,6 +87,7 @@ CREATE TABLE `likes` (
 INSERT INTO `likes` (`userId`, `songId`, `action`) VALUES
 (21, 2, 'like'),
 (21, 6, 'like'),
+(21, 8, 'like'),
 (21, 45, 'like'),
 (21, 46, 'like'),
 (21, 47, 'like'),
@@ -327,7 +329,7 @@ CREATE TABLE `songs` (
 INSERT INTO `songs` (`id`, `artist`, `name`, `genre`, `filename`, `covername`, `uploadedby`, `time`, `approved`) VALUES
 (2, 'Michael Buble', 'Feeling Good', 'Classical', 'feelinggood.mp3', 'buble.jpg', 'sze8torada', '2019-11-07 18:44:49', 1),
 (6, 'Kós János', 'Kislány a zongoránál', 'Classical', 'kislany.mp3', 'kos.jpg', 'sze8torada', '2019-11-07 19:16:40', 1),
-(7, 'Shawn Mendez', 'Senorita', 'Pop', 'senorita.mp3', 'senorita.png', 'testuser123', '2020-03-07 13:46:34', 0),
+(7, 'Shawn Mendez', 'Senorita', 'Pop', 'senorita.mp3', 'senorita.png', 'testuser123', '2020-03-08 11:46:23', 1),
 (8, '30Y', 'Felhő', 'Alternatív', 'felho.mp3', '30y.jpg', 'testuser123', '2019-12-26 23:43:28', 1),
 (9, 'Ocho Macho', 'Jó nekem', 'Alternatív', 'jon.mp3', 'ocho.jpeg', 'testuser123', '2019-12-26 23:43:33', 1),
 (44, 'Shawn Mendez', 'there is nothing', 'Pop', 'theresnothing.mp3', 'shawn.jpg', 'sze8torada', '2019-11-07 19:16:45', 1),
@@ -453,7 +455,7 @@ ALTER TABLE `songs`
 -- AUTO_INCREMENT a táblához `felhasznalo`
 --
 ALTER TABLE `felhasznalo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT a táblához `newsletter`
