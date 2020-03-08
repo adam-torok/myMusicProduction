@@ -1,3 +1,10 @@
+<!---
+I DO NOT OWN ANY OF THE MUSIC, OR THE ALBUM COVERS ->
+All rights reserved to the respective artists and parties. Support the artists.
+No copyright infringement intended for music,
+for promotional and study porpuses only,
+all rights reserved to their respective owners.
+--->
 <?php $array = array("Alternativ", "Metál", "Pop", "Rock", "Future", "Jazz", "Classical", "Rap", "Tropical"); ?>
 <div class="container">
    <?php foreach($array as $key=>$value): ?>
