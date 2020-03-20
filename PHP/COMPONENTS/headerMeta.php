@@ -2,6 +2,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" href="../IMG/mymusiclogo.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1, content=" width=1000 " maximum-scale=1, user-scalable=no"/>
 <link rel="stylesheet" href="../CSS/header.css">
 <link rel="stylesheet" href="../CSS/footer.css">

@@ -2,10 +2,7 @@
 // dbcect to database
 error_reporting(1);
 require_once('config.php');
-// lets assume a user is logged in with id $userId
 $userId = $_SESSION['id'];
-
-// if user clicks like or dislike button
 if (isset($_POST['action'])) {
   $songId = $_POST['songId'];
   $action = $_POST['action'];
@@ -21,14 +18,11 @@ if (isset($_POST['action'])) {
   	default:
   		break;
   }
-
-  // execute query to effect changes in the database ...
   mysqli_query($dbc, $sql);
   echo getRating($songId);
   exit(0);
 }
 
-// Get total number of likes for a particular post
 function getLikes($id)
 {
   global $dbc;
@@ -40,7 +34,6 @@ function getLikes($id)
 }
 
 
-// Get total number of likes and dislikes for a particular post
 function getRating($id)
 {
   global $dbc;
@@ -59,7 +52,6 @@ function getRating($id)
   return json_encode($rating);
 }
 
-// Check if user already likes post or not
 function userLiked($songId)
 {
   global $dbc;
@@ -74,7 +66,6 @@ function userLiked($songId)
   }
 }
 
-// Check if user already dislikes post or not
 function userDisliked($songId)
 {
   global $dbc;
@@ -91,6 +82,4 @@ function userDisliked($songId)
 
 $sql = "SELECT * FROM likes";
 $result = mysqli_query($dbc, $sql);
-// fetch all likes from database
-// return them as an associative array called $likes
 $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);

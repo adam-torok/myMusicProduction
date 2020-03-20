@@ -1,5 +1,4 @@
 $(document).on('click','#playButton',function(){
-  console.log("😪😪");
   var src = $(this).find('a').attr('href');
   var imgsrc = $(this).find('a').next().attr("href");
   var playerImage = $("#playerImage").attr('src',imgsrc);

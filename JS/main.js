@@ -1,5 +1,5 @@
 function loadSpinner() {
-var loadPage = setTimeout(showPage, 700);
+var loadPage = setTimeout(showPage, 100);
 }
 function showPage() {
 document.getElementById("loader").style.display = "none";

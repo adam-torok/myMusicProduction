@@ -112,11 +112,18 @@ function generateNewPassword($length = 10) {
 
 function saveBio($biopost,$dbc,$id){
   //PREPARED STATEMENTEK, A VÉDELEM ÉRDEKÉBEN
+    $sql = "SELECT bio FROM felhasznalo WHERE id = $id";
+    $result = $dbc -> query($sql);
+    $row = mysqli_fetch_assoc($result);
+    $oldBio = $row['bio'];
     $bio = $biopost;
     $sql = "UPDATE felhasznalo SET bio = ? WHERE id= ?";
     $stmt = mysqli_stmt_init($dbc);
     if(!mysqli_stmt_prepare($stmt,$sql)){
-      showDialog("Hiba történt a biod frissítése közben.","profile.php");
+      showDialog("Hiba történt a leírásod frissítése közben.","profile.php");
+    }
+    else if($oldBio == $biopost){
+      showDialog("Nem lehet ugyanaz a leírásod!","profile.php");
     }
     else{
       mysqli_stmt_bind_param($stmt,"ss",$bio,$id);

@@ -61,7 +61,10 @@ if(isset($_POST["save_password"])){
   $pass = $_POST['password-renew'];
   sanitiseInput($dbc,$pass);
   if(strlen($pass) >= 20){
-    showDialog("jelszó maximum 20 karakter.","profile.php");
+    showDialog("Jelszó maximum 20 karakter.","profile.php");
+  }
+  else if(strlen($pass) <= 10){
+    showDialog("Jelszó minimum 10 karakter.","profile.php");
   }
   else{
     updatePassword($dbc,$pass,$id);
@@ -263,12 +266,6 @@ if(isset($_POST["save_password"])){
     $("input[name='save_password']").click(function(){
       var val1 = $("#password").val();
       var val2 = $("#passwordagain").val();
-      if(val1 != val2){
-        alert("fck");
-      }
-      else{
-        alert("yes");
-      }
     })
 });
 </script>

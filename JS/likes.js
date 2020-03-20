@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-// if the user clicks on the like button ...
+// Ha egy felhasználó a szívre kattint...
 $('.like-btn').on('click', function(){
   var songId = $(this).data('id');
   $clicked_btn = $(this);

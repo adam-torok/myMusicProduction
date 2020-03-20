@@ -25,6 +25,6 @@
    <img class="logo" style="margin-left: 2rem;width:100px;height:100px;" src="../IMG/myMusicLogo.png" alt="">
    <audio ontimeupdate="updateBar()" id="myaudio"  id="player" autoplay>
       <source src="../SONGS/" type="audio/mpeg">
-      Your browser does not support the audio element.
+      A böngésződ nem támogatja az Audiót!
    </audio>
 </div>
